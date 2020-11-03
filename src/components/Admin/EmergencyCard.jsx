@@ -10,7 +10,7 @@ function EmergencyCard() {
       <h4>Medication and History "ListAny"</h4>
       <h5>Group/Policy Number "ifGroupInsurance and Number"</h5>
       <h6>Ibuprofen Release "yes/no"</h6>
-      <button>button dropdown menu tor sort by...</button>
+      <button>button dropdown menu sort by...</button>
     </div>
     </>
   )

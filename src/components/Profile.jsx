@@ -5,6 +5,7 @@ import TokenTest from './TokenTest';
 const Profile = () => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
   const [userMetadata, setUserMetadata] = useState(null);
+  const [token, setToken] = useState('');
 
   useEffect(() => {
     const getUserMetadata = async () => {
@@ -27,13 +28,15 @@ const Profile = () => {
         const { user_metadata } = await metadataResponse.json();
   
         setUserMetadata(user_metadata);
+        setToken(accessToken)
+        console.log(accessToken);
       } catch (e) {
         console.log(e.message);
       }
     };
   
     getUserMetadata();
-  }, []);
+  }, [getAccessTokenSilently, user]);
 
 
   return (
@@ -43,12 +46,13 @@ const Profile = () => {
         <h2>{user.name}</h2>
         <p>{user.email}</p>
         <h3>User Metadata</h3>
+        {token}
         {userMetadata ? (
           <pre>{JSON.stringify(userMetadata, null, 2)}</pre>
         ) : (
           "No user metadata defined"
         )}
-        <TokenTest />
+      <TokenTest token={token} />
       </div>
     )
   );

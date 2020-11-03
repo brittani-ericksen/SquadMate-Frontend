@@ -8,9 +8,11 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
-      domain="YOUR_DOMAIN"
-      clientId="YOUR_CLIENT_ID"
+      domain={process.env.REACT_APP_AUTH0_DOMAIN}
+      clientId={process.env.REACT_APP_AUTH0_CLIENTID}
       redirectUri={window.location.origin}
+      audience="https://squadmate.us.auth0.com/api/v2/"
+      scope="read:current_user update:current_user_metadata"
     >
       <App />
     </Auth0Provider>

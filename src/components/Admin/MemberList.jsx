@@ -16,7 +16,7 @@ const MemberList = () =>{
 
     return (
         <>
-            {/* card components - map through each member - infintie scrolling */}
+            {/* card components - display one for each member */}
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia

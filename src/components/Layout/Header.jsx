@@ -27,7 +27,7 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            SquadTeam
+            SquadMate
           </Typography>
           <LogoutButton />
         </Toolbar>

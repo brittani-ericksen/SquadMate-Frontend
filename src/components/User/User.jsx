@@ -1,5 +1,6 @@
 import React from 'react';
 import UserProfile from "./UserProfile";
+import EmergencyCard from "../User/EmergencyCard";
 //import Forms from "./Forms";
 //import Team from "./Team";
 
@@ -13,9 +14,10 @@ const User = () =>{
                 <h1>Welcome "UserName"</h1>
             </div>
             <div>
-              Missing stuff......
+                Missing stuff......
             </div>
             <UserProfile />
+            <EmergencyCard />
             
         </>
     );

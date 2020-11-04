@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from './components/Layout/Layout';
+import LoginButton from "./components/Home/LoginButton";
 import "./App.css";
 
 
@@ -8,6 +9,7 @@ function App() {
     
       <div className="App">
         <Layout />
+        <LoginButton />
       </div>
     
   );

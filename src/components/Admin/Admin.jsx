@@ -1,5 +1,6 @@
 import React from 'react';
-import EmergencyCard from "./EmergencyCard";
+//import AdminEmergencyCards from "./AdminEmergencyCards";
+//import AdminForms from "./AdminForms";
 //import AdminProfile from "./AdminProfile";
 //import MemberList from "./MemberList";
 
@@ -11,12 +12,11 @@ const Admin = () =>{
                 <img src="../../public/avatar-placeholder.png" alt="placeholder" />
                 <h1>Welcome "AdminName"</h1>
             </div>
-            <div>
-              Missing stuff......
-            </div>
-            
-            <EmergencyCard />
-            
+            {/* buttons will route to each page */}
+            <button>Member List</button>
+            <button>Forms</button>
+            <button>Emergency Cards</button>
+            <button>Profile</button>
         </>
     );
 }

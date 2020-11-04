@@ -1,7 +1,7 @@
 import React from 'react';
 import EmergencyCard from "./EmergencyCard";
-import AdminProfile from "./AdminProfile";
-import MemberList from "./MemberList";
+//import AdminProfile from "./AdminProfile";
+//import MemberList from "./MemberList";
 
 const Admin = () =>{
 
@@ -14,11 +14,10 @@ const Admin = () =>{
             <div>
               Missing stuff......
             </div>
-            <MemberList />
-            <AdminProfile />
+            
             <EmergencyCard />
+            
         </>
     );
 }
-
 export default Admin;

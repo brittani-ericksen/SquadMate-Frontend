@@ -1,10 +1,10 @@
 import React from "react";
-import LoginButton from './LoginButton';
-import LogoutButton from "./LogoutButton";
 import Header from "./Header";
 import Footer from "./Footer";
 import Admin from '../Admin/Admin';
 import User from "../User/User";
+import LoginButton from "../Home/LoginButton";
+import LogoutButton from './LogoutButton';
 import { Switch, Route } from 'react-router-dom';
 
 const Layout = () =>{

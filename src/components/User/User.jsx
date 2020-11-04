@@ -1,5 +1,6 @@
 import React from 'react';
 import UserProfile from "./UserProfile";
+import EmergencyCard from "../User/EmergencyCard";
 //import Forms from "./Forms";
 //import Team from "./Team";
 import { Switch, Route, Link } from 'react-router-dom';

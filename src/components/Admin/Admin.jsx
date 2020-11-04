@@ -1,7 +1,9 @@
 import React from 'react';
-import EmergencyCard from "./EmergencyCard";
+import AdminEmergencyCards from "./AdminEmergencyCards";
+//import AdminForms from "./AdminForms";
 //import AdminProfile from "./AdminProfile";
 //import MemberList from "./MemberList";
+
 import { Switch, Route } from 'react-router-dom';
 
 const Admin = () =>{
@@ -25,7 +27,7 @@ const Admin = () =>{
                 <h1>Forms</h1>
             </Route>
             <Route path="/admin/emergencycards">
-                <EmergencyCard />
+                <AdminEmergencyCards />
             </Route>
         </Switch>
             

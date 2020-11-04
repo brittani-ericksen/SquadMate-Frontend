@@ -1,16 +1,17 @@
 import React from "react";
 import Layout from './components/Layout';
-import LoginButton from './components/LoginButton';
+import Admin from './components/Admin';
+import User from './components/User';
 import "./App.css";
-import EmergencyCard from "./components/Admin/EmergencyCard";
+
 
 function App() {
   return (
     
       <div className="App">
-        <LoginButton />
         <Layout />
-        <EmergencyCard />
+        <Admin />
+        <User />
       </div>
     
   );

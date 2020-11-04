@@ -1,4 +1,8 @@
 import React from 'react';
+import UserProfile from "./UserProfile";
+import Forms from "./Forms";
+import Team from "./Team";
+
 
 const User = () =>{
 
@@ -11,12 +15,9 @@ const User = () =>{
             <div>
               Missing stuff......
             </div>
-
-            <div>
-                <button>Profile</button>
-                <button>Forms</button>
-                <button>Team</button>
-            </div>
+            <UserProfile />
+            <Forms />
+            <Team />
         </>
     );
 }

@@ -19,6 +19,9 @@ const User = () =>{
                 <div>
                 Missing stuff......
                 </div>
+            </Route>
+            <Route path="/user/profile">
+                <h1>Profile</h1>
                 <UserProfile />
             </Route>
             <Route path="/user/forms">

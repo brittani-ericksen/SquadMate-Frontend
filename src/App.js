@@ -1,16 +1,17 @@
 import React from "react";
 import Layout from './components/Layout';
-import LoginButton from './components/LoginButton';
-import LogoutButton from './components/LogoutButton';
+import Admin from './components/Admin';
+import User from './components/User';
 import "./App.css";
+
 
 function App() {
   return (
     
       <div className="App">
-        <LoginButton />
-
         <Layout />
+        <Admin />
+        <User />
       </div>
     
   );

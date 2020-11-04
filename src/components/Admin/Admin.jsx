@@ -1,4 +1,7 @@
 import React from 'react';
+import EmergencyCard from "./EmergencyCard";
+import AdminProfile from "./AdminProfile";
+import MemberList from "./MemberList";
 
 const Admin = () =>{
 
@@ -11,12 +14,9 @@ const Admin = () =>{
             <div>
               Missing stuff......
             </div>
-
-            <div>
-                <button>Members</button>
-                <button>Forms</button>
-                <button>Emergency Cards</button>
-            </div>
+            <MemberList />
+            <AdminProfile />
+            <EmergencyCard />
         </>
     );
 }

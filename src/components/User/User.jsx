@@ -1,7 +1,7 @@
 import React from 'react';
 import UserProfile from "./UserProfile";
-import Forms from "./Forms";
-import Team from "./Team";
+//import Forms from "./Forms";
+//import Team from "./Team";
 
 
 const User = () =>{
@@ -16,8 +16,7 @@ const User = () =>{
               Missing stuff......
             </div>
             <UserProfile />
-            <Forms />
-            <Team />
+            
         </>
     );
 }

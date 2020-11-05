@@ -7,7 +7,7 @@ function App() {
     return (
         <div className='App'>
             <Router>
-                <Layout />      
+                <Layout />     
             </Router>
             
         </div>

@@ -6,21 +6,22 @@ import Admin from '../Admin/Admin';
 import User from "../User/User";
 import { Switch, Route } from 'react-router-dom';
 
-const Layout = () =>{
-
+const Layout = props =>{
+    const { user, setUser, isLoggedIn, setIsLoggedIn } = props;
+    
     return (
         <>
         <div> 
-            <Header />
+            <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>
                 <Switch>
                     <Route exact path="/">
-                        <Home />
+                        <Home user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                     </Route>
                     <Route path="/admin">
-                        <Admin />
+                        <Admin user={user}/>
                     </Route>
                     <Route path="/user">
-                        <User />
+                        <User user={user}/>
                     </Route>
                 </Switch>        
             <Footer />

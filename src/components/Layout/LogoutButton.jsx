@@ -1,12 +1,19 @@
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from '@material-ui/core/Button';
+import { useHistory } from 'react-router-dom';
 
-const Button = () => {
-  const { logout } = useAuth0();
+const Button = (props) => {
+  const { setIsLoggedIn, setUser } = props;
+  const history = useHistory();
 
+  const _handleClick = () => {
+    setIsLoggedIn(false);
+    setUser('');
+    history.push('/');
+  } 
   return (
-    <LogoutButton onClick={() => logout({ returnTo: window.location.origin })}>Log Out
+    <LogoutButton onClick={() => _handleClick()}>
+      Log Out
     </LogoutButton>
   );
 };

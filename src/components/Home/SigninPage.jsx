@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { useHistory } from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -46,11 +47,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function SignIn(props) {
+  const { setUser, setIsLoggedIn } = props;
   const classes = useStyles();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
 
   const _handleEmail = input => {
@@ -74,6 +77,9 @@ export default function SignIn() {
 
     const resdata = await response.json();
     console.log(resdata);
+    setUser(resdata);
+    setIsLoggedIn(true);
+    history.push('/admin');
   }
   return (
     <Container component="main" maxWidth="xs">

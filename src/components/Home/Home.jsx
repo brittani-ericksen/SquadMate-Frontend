@@ -1,15 +1,15 @@
 import LoginButton from "../Home/LoginButton";
-import Signin from "./SigninPage";
+import Signin from "./SigninPage"
 import Signup from "./SignupPage";
 import React from "react";
 
-const Home = () => {
+const Home = props => {
+  const { user, setUser, isLoggedIn, setIsLoggedIn } = props;
   return (
     <>
       <div>Home</div>
-      <LoginButton />
       <Signup />
-      <Signin />
+      <Signin user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
     </>
   );
 };

@@ -7,14 +7,7 @@ function App() {
     return (
         <div className='App'>
             <Router>
-                <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/login">
-                        <Layout />
-                    </Route>
-                </Switch>        
+                <Layout />     
             </Router>
             
         </div>

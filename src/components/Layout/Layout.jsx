@@ -13,6 +13,7 @@ const Layout = () =>{
             <Header />
                 <Switch>
                     <Route exact path="/">
+                        <h1>Layout Page</h1>
                     </Route>
                     <Route path="/admin">
                         <Admin />

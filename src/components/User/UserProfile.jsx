@@ -7,6 +7,7 @@ const UserProfile = () =>{
             {/* pulls info in from completed form, editable and updates db when changed */}
             <div>
                 {/* upload profile pic */}
+                <input type="file" accept="image/*" multiple = "false" />
                 <form>
                     <label>Rider First Name</label><input type="text" />
                     <label>Rider Last Name</label><input type="text" />

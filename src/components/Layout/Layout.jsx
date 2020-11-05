@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import Home from "../Home/Home";
 import Footer from "./Footer";
 import Admin from '../Admin/Admin';
 import User from "../User/User";
@@ -13,6 +14,7 @@ const Layout = () =>{
             <Header />
                 <Switch>
                     <Route exact path="/">
+                        <Home />
                     </Route>
                     <Route path="/admin">
                         <Admin />

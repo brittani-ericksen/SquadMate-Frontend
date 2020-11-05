@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -49,6 +49,32 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn() {
   const classes = useStyles();
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
+  const _handleEmail = input => {
+    setEmail(input);
+  }
+  const _handlePassword = input => {
+    setPassword(input);
+  }
+
+  const _handleSubmit = async(e) => {
+    e.preventDefault();
+    let data = {
+      email: email,
+      password: password
+    }
+    const response = await fetch(`http://localhost:3333/user/login`, {
+      method: 'POST',
+      headers: { 'Content-Type' : 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    const resdata = await response.json();
+    console.log(resdata);
+  }
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -59,7 +85,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={e => _handleSubmit(e)}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -70,6 +96,8 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={e => _handleEmail(e.target.value)}
+            value={email}
           />
           <TextField
             variant="outlined"
@@ -81,6 +109,8 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={e => _handlePassword(e.target.value)}
+            value={password}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}

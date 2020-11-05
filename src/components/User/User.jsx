@@ -26,10 +26,12 @@ const User = () =>{
             </Route>
             <Route path="/user/forms">
                 <h1>Forms</h1>
+                {/* <Forms /> */}
                 <Link to="/user">Go Back</Link>
             </Route>
             <Route path="/user/team">
                 <h1>Team</h1>
+                {/* <Team /> */}
                 <Link to="/user">Go Back</Link>
             </Route>
         </Switch>

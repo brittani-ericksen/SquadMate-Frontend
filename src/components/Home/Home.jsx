@@ -1,4 +1,6 @@
 import LoginButton from "../Home/LoginButton";
+import Signin from "./SigninPage";
+import Signup from "./SignupPage";
 import React from "react";
 
 const Home = () => {
@@ -6,6 +8,8 @@ const Home = () => {
     <>
       <div>Home</div>
       <LoginButton />
+      <Signup />
+      <Signin />
     </>
   );
 };

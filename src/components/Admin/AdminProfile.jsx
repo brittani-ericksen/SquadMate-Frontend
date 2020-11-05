@@ -6,6 +6,7 @@ const AdminProfile = () =>{
         <>
             <div>
                 {/* upload profile pic */}
+                <input type="file" accept="image/*" multiple = "false" />
                 <form>
                     <label>First Name</label><input type="text" />
                     <label>Last Name</label><input type="text" />

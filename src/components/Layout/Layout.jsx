@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import Home from "../Home/Home";
+import Home from "../Home/Home"
 import Footer from "./Footer";
 import Admin from '../Admin/Admin';
 import User from "../User/User";
@@ -16,6 +16,9 @@ const Layout = props =>{
                 <Switch>
                     <Route exact path="/">
                         <Home user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+                    </Route>
+                    <Route path="/home">
+                        <Home />
                     </Route>
                     <Route path="/admin">
                         <Admin user={user}/>

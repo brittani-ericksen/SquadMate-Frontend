@@ -45,7 +45,7 @@ const Footer = () => {
       <CssBaseline />
       <footer className={classes.footer}>
         <Container maxWidth="s">
-          <Typography variant="body1">
+          <Typography variant="body6">
             <Button color="primary">Home</Button>
             <Button color="primary">Terms of Service</Button>
             <Button color="primary">About Us</Button>

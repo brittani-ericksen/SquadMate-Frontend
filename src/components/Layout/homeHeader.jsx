@@ -1,6 +1,7 @@
 import React from "react";
-import LogoutButton from "./LogoutButton";
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import LoginButton from "../Home/LoginButton";
+import { AppBar, Toolbar, Typography, IconButton } from "@material-ui/core";
+//import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = (props) => {
+const HomeHeader = (props) => {
   const classes = useStyles();
   const { setIsLoggedIn, setUser, isLoggedIn } = props;
 
@@ -23,14 +24,15 @@ const Header = (props) => {
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h3" className={classes.title}>
+          <Typography variant="h6" className={classes.title}>
             SquadMate
           </Typography>
-          {!!isLoggedIn ? <LogoutButton setIsLoggedIn={setIsLoggedIn} setUser={setUser}/> : ''}
+          <LoginButton />
+            
         </Toolbar>
       </AppBar>
     </>
   );
 };
 
-export default Header;
+export default HomeHeader;

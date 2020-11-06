@@ -7,7 +7,7 @@ import Signup from "./SignupPage";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
-const Home = () => {
+const Home = props => {
   const { user, setUser, isLoggedIn, setIsLoggedIn } = props;
 
   return (

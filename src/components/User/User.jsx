@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
   
-const User = () => {
+const User = ({ user }) => {
     const classes = useStyles();
     return (
         <>
@@ -50,7 +50,7 @@ const User = () => {
             <Route path="/user/profile">
                 <div>Profile</div>
                 <Link to="/user">Go Back</Link>
-                <UserProfile />
+                <UserProfile user={user} />
             </Route>
             <Route path="/user/forms">
                 <h1>Forms</h1>

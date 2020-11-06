@@ -13,7 +13,6 @@ function App() {
             <Router>
                 <Layout user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>     
             </Router>
-            
         </div>
     );
 }

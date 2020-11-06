@@ -37,6 +37,10 @@ const localUser =
   userName: "rider",
   email: "co@me.com",
   password: "password",
+  phone: {
+      cellphone: '555-555-5555',
+      home: '555-555-5555'
+  },
   team: {
       $oid: "5fa2dd0998fe8fbfdf5eaac2"
       },

@@ -1,14 +1,19 @@
 import React from 'react';
-import UserProfile from "./UserProfile";
+
 import EmergencyCard from "../User/EmergencyCard";
+import UserProfile from "./UserProfile";
 import Forms from "./Forms";
 import Team from "./Team";
+
 import { Switch, Route, Link } from 'react-router-dom';
+
 import { Box, makeStyles, Button } from "@material-ui/core";
 import Alert from '@material-ui/lab/Alert';
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
+      padding: 1,
       width: '100%',
       '& > * + *': {
         marginTop: theme.spacing(2),
@@ -16,20 +21,21 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
   
-const User = () => {
+const User = (props) => {
     const classes = useStyles();
+    const { firstName } = props.user;
     return (
         <>
-        <Box width="100%" className="mainContent">
+        <Box color="primary.main" width="100%" className="mainContent">
         <Switch>
             <Route exact path="/user">
                 <div>
                     <img src="../../public/avatar-placeholder.png" alt="placeholder" />
-                    <h1>Welcome "UserName"</h1>
+                    <h1>Welcome {firstName}</h1>
                 </div>
                 <div className={classes.root}>
                 <Alert variant="filled" severity="error">
-                    This is an error alert — check it out!!!
+                    Missing Forms Alert — check it out!
                 </Alert>
                 </div>
                 <div>
@@ -61,7 +67,7 @@ const User = () => {
             <Route path="/user/team">
                 <h1>Team</h1>
                 {/* <Team /> */}
-                <Link to="/user">Go Back</Link>
+                <Link style={{ height: 100, width: '100%', position: 'fixed' }} to="/user">Go Back</Link>
                 <Team />
             </Route>
             <Route path="/user/emcard">

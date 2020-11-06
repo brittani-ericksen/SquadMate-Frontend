@@ -11,7 +11,11 @@ function App() {
     return (
         <div className='App'>
             <Router>
-                <Layout user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>     
+                <Layout 
+                    user={user} 
+                    setUser={setUser} 
+                    isLoggedIn={isLoggedIn} 
+                    setIsLoggedIn={setIsLoggedIn}/>     
             </Router>
         </div>
     );

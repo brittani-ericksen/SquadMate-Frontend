@@ -16,8 +16,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = () => {
+const Header = (props) => {
   const classes = useStyles();
+  const { setIsLoggedIn, setUser, isLoggedIn } = props;
 
   return (
     <>
@@ -29,7 +30,8 @@ const Header = () => {
           <Typography variant="h6" className={classes.title}>
             SquadMate
           </Typography>
-            <LogoutButton />
+          {!!isLoggedIn ? <LogoutButton setIsLoggedIn={setIsLoggedIn} setUser={setUser}/> : ''}
+            
         </Toolbar>
       </AppBar>
     </>

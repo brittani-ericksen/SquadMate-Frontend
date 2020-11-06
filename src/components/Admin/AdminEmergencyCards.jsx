@@ -12,7 +12,8 @@ const useStyles = makeStyles({
     },
 });
 
-function EmergencyCard() {
+function EmergencyCard(props) {
+    const { user } = props;
     const classes = useStyles();
 
     return (
@@ -21,10 +22,10 @@ function EmergencyCard() {
             <Card className={classes.root} variant="outlined">
                 <CardContent>
                 <Typography className="title" component="h1">
-                    Rider Name
+                    Rider Name {user.firstName}
                 </Typography>
                 <Typography component="h2">
-                    Emergency Contact Name:<br />
+                    Emergency Contact Name: <br />
                     Emergency Contact Number:
                 </Typography>
                 <Typography component="p">

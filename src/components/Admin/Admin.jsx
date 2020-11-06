@@ -6,15 +6,15 @@ import MemberList from "./MemberList";
 
 import { Switch, Route, Link } from 'react-router-dom';
 
-const Admin = () =>{
-
+const Admin = (props) =>  {
+    const { firstName } = props.user;
     return (
         <>
         <Switch>
             <Route exact path="/admin">
                 <div>
                     <img src="../../public/avatar-placeholder.png" alt="placeholder" />
-                    <h1>Welcome "AdminName"</h1>
+                    <h1>Welcome {firstName}</h1>
                     <Link to="/admin/profile"><button>Profile</button></Link>
                     <Link to="/admin/memberlist"><button>Members</button></Link>
                     <Link to="/admin/forms"><button>Forms</button></Link>
@@ -23,7 +23,7 @@ const Admin = () =>{
             </Route>
             <Route path="/admin/profile">
                 <h1>Profile</h1>
-                <AdminProfile />
+                <AdminProfile user={props.user}/>
             </Route>
             <Route path="/admin/memberlist">
                 <h1>Members</h1>
@@ -35,7 +35,7 @@ const Admin = () =>{
             </Route>
             <Route path="/admin/emergencycards">
                 <h1>Emergency Cards</h1>
-                <AdminEmergencyCards />
+                <AdminEmergencyCards user={props.user}/>
             </Route>
         </Switch>
             

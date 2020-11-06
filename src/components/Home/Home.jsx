@@ -18,8 +18,7 @@ const Home = props => {
                 <h2>this is a test</h2>
       </LazyHero>
       <Carousel />
-      <Signup />
-      <Signin user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+      
       {/* features */}
     </>
   );

@@ -8,12 +8,13 @@ const useStyles = makeStyles({
         justifyContent: "center",
     },
     cardRoot: {
+        textAlign: "center",
         maxWidth: 345,
     },
     image: {
         height: "auto",
-        width: "50%",
-        alignItems: "flex-end",
+        width: 200,
+        
 
     },
 });
@@ -36,12 +37,12 @@ const MemberList = () =>{
     return (
         <>
         <div className={classes.gridRoot}>
-        <Grid container justify='center'
+        <Grid container
         spacing={3}
         >
         {teamData.map((mate) =>(
             <>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} sm={9} md={6} lg={3} xl={3}>
                         <Card className={classes.cardRoot}>
                             <CardMedia
                                 className={classes.image}

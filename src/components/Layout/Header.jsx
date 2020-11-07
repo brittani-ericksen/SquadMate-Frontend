@@ -26,6 +26,7 @@ const Header = (props) => {
           <Typography variant="h3" className={classes.title}>
             SquadMate
           </Typography>
+          <AcUnitRoundedIcon />
           {!!isLoggedIn ? <LogoutButton setIsLoggedIn={setIsLoggedIn} setUser={setUser}/> : ''}
         </Toolbar>
       </AppBar>

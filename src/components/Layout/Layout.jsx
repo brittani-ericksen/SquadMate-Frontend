@@ -16,27 +16,38 @@ const Layout = props =>{
         <>
         <div>
         {!!isLoggedIn ? <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/> : <HomeHeader />}
-                <Switch>
-                    <Route exact path="/">
-                        <Home user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
-                    </Route>
-                    <Route path="/home">
-                        <Home />
-                    </Route>
-                    <Route path="/signin">
-                        <Signin user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
-                    </Route>
-                    <Route path="/signup">
-                        <Signup />
-                    </Route>
-                    <Route path="/admin">
-                        <Admin user={user}/>
-                    </Route>
-                    <Route path="/user">
-                        <User user={user}/>
-                    </Route>
-                </Switch>        
+            <Switch>
+                
+                <Route exact path="/">
+                    <Home user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+                </Route>
+                <Route path="/home">
+
+                    <Home />
+
+                </Route>
+                <Route path="/signin">
+                    <Signin user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+                </Route>
+                <Route path="/signup">
+
+                    <Signup />
+
+                </Route>
+                <Route path="/admin">
+
+                    <Admin user={user}/>
+
+                </Route>
+                <Route path="/user">
+
+                    <User user={user}/>
+
+                </Route>
+            </Switch>    
+
             <Footer />
+
         </div>
         </>
     );

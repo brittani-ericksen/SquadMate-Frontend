@@ -2,22 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActions, CardActionArea, CardMedia, CardContent, Button, Typography, Grid } from '@material-ui/core';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     gridRoot: {
-        flexGrow:1,
-        justifyContent: "center",
+        flexGrow: 1,
+        justifyContent: "space-evenly",
     },
     cardRoot: {
-        textAlign: "center",
+        margin: '0 auto',
         maxWidth: 345,
     },
     image: {
         height: "auto",
+        margin: '0 auto',
         width: 200,
-        
-
     },
-});
+    center: {
+        margin: '0 auto',
+    }
+}));
 
 const MemberList = () =>{
     const classes = useStyles();
@@ -37,13 +39,12 @@ const MemberList = () =>{
     return (
         <>
         <div className={classes.gridRoot}>
-        <Grid container
-        spacing={3}
+        <Grid container spacing={3}       
         >
         {teamData.map((mate) =>(
             <>
-                    <Grid item xs={12} sm={9} md={6} lg={3} xl={3}>
-                        <Card className={classes.cardRoot}>
+                    <Grid item className="center" xs={12} sm={9} md={6} lg={3} xl={3} >
+                        <Card className={classes.cardRoot} >
                             <CardMedia
                                 className={classes.image}
                                 component="img"

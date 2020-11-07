@@ -34,7 +34,7 @@ const Admin = (props) =>  {
                 <AdminForms />
             </Route>
             <Route path="/admin/emergencycards">
-                <h1>Emergency Cards</h1>
+                <h1 className="removePrint">Emergency Cards</h1>
                 <AdminEmergencyCards user={user}/>
             </Route>
         </Switch>

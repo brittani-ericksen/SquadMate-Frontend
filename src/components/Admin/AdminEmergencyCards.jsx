@@ -1,45 +1,28 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import GetCardInfo from './GetCardInfo';
 
-const useStyles = makeStyles({
-    root: {
-        textAlign: 'left',
-        width: 500,
-    },
-    title: {
-        fontSize: 14,
-    },
-});
 
 function EmergencyCard(props) {
     const { user } = props;
-    const classes = useStyles();
+    const [teamMembers, setTeamMembers] = useState([]);
+
+    useEffect(() => {
+        (async function(){
+            const response = await fetch(`http://localhost:3333/team/${user.team}/users`);
+            const data = await response.json();
+            setTeamMembers(data);
+            console.log(data);
+        })();
+    }, [setTeamMembers, user]);
+
+    let team = teamMembers.filter(member => member._id !== user._id);
 
     return (
-        <>
-        {/* card components - display one for each member */}
-            <Card className={classes.root} variant="outlined">
-                <CardContent>
-                <Typography className="title" component="h1">
-                    Rider Name {user.firstName}
-                </Typography>
-                <Typography component="h2">
-                    Emergency Contact Name: <br />
-                    Emergency Contact Number:
-                </Typography>
-                <Typography component="p">
-                    Medications and History:<br />
-                    Ibuprofen Release:
-                </Typography>
-                <Typography component="p">
-                    Insurance Company Name:<br />
-                    Policy Number:<br />
-                    Group Name:<br />
-                </Typography>
-                </CardContent>
-            </Card>
-        </>
+        <div className="printCard">
+        {team.map((member) => (            
+            <GetCardInfo id={member._id}/>
+        ))}
+        </div>
     );
 }
 

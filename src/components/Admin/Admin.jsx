@@ -7,14 +7,14 @@ import MemberList from "./MemberList";
 import { Switch, Route, Link } from 'react-router-dom';
 
 const Admin = (props) =>  {
-    const { firstName } = props.user;
+    const { user } = props;
     return (
         <>
         <Switch>
             <Route exact path="/admin">
                 <div>
-                    <img src="../../public/avatar-placeholder.png" alt="placeholder" />
-                    <h1>Welcome {firstName}</h1>
+                    <img src={user.avatarUrl} alt="placeholder" />
+                    <h1>Welcome {user.firstName}</h1>
                     <Link to="/admin/profile"><button>Profile</button></Link>
                     <Link to="/admin/memberlist"><button>Members</button></Link>
                     <Link to="/admin/forms"><button>Forms</button></Link>
@@ -23,7 +23,7 @@ const Admin = (props) =>  {
             </Route>
             <Route path="/admin/profile">
                 <h1>Profile</h1>
-                <AdminProfile user={props.user}/>
+                <AdminProfile user={props.user} setUser={props.setUser}/>
             </Route>
             <Route path="/admin/memberlist">
                 <h1>Members</h1>

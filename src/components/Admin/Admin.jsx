@@ -3,18 +3,18 @@ import AdminEmergencyCards from "./AdminEmergencyCards";
 import AdminForms from "./AdminForms";
 import AdminProfile from "./AdminProfile";
 import MemberList from "./MemberList";
-
+import Avatar from 'react-avatar';
 import { Switch, Route, Link } from 'react-router-dom';
 
 const Admin = (props) =>  {
-    const { firstName } = props.user;
+    const { user } = props;
     return (
         <>
         <Switch>
             <Route exact path="/admin">
                 <div>
-                    <img src="../../public/avatar-placeholder.png" alt="placeholder" />
-                    <h1>Welcome {firstName}</h1>
+                <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="105" round />                   
+                <h1>Welcome {user.firstName}</h1>
                     <Link to="/admin/profile"><button>Profile</button></Link>
                     <Link to="/admin/memberlist"><button>Members</button></Link>
                     <Link to="/admin/forms"><button>Forms</button></Link>
@@ -23,7 +23,7 @@ const Admin = (props) =>  {
             </Route>
             <Route path="/admin/profile">
                 <h1>Profile</h1>
-                <AdminProfile user={props.user}/>
+                <AdminProfile user={user}/>
             </Route>
             <Route path="/admin/memberlist">
                 <h1>Members</h1>
@@ -35,7 +35,7 @@ const Admin = (props) =>  {
             </Route>
             <Route path="/admin/emergencycards">
                 <h1>Emergency Cards</h1>
-                <AdminEmergencyCards user={props.user}/>
+                <AdminEmergencyCards user={user}/>
             </Route>
         </Switch>
             

@@ -15,7 +15,7 @@ const Layout = props =>{
     return (
         <>
         <div>
-        {!!isLoggedIn ? <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/> : <HomeHeader />}
+        {!!isLoggedIn ? <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} user={user}/> : <HomeHeader />}
                 <Switch>
                     <Route exact path="/">
                         <Home user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>

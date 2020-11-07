@@ -1,4 +1,5 @@
 import React from 'react';
+import Avatar from 'react-avatar';
 
 const AdminProfile = (props) =>{
     const { user } = props;
@@ -6,7 +7,7 @@ const AdminProfile = (props) =>{
         <>
             <div>
                 {/* upload profile pic */}
-                <input type="file" accept="image/*" multiple = "false" />
+                <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="105" round />
                 <form>
                     <label>First Name</label><input type="text" value={user.firstName}/>
                     <label>Last Name</label><input type="text" value={user.lastName}/>

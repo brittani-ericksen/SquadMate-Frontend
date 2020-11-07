@@ -1,12 +1,14 @@
 import React from 'react';
+import Avatar from 'react-avatar';
 
-const UserProfile = () =>{
+const UserProfile = (props) =>{
+    const { user } = props;
 
     return (
         <>
             {/* pulls info in from completed form, editable and updates db when changed */}
             <div>
-                {/* upload profile pic */}
+            <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="75" round />
                 <input type="file" accept="image/*" multiple = "false" />
                 <form>
                     <label>Rider First Name</label><input type="text" />

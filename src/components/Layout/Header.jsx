@@ -1,5 +1,6 @@
 import React from "react";
 import LogoutButton from "./LogoutButton";
+import Avatar from 'react-avatar';
 import { AppBar, Toolbar, Typography, IconButton } from "@material-ui/core";
 //import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,7 +19,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = (props) => {
   const classes = useStyles();
-  const { setIsLoggedIn, setUser, isLoggedIn } = props;
+  const { setIsLoggedIn, setUser, isLoggedIn, user } = props;
+
+
 
   return (
     <>
@@ -27,6 +30,7 @@ const Header = (props) => {
           <Typography variant="h6" className={classes.title}>
             SquadMate
           </Typography>
+          <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="75" round />
           {!!isLoggedIn ? <LogoutButton setIsLoggedIn={setIsLoggedIn} setUser={setUser}/> : ''}
             
         </Toolbar>

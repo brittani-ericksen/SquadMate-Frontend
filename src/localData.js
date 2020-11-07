@@ -36,6 +36,7 @@ const localUser =
   lastName: "Shlomo",
   userName: "rider",
   email: "co@me.com",
+  github: "",
   password: "password",
   phone: {
       cellphone: '555-555-5555',

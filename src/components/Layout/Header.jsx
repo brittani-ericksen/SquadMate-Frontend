@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
 import LogoutButton from "./LogoutButton";
 import Avatar from 'react-avatar';
 import { AppBar, Toolbar, Typography, IconButton } from "@material-ui/core";
@@ -22,6 +23,12 @@ const Header = (props) => {
   const { setIsLoggedIn, setUser, isLoggedIn, user } = props;
 
 
+  const history = useHistory();
+  const _handleClick = (e) => {
+    if (user.isAdmin){history.push("/admin/profile")
+    }else{history.push("/user/profile")
+  };
+  }; 
 
   return (
     <>
@@ -30,7 +37,7 @@ const Header = (props) => {
           <Typography variant="h6" className={classes.title}>
             SquadMate
           </Typography>
-          <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="75" round />
+          <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="75" round onClick={e => _handleClick(e)}/>
           {!!isLoggedIn ? <LogoutButton setIsLoggedIn={setIsLoggedIn} setUser={setUser}/> : ''}
             
         </Toolbar>

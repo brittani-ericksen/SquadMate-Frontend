@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   }));
   
 const User = (props) => {
-    const { firstName, user } = props;
+    const { user } = props;
     const classes = useStyles();
     return (
         <>
@@ -27,7 +27,7 @@ const User = (props) => {
             <Route exact path="/user">
                 <div>
                 <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="75" round />
-                    <h1>Welcome {firstName}</h1>
+                    <h1>Welcome {user.firstName}</h1>
                 </div>
                 <div className={classes.root}>
                 <Alert variant="filled" severity="error">
@@ -52,7 +52,7 @@ const User = (props) => {
             <Route path="/user/profile">
                 <div>Profile</div>
                 <Link to="/user">Go Back</Link>
-                <UserProfile />
+                <UserProfile user={user}/>
             </Route>
             <Route path="/user/forms">
                 <h1>Forms</h1>

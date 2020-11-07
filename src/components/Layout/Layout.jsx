@@ -27,10 +27,10 @@ const Layout = props =>{
                         <Signin user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                     </Route>
                     <Route path="/signup">
-                        <Signup />
+                        <Signup user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                     </Route>
                     <Route path="/admin">
-                        <Admin user={user}/>
+                        <Admin user={user} setUser={setUser}/>
                     </Route>
                     <Route path="/user">
                         <User user={user}/>

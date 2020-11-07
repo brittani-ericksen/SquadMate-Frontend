@@ -7,7 +7,7 @@ import Avatar from 'react-avatar';
 import { Switch, Route, Link } from 'react-router-dom';
 
 const Admin = (props) =>  {
-    const { user } = props;
+    const { user, setUser } = props;
     return (
         <>
         <Switch>
@@ -23,7 +23,7 @@ const Admin = (props) =>  {
             </Route>
             <Route path="/admin/profile">
                 <h1>Profile</h1>
-                <AdminProfile user={user}/>
+                <AdminProfile user={user} setUser={setUser}/>
             </Route>
             <Route path="/admin/memberlist">
                 <h1>Members</h1>

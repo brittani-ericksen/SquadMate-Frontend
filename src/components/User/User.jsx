@@ -3,6 +3,7 @@ import UserProfile from "./UserProfile";
 import EmergencyCard from "../User/EmergencyCard";
 import Forms from "./Forms";
 import Team from "./Team";
+import Avatar from 'react-avatar';
 import { Switch, Route, Link } from 'react-router-dom';
 import { Box, makeStyles, Button } from "@material-ui/core";
 import Alert from '@material-ui/lab/Alert';
@@ -16,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
   
-const User = () => {
+const User = (props) => {
+    const { user } = props;
     const classes = useStyles();
     return (
         <>
@@ -24,8 +26,8 @@ const User = () => {
         <Switch>
             <Route exact path="/user">
                 <div>
-                    <img src="../../public/avatar-placeholder.png" alt="placeholder" />
-                    <h1>Welcome "UserName"</h1>
+                <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="75" round />
+                    <h1>Welcome {user.firstName}</h1>
                 </div>
                 <div className={classes.root}>
                 <Alert variant="filled" severity="error">
@@ -50,7 +52,7 @@ const User = () => {
             <Route path="/user/profile">
                 <div>Profile</div>
                 <Link to="/user">Go Back</Link>
-                <UserProfile />
+                <UserProfile user={user}/>
             </Route>
             <Route path="/user/forms">
                 <h1>Forms</h1>

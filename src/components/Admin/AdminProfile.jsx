@@ -1,3 +1,4 @@
+import Avatar from 'react-avatar';
 import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -52,7 +53,7 @@ const AdminProfile = (props) =>{
         <>
             <div>
                 {/* upload profile pic */}
-                <input type="file" accept="image/*" multiple={false} />
+                <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="105" round />
                 <form onSubmit={e => _handleSubmit(e)}>
                     <label>First Name</label><input type="text" value={firstName} onChange={e => _handleFirstName(e.target.value)}/>
                     <label>Last Name</label><input type="text" value={lastName} onChange={e => _handleLastName(e.target.value)}/>

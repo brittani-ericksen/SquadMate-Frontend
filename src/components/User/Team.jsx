@@ -25,8 +25,8 @@ const Team = () => {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
+          image=""
+          title="Contemplative Team"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

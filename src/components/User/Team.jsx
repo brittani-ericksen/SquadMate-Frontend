@@ -7,13 +7,17 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+//import { FormatAlignCenter } from '@material-ui/icons';
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
   },
   media: {
-    height: 140,
+    height: 150,
   },
 });
 
@@ -21,34 +25,36 @@ const Team = () => {
   const classes = useStyles();
 
   return (
+    
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
+              className={classes.media}
+              image="/static/images/cards/contemplative-reptile.jpg"
+              title="Contemplative SquadMate"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            The Team
+                The Team
           </Typography>
           <Typography variant="body1" color="textSecondary" component="p">
-            SquadMate Group
+                SquadMate Group
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          Share More
+                  Share More
         </Button>
         <Button size="small" color="primary">
-          Learn More
+                  Learn More
         </Button>
         <Button size="small" color="primary">
-          Do More
+                  Do More
         </Button>
       </CardActions>
     </Card>
+    
   );
 }
 export default Team;

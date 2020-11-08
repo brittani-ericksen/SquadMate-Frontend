@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.relative {
+  position: relative;
+}
+
+@media print {
+  header, footer, .removePrint {
+    display: none;
+  }
+
+  .printCard {
+    margin-top: 20px;
+  }
+}

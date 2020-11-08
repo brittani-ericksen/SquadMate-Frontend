@@ -1,8 +1,6 @@
 import React from "react";
 import LogoutButton from '@material-ui/core/Button';
-import { createMuiTheme } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-
+import { Box } from "@material-ui/core";
 import { useHistory } from 'react-router-dom';
 
 const Button = (props) => {
@@ -15,11 +13,13 @@ const Button = (props) => {
     history.push('/');
   } 
   return (
-    <LogoutButton 
-    accent="purple.A200" 
-    onClick={() => _handleClick()}>
-      Log Out
-    </LogoutButton>
+    <Box color="text.primary">
+      <LogoutButton 
+      accent="purple.A200" 
+      onClick={() => _handleClick()}>
+        Log Out
+      </LogoutButton>
+    </Box>
   );
 };
 

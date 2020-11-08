@@ -66,7 +66,12 @@ export default function SignIn(props) {
     console.log(resdata);
     setUser(resdata);
     setIsLoggedIn(true);
-    history.push('/admin');
+    if (resdata.isAdmin) {
+      history.push('/admin');
+    } else {
+      history.push('/user');
+    }
+    
   }
   return (
     <Container component="main" maxWidth="xs">

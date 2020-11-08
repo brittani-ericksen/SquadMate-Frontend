@@ -1,9 +1,8 @@
-const localUser =
-{
-  parentForm: {
-      rider: {
-          firstName: "Joe",
-          lastName: "Shlomo"
+const localUser = {
+    parentForm: {
+        rider: {
+            firstName: 'Joe',
+            lastName: 'Shlomo',
         },
       parentOne: {
           phone: {
@@ -36,6 +35,7 @@ const localUser =
   lastName: "Shlomo",
   userName: "rider",
   email: "co@me.com",
+  github: "",
   password: "password",
   phone: {
       cellphone: '555-555-5555',

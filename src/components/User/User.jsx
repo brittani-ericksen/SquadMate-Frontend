@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const User = (props) => {
-    const { user } = props;
+    const { user, setUser } = props;
     const classes = useStyles();
   return (
     <>
@@ -38,12 +38,16 @@ const User = (props) => {
             <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="75" round />
                 <h1>Welcome {user.firstName}</h1>
         </div>
-            <Alert 
-                justify="center" 
-                variant="filled" 
-                severity="error">
-                Missing Forms Alert — check it out!
-            </Alert>
+        {!!user.emergencyFormDone ? "" : (
+          <Alert 
+          justify="center" 
+          variant="filled" 
+          severity="error">
+          Missing Forms Alert — check it out! <br />
+          {!!user.emergencyFormDone ? "" : <Link to='/user/forms'>Emergency Contact Form</Link>}
+      </Alert>
+        )}
+            
 
           <div className={classes.root}>
 
@@ -62,8 +66,10 @@ const User = (props) => {
                     <Link to="/user/forms" >
                         <Paper className={classes.paper}>
                             Forms
+                            <p>{!!user.emergencyFormDone ? 'green': ''}</p>
                         </Paper>
                     </Link>
+                    
                 </Grid>
 
                 <Grid item xs={2}>
@@ -91,7 +97,7 @@ const User = (props) => {
                 <Link to="/user">
                     Go Back
                 </Link>
-                <Forms />
+                <Forms user={user} setUser={setUser}/>
             </Route>
             <Route path="/user/team">
                 <h1>Team</h1>

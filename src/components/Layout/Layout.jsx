@@ -36,7 +36,7 @@ const Layout = props =>{
                         <Admin user={user} setUser={setUser}/>
                     </Route>
                     <Route path="/user">
-                        <User user={user}/>
+                        <User user={user} setUser={setUser}/>
                     </Route>
                     <Route path="/getCardInfo/:id">
                         <GetCardInfo />

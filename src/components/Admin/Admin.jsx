@@ -31,7 +31,7 @@ const Admin = (props) =>  {
             </Route>
             <Route path="/admin/forms">
                 <h1>Forms</h1>
-                <AdminForms />
+                <AdminForms user={user}/>
             </Route>
             <Route path="/admin/emergencycards">
                 <h1 className="removePrint">Emergency Cards</h1>

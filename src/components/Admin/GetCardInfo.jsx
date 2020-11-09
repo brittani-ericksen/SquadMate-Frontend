@@ -66,7 +66,7 @@ const GetCardInfo = (props) => {
             </Typography>
             <Typography component="p">
                 Medications and History: {member.allergies}<br />
-                Ibuprofen Release: {!!member.ibprofenRelease ? 'Yes' : 'No'}
+                Ibuprofen Release: {!!member.ibuprofenRelease ? 'Yes' : 'No'}
             </Typography>
             <Typography component="p">
                 Insurance Company Name: {member.insurance.provider}<br />

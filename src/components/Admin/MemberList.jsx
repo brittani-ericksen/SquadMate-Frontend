@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import Avatar from 'react-avatar';
+import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActions, CardActionArea, CardMedia, CardContent, Button, Typography, Grid } from '@material-ui/core';
+import GhostLoad from '../Layout/GhostLoad';
 
 const useStyles = makeStyles((theme) => ({
     gridRoot: {
@@ -21,9 +24,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+
+
 const MemberList = () =>{
     const classes = useStyles();
     const[teamData, setTeamData] = useState([]);
+    const [ghostLoad, setGhostLoad] =useState(false);
 
     useEffect(() => {
         let teamId = '5fa2dd0998fe8fbfdf5eaac2';
@@ -32,6 +38,7 @@ const MemberList = () =>{
             const response = await fetch(`http://localhost:3333/team/${teamId}/users`);
             const data = await response.json();
             setTeamData(data);
+            console.log(data);
         })();
     },[setTeamData])
     
@@ -45,23 +52,30 @@ const MemberList = () =>{
             <>
                     <Grid item className="center" xs={12} sm={9} md={6} lg={3} xl={3} >
                         <Card className={classes.cardRoot} >
-                            <CardMedia
-                                className={classes.image}
-                                component="img"
-                                image="/avatar-placeholder.png"
-                                title={mate.firstName}
-                            />
+                        <Avatar githubHandle={mate.github} src="/avatar-placeholder.png" size="105" round /> 
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    {mate.firstName} {mate.lastName}
+                                <Typography gutterBottom
+                                variant="h5"
+                                component="h2">
+                                    {mate.firstName}
+                                    {mate.lastName}
                                 </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    **** Additional info ****
+                                <Typography variant="h6"
+                                color="textSecondary"
+                                component="p">
+
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" color="primary">
+                                <Button size="small"
+                                color="primary">
                                 View Profile
+                                </Button>
+                                
+                                <Button size="small"
+                                color="primary"
+                                href={`/getCardInfo/${mate._id}`}>
+                                View Emergency Card
                                 </Button>
                             </CardActions>
                         </Card>

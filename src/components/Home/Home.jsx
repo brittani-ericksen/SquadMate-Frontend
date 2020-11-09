@@ -97,6 +97,7 @@ const Home = props => {
             </Grid>
             <Grid item xs={4}>
               <Paper className={classes.paper}>
+                <img src="iconimages/filloutforms.png" />
                 <p>Fill Out and Submit Forms</p>
               </Paper>
             </Grid>

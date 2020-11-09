@@ -1,5 +1,6 @@
 .carousel {
     max-height: 500px;
+    padding-top: 20px;
 }
 
 .carousel .thumb img {

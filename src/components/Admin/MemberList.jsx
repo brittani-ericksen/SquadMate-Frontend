@@ -1,45 +1,92 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Avatar from 'react-avatar';
+import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardActions, CardActionArea, CardMedia, CardContent, Button, Typography } from '@material-ui/core';
+import { Card, CardActions, CardActionArea, CardMedia, CardContent, Button, Typography, Grid } from '@material-ui/core';
+import GhostLoad from '../Layout/GhostLoad';
 
-const useStyles = makeStyles({
-    root: {
+const useStyles = makeStyles((theme) => ({
+    gridRoot: {
+        flexGrow: 1,
+        justifyContent: "space-evenly",
+    },
+    cardRoot: {
+        margin: '0 auto',
         maxWidth: 345,
     },
-    media: {
-        height: 140,
+    image: {
+        height: "auto",
+        margin: '0 auto',
+        width: 200,
     },
-});
+    center: {
+        margin: '0 auto',
+    }
+}));
+
+
 
 const MemberList = () =>{
     const classes = useStyles();
+    const[teamData, setTeamData] = useState([]);
+    const [ghostLoad, setGhostLoad] =useState(false);
+
+    useEffect(() => {
+        let teamId = '5fa2dd0998fe8fbfdf5eaac2';
+
+        (async function() {
+            const response = await fetch(`http://localhost:3333/team/${teamId}/users`);
+            const data = await response.json();
+            setTeamData(data);
+            console.log(data);
+        })();
+    },[setTeamData])
+    
 
     return (
         <>
-            {/* card components - display one for each member */}
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="../../public/avatar-placeholder.png"
-                        title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Name
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            **** Additional info ****
-                        </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small" color="primary">
-                        View Profile
-                        </Button>
-                    </CardActions>
-                </CardActionArea>
-            </Card>
-        </>
+        <div className={classes.gridRoot}>
+        <Grid container spacing={3}       
+        >
+        {teamData.map((mate) =>(
+            <>
+                    <Grid item className="center" xs={12} sm={9} md={6} lg={3} xl={3} >
+                        <Card className={classes.cardRoot} >
+                        <Avatar githubHandle={mate.github} src="/avatar-placeholder.png" size="105" round /> 
+                            <CardContent>
+                                <Typography gutterBottom
+                                variant="h5"
+                                component="h2">
+                                    {mate.firstName}
+                                    {mate.lastName}
+                                </Typography>
+                                <Typography variant="h6"
+                                color="textSecondary"
+                                component="p">
+
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button size="small"
+                                color="primary">
+                                View Profile
+                                </Button>
+                                
+                                <Button size="small"
+                                color="primary"
+                                href={`/getCardInfo/${mate._id}`}>
+                                View Emergency Card
+                                </Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>    
+                
+                <p></p>
+            </>
+        ))}
+        </Grid>
+        </div>
+    </>
     );
 }
 

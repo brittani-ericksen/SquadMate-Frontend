@@ -24,7 +24,7 @@ const User = () => {
         <Switch>
             <Route exact path="/user">
                 <div>
-                    <img src="../../public/avatar-placeholder.png" alt="placeholder" />
+                    <img src="avatar-placeholder.png" alt="placeholder" />
                     <h1>Welcome "UserName"</h1>
                 </div>
                 <div className={classes.root}>

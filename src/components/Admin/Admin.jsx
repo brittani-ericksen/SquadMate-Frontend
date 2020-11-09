@@ -13,7 +13,7 @@ const Admin = (props) =>  {
         <Switch>
             <Route exact path="/admin">
                 <div>
-                    <img src="../../public/avatar-placeholder.png" alt="placeholder" />
+                    <img src="avatar-placeholder.png" alt="placeholder" />
                     <h1>Welcome {firstName}</h1>
                     <Link to="/admin/profile"><button>Profile</button></Link>
                     <Link to="/admin/memberlist"><button>Members</button></Link>

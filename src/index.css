@@ -16,12 +16,18 @@ code {
   position: relative;
 }
 
+.printCard {
+  display: none;
+}
+
 @media print {
   header, footer, .removePrint {
     display: none;
   }
 
   .printCard {
+    display: block;
     margin-top: 20px;
   }
 }
+

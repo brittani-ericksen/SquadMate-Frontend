@@ -2,8 +2,9 @@ import React from "react";
 import { useHistory } from 'react-router-dom';
 import LogoutButton from "./LogoutButton";
 import Avatar from 'react-avatar';
-import { AppBar, Toolbar, Typography, IconButton } from "@material-ui/core";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,7 +35,9 @@ const Header = (props) => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h3" className={classes.title}>
+          <Box textAlign="center">
             SquadMate
+            </Box>
           </Typography>
           <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="75" round onClick={e => _handleClick(e)}/>
           {!!isLoggedIn ? <LogoutButton setIsLoggedIn={setIsLoggedIn} setUser={setUser}/> : ''}

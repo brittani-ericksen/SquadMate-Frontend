@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardContent, Typography } from '@material-ui/core';
 import styled from 'styled-components';
+import { AutoSizer } from '@material-ui/data-grid';
+
 
 const QRCode = styled.img`
     position: absolute;
@@ -23,9 +25,10 @@ const useStyles = makeStyles({
     root: {
         textAlign: 'left',
         width: 500,
+        margin: "0 auto",
     },
     title: {
-        fontSize: 14,
+        fontSize: 12,
     },
 });
 
@@ -52,15 +55,16 @@ const GetCardInfo = (props) => {
 
     return (
         <>
+        
         {!!member ? (
-
+            <div>
 <Card key={member._id} className={classes.root} variant="outlined">
                 <div className="relative">
             <CardContent>
-            <Typography className="title" component="h1">
+            <Typography className="title" component="p">
                 Rider Name {member.parentForm.rider.firstName + " " + member.parentForm.rider.lastName}
             </Typography>
-            <Typography component="h2">
+            <Typography component="p">
                 Emergency Contact Name: {member.parentForm.emergencyContactOne.firstName}<br />
                 Emergency Contact Number: {member.parentForm.emergencyContactOne.phone.cell}
             </Typography>
@@ -74,12 +78,15 @@ const GetCardInfo = (props) => {
                 Group Name: {member.insurance.group}<br />
             </Typography>
             </CardContent>
-            
+           
             <QRCode src={`https://api.qrserver.com/v1/create-qr-code/?data=http://localhost:3000/getCardInfo/${member._id}`} alt="qr-code"/>
             </div>
         </Card>
+         <p>
+
+         </p>
+         </div>
         ) : null}
-        
         </>
     )
 }

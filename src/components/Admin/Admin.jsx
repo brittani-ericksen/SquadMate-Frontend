@@ -5,9 +5,14 @@ import AdminProfile from "./AdminProfile";
 import MemberList from "./MemberList";
 import Avatar from 'react-avatar';
 import { Switch, Route, Link } from 'react-router-dom';
+import PrintIcon from '@material-ui/icons/Print';
 
 const Admin = (props) =>  {
     const { user, setUser } = props;
+    const _handlePrint = ()=>{
+        document.getElementByClassName('printCard').style.display='block';
+    }
+
     return (
         <>
         <Switch>
@@ -35,6 +40,7 @@ const Admin = (props) =>  {
             </Route>
             <Route path="/admin/emergencycards">
                 <h1 className="removePrint">Emergency Cards</h1>
+                <PrintIcon type="button" onClick={()=>window.print()} />
                 <AdminEmergencyCards user={user}/>
             </Route>
         </Switch>

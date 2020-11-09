@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Paper, Grid } from '@material-ui/core';
 
@@ -13,9 +13,20 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const AdminForms = () =>{
+const AdminForms = ({user}) =>{
     const classes = useStyles();
+    const [teamMembers, setTeamMembers] = useState([]);
 
+
+    useEffect(() => {
+        (async function(){
+            const response = await fetch(`http://localhost:3333/team/${user.team}/users`);
+            const data = await response.json();
+            setTeamMembers(data);
+        })();
+    }, [setTeamMembers, user]);
+    
+    
     return (
         <>
             <div className={classes.root}>
@@ -24,13 +35,17 @@ const AdminForms = () =>{
                         <Paper className={classes.paper}>
                         <p>Riders missing forms</p>
                         <ul>
-                            <li>rider name</li>
+                            {teamMembers.filter(member => !member.emergencyFormDone).map(member => {
+                                return (<li key={member._id}>{member.firstName}</li>)
+                            })}
                         </ul>
                         <button>Send form reminder email</button>
 
                         <p>Riders with all forms submitted</p>
                         <ul>
-                            <li>rider name</li>
+                            {teamMembers.filter(member => member.emergencyFormDone).map(member => {
+                                return (<li key={member._id}>{member.firstName}</li>)
+                            })}
                         </ul>
                         </Paper>
                     </Grid>

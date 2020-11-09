@@ -62,15 +62,6 @@ const User = (props) => {
                     </Link>
                 </Grid>
 
-                <Grid item xs={2}>
-                    <Link to="/user/forms" >
-                        <Paper className={classes.paper}>
-                            Forms
-                            <p>{!!user.emergencyFormDone ? 'green': ''}</p>
-                        </Paper>
-                    </Link>
-                    
-                </Grid>
 
                 <Grid item xs={2}>
                     <Link to="/user/team" >
@@ -90,7 +81,7 @@ const User = (props) => {
                 <Link to="/user">
                     Go Back
                 </Link>
-                <UserProfile user={user}/>
+                <UserProfile user={user} setUser={setUser}/>
             </Route>
             <Route path="/user/forms">
                 <h1>Forms</h1>

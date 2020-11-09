@@ -28,7 +28,6 @@ const Home = props => {
       <div>Home</div>
       <LazyHero color="#ffffff" imageSrc="/heroimage.jpg" opacity="0.7" parallaxOffset="100">
                 <h1>SquadMate</h1>
-                <Link to="/signin"><Button variant="contained">Sign In</Button></Link>
                 <Link to="/signup"><Button variant="contained">Sign Up</Button></Link>
       </LazyHero>
       <Carousel />

@@ -3,6 +3,11 @@ const localUser = {
         rider: {
             firstName: 'Joe',
             lastName: 'Shmoe',
+            email: 'joe@rider.com',
+            phone: {
+                cell: '555-555-5555c',
+                home: '555-555-5555h'
+            }
         },
         parentOne: {
             phone: {

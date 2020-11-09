@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {TextField, FormControl, FormLabel, FormControlLabel, RadioGroup, Radio, Button }  from '@material-ui/core';
+import {TextField, Container, FormControl, FormLabel, FormControlLabel, RadioGroup, Radio, Button }  from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 
@@ -14,18 +14,22 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center'
   },
+  marginTop: {
+    marginTop: '4rem'
+  }
 }));
 
 function Forms({user, setUser}) {
   const classes = useStyles();
   const history = useHistory();
 
+
   const [riderFirstName, setRiderFirstName] = useState(user.parentForm.rider.firstName);
   const [riderLastName, setRiderLastName] = useState(user.parentForm.rider.lastName);
   const [emergencyContactOneFirstName, setEmergencyContactOneFirstName] = useState(user.parentForm.emergencyContactOne.firstName);
   const [emergencyContactOneLastName, setEmergencyContactOneLastName] = useState(user.parentForm.emergencyContactOne.lastName);
-  const [emergencyContactOneCell, setEmergencyContactOneCell] = useState(user.parentForm.emergencyContactOne.phone.cell);
-  const [emergencyContactOneHome, setEmergencyContactOneHome] = useState(user.parentForm.emergencyContactOne.phone.home);
+  const [emergencyContactOneCellPhone, setEmergencyContactOneCellPhone] = useState(user.parentForm.emergencyContactOne.phone.cell);
+  const [emergencyContactOneHomePhone, setEmergencyContactOneHomePhone] = useState(user.parentForm.emergencyContactOne.phone.home);
   const [insuranceProvider, setInsuranceProvider] = useState(user.insurance.provider);
   const [insurancePolicyNumber, setInsurancePolicyNumber] = useState(user.insurance.number);
   const [insuranceGroup, setInsuranceGroup] = useState(user.insurance.group);
@@ -47,12 +51,12 @@ function Forms({user, setUser}) {
     setEmergencyContactOneLastName(input);
   }
 
-  const _handleEmergencyContactOneCell = input => {
-    setEmergencyContactOneCell(input);
+  const _handleEmergencyContactOneCellPhone = input => {
+    setEmergencyContactOneCellPhone(input);
   }
 
-  const _handleEmergencyContactOneHome = input => {
-    setEmergencyContactOneHome(input);
+  const _handleEmergencyContactOneHomePhone = input => {
+    setEmergencyContactOneHomePhone(input);
   }
 
   const _handleInsuranceProvider = input => {
@@ -80,28 +84,80 @@ function Forms({user, setUser}) {
     } else {
       ib = false
     }
-    let data = { 
-      parentForm: {
-        rider: {
-          firstName: riderFirstName,
-          lastName: riderLastName
-        },
-        emergencyContactOne: {
-          firstName: emergencyContactOneFirstName,
-          lastName: emergencyContactOneLastName,
-          phone: {
-            cell: emergencyContactOneCell,
-            home: emergencyContactOneHome
-          }
+  //   let data = { 
+  //     parentForm: {
+  //       rider: {
+  //         firstName: riderFirstName,
+  //         lastName: riderLastName
+  //       },
+  //       emergencyContactOne: {
+  //         firstName: emergencyContactOneFirstName,
+  //         lastName: emergencyContactOneLastName,
+  //         phone: {
+  //           cell: emergencyContactOneCell,
+  //           home: emergencyContactOneHome
+  //         }
+  //       }
+  //     },
+  //     insurance: {
+  //       provider: insuranceProvider,
+  //       group: insuranceGroup,
+  //       number: insurancePolicyNumber
+  //     },
+  //     ibuprofenRelease: ib,
+  //     emergencyFormDone: true,
+  // }
+  let data = {
+    parentForm: {
+      rider: {
+        firstName: riderFirstName,
+        lastName: riderLastName,
+        email: user.parentForm.rider.email,
+        phone: {
+          cell: user.parentForm.rider.phone.cell
         }
       },
-      insurance: {
-        provider: insuranceProvider,
-        group: insuranceGroup,
-        number: insurancePolicyNumber
+      parentOne: {
+        firstName: user.parentForm.parentOne.firstName,
+        lastName: user.parentForm.parentOne.lastName,
+        phone: {
+          cell: user.parentForm.parentOne.phone.cell,
+          home: user.parentForm.parentOne.phone.home
+        }
       },
-      ibuprofenRelease: ib,
-      emergencyFormDone: true,
+      parentTwo: {
+        firstName: user.parentForm.parentTwo.firstName,
+        lastName: user.parentForm.parentTwo.lastName,
+        phone: {
+          cell: user.parentForm.parentTwo.phone.cell,
+          home: user.parentForm.parentTwo.phone.home
+        }
+      },
+      emergencyContactOne: {
+        firstName: emergencyContactOneFirstName,
+        lastName: emergencyContactOneLastName,
+        phone: {
+          cell: emergencyContactOneCellPhone,
+          home: emergencyContactOneHomePhone,
+        }
+      },
+      emergencyContactTwo: {
+        firstName: user.parentForm.emergencyContactTwo.firstName,
+        lastName: user.parentForm.emergencyContactTwo.lastName,
+        phone: {
+          cell: user.parentForm.emergencyContactTwo.phone.cell,
+          home: user.parentForm.emergencyContactTwo.phone.home,
+        }
+      },
+      
+    },
+    insurance: {
+      provider: insuranceProvider,
+      group: insuranceGroup,
+      number: insurancePolicyNumber
+    },
+    ibuprofenRelease: ib,
+    emergencyFormDone: true,
   }
 
   console.log('Data', data);
@@ -126,24 +182,27 @@ function Forms({user, setUser}) {
     <form className={classes.root} autoComplete="off" onSubmit={e => _handleSubmit(e)}>
       <p>*  Required</p>
       <div>
-      <TextField
-          required
-          id="riderFirstName"
-          label="Rider First Name"
-          defaultValue={riderFirstName}
-          variant="outlined"
-          onChange={e => _handleRiderFirstName(e.target.value)}
-        />
+        <Container component='riderInfo'>
+          <h2>Rider Information</h2>
+          <TextField
+              required
+              id="riderFirstName"
+              label="Rider First Name"
+              defaultValue={riderFirstName}
+              variant="outlined"
+              onChange={e => _handleRiderFirstName(e.target.value)}
+            />
         
-      <TextField
-          required
-          id="riderLastName"
-          label="Rider Last Name"
-          defaultValue={riderLastName}
-          variant="outlined"
-          onChange={e => _handleRiderLastName(e.target.value)}
-        />
-
+          <TextField
+              required
+              id="riderLastName"
+              label="Rider Last Name"
+              defaultValue={riderLastName}
+              variant="outlined"
+              onChange={e => _handleRiderLastName(e.target.value)}
+            />
+        </Container>
+      <Container component="Emergencycontact" className={classes.marginTop}>
       <TextField
           required
           id="emergencyContactFirstName"
@@ -166,18 +225,22 @@ function Forms({user, setUser}) {
           required
           id="emergencyContactCell"
           label="Emergency Contact Cell"
-          defaultValue={emergencyContactOneCell}
+          defaultValue={emergencyContactOneCellPhone}
           variant="outlined"
-          onChange={e => _handleEmergencyContactOneCell(e.target.value)}
+          onChange={e => _handleEmergencyContactOneCellPhone(e.target.value)}
         />
 
       <TextField
           id="emergencyContactHome"
           label="Emergency Contact Home"
-          defaultValue={emergencyContactOneHome}
+          defaultValue={emergencyContactOneHomePhone}
           variant="outlined"
-          onChange={e => _handleEmergencyContactOneHome(e.target.value)}
+          onChange={e => _handleEmergencyContactOneHomePhone(e.target.value)}
         />
+
+</Container>
+
+<Container component='Insurance' className={classes.marginTop}> 
 
       <TextField
           required
@@ -205,6 +268,7 @@ function Forms({user, setUser}) {
           variant="outlined"
           onChange={e => _handleInsuranceGroup(e.target.value)}
         />
+        </Container>
 
       <FormControl component="fieldset" className={classes.form}>
         <FormLabel component="legend">Ibuprofen Release</FormLabel>

@@ -1,78 +1,108 @@
 import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
+import Avatar from 'react-avatar';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
+import Alert from '@material-ui/lab/Alert';
+import Grid from '@material-ui/core/Grid';
+
 import UserProfile from "./UserProfile";
-import EmergencyCard from "../User/EmergencyCard";
 import Forms from "./Forms";
 import Team from "./Team";
-import { Switch, Route, Link } from 'react-router-dom';
-import { Box, makeStyles, Button } from "@material-ui/core";
-import Alert from '@material-ui/lab/Alert';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      width: '100%',
-      '& > * + *': {
-        marginTop: theme.spacing(2),
-      },
-    },
-  }));
-  
-const User = () => {
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    height: 100,
+    width: 100,
+    
+  },
+}));
+
+const User = (props) => {
+    const { user } = props;
     const classes = useStyles();
-    return (
-        <>
-        <Box width="100%" className="mainContent">
-        <Switch>
-            <Route exact path="/user">
-                <div>
-                    <img src="avatar-placeholder.png" alt="placeholder" />
-                    <h1>Welcome "UserName"</h1>
-                </div>
-                <div className={classes.root}>
-                <Alert variant="filled" severity="error">
-                    This is an error alert — check it out!!!
-                </Alert>
-                </div>
-                <div>
-                <Link to="/user/profile" >
-                    <Button component="button" variant="body2" >Profile</Button>
-                </Link>
-                <Link to="/user/forms" >
-                    <Button component="button" variant="body2">Forms</Button>
-                </Link>
-                <Link to="/user/team" >
-                    <Button component="button" variant="body2">Team</Button>
-                </Link>
-                <Link to="/user/emcard" >
-                    <Button component="button" variant="body2">EmergencyCard</Button>
-                </Link>
-                </div>
-            </Route>
+  return (
+    <>
+      <Switch>
+
+        <Route exact path="/user">
+
+        <div>
+            <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="75" round />
+                <h1>Welcome {user.firstName}</h1>
+        </div>
+            <Alert 
+                justify="center" 
+                variant="filled" 
+                severity="error">
+                Missing Forms Alert — check it out!
+            </Alert>
+
+          <div className={classes.root}>
+
+            <div style={{marginLeft:"25%"}}>
+
+              <Grid container spacing={3}>
+                <Grid item xs={2}>
+                    <Link to="/user/profile" >
+                        <Paper className={classes.paper}>
+                            Profile
+                        </Paper>
+                    </Link>
+                </Grid>
+
+                <Grid item xs={2}>
+                    <Link to="/user/forms" >
+                        <Paper className={classes.paper}>
+                            Forms
+                        </Paper>
+                    </Link>
+                </Grid>
+
+                <Grid item xs={2}>
+                    <Link to="/user/team" >
+                        <Paper className={classes.paper}>
+                            Team
+                        </Paper>
+                    </Link>
+                </Grid>
+              </Grid>
+
+            </div>
+          </div>
+        </Route>
+
             <Route path="/user/profile">
                 <div>Profile</div>
-                <Link to="/user">Go Back</Link>
-                <UserProfile />
+                <Link to="/user">
+                    Go Back
+                </Link>
+                <UserProfile user={user}/>
             </Route>
             <Route path="/user/forms">
                 <h1>Forms</h1>
-                {/* <Forms /> */}
-                <Link to="/user">Go Back</Link>
+                <Link to="/user">
+                    Go Back
+                </Link>
                 <Forms />
             </Route>
             <Route path="/user/team">
                 <h1>Team</h1>
-                {/* <Team /> */}
-                <Link to="/user">Go Back</Link>
+                <Link to="/user">
+                    Go Back
+                </Link>
                 <Team />
             </Route>
-            <Route path="/user/emcard">
-                <h1>EmergencyCard</h1>
-                <Link to="/user">Go Back</Link>
-                <EmergencyCard />
-            </Route>
-        </Switch>
-        </Box>
-        </>
-    );
-}
 
+      </Switch>
+    </>
+  );
+}
 export default User;

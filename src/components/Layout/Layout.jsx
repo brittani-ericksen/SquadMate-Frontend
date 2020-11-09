@@ -8,6 +8,7 @@ import User from "../User/User";
 import Signin from "../Home/SigninPage";
 import Signup from "../Home/SignupPage";
 import { Switch, Route } from 'react-router-dom';
+import GetCardInfo from "../Admin/GetCardInfo";
 
 const Layout = props =>{
     const { user, setUser, isLoggedIn, setIsLoggedIn } = props;
@@ -15,7 +16,9 @@ const Layout = props =>{
     return (
         <>
         <div>
-        {!!isLoggedIn ? <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/> : <HomeHeader />}
+            <div className="removePrint">
+        {!!isLoggedIn ? <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} user={user}/> : <HomeHeader />}
+        </div>
                 <Switch>
                     <Route exact path="/">
                         <Home user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
@@ -27,16 +30,20 @@ const Layout = props =>{
                         <Signin user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                     </Route>
                     <Route path="/signup">
-                        <Signup />
+                        <Signup user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                     </Route>
                     <Route path="/admin">
-                        <Admin user={user}/>
+                        <Admin user={user} setUser={setUser}/>
                     </Route>
                     <Route path="/user">
                         <User user={user}/>
                     </Route>
+                    <Route path="/getCardInfo/:id">
+                        <GetCardInfo />
+                    </Route>
                 </Switch>        
             <Footer />
+
         </div>
         </>
     );

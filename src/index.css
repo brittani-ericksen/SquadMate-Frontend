@@ -16,12 +16,10 @@ code {
   position: relative;
 }
 
+
 @media print {
   header, footer, .removePrint {
     display: none;
   }
 
-  .printCard {
-    margin-top: 20px;
-  }
 }

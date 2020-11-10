@@ -1,13 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AdminEmergencyCards from "./AdminEmergencyCards";
 import AdminForms from "./AdminForms";
 import AdminProfile from "./AdminProfile";
 import MemberList from "./MemberList";
 import Avatar from 'react-avatar';
+import GhostLoad from '../Layout/GhostLoad';
 import { Switch, Route, Link } from 'react-router-dom';
 
 const Admin = (props) =>  {
     const { user, setUser } = props;
+    const [ghostLoad, setGhostLoad] = useState(false);
+
+    const _memberClick = () =>{
+        setGhostLoad(true)
+    setTimeout(() => {
+    setGhostLoad(false)
+    },1500)
+    ;
+    window.location.href = "/admin/memberlist";
+    }
     return (
         <>
         <Switch>
@@ -27,7 +38,8 @@ const Admin = (props) =>  {
             </Route>
             <Route path="/admin/memberlist">
                 <h1>Members</h1>
-                <MemberList />
+                {!!ghostLoad === true ? <GhostLoad /> :
+                <MemberList />}
             </Route>
             <Route path="/admin/forms">
                 <h1>Forms</h1>

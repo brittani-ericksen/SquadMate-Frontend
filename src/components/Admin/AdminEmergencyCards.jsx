@@ -1,6 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { Button } from '@material-ui/core';
+import PrintIcon from '@material-ui/icons/Print';
 import GetCardInfo from './GetCardInfo';
 
+const Container = styled.div`
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+`;
+
+const RemovePrint = styled.div`
+    @media print {
+        display: none;
+    }
+`;
 
 function EmergencyCard(props) {
     const { user } = props;
@@ -18,11 +35,16 @@ function EmergencyCard(props) {
     let team = teamMembers.filter(member => member._id !== user._id);
 
     return (
-        <div className="printCard">
+        <>
+        <RemovePrint className=".removePrint">
+        <Button onClick={window.print}><PrintIcon /></Button>
+        </RemovePrint>
+        <Container className="printCard">
         {team.map((member) => (            
             <GetCardInfo id={member._id}/>
         ))}
-        </div>
+        </Container>
+        </>
     );
 }
 

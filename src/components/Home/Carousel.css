@@ -1,12 +1,11 @@
 .carousel {
+    margin: 0 auto;
+    margin-bottom: 24px;
+    margin-top: 24px;
     max-height: 500px;
-    padding-top: 20px;
+    max-width: 700px;
 }
 
-.carousel .thumb img {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.carousel .slide img {
+.carousel img {
+    max-height: 500px;
 }

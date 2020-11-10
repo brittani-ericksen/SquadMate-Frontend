@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import Layout from './components/Layout/Layout';
-import 'fontsource-roboto';
-import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import localData from './localData.js';
+import Layout from './components/Layout/Layout';
+import 'fontsource-roboto';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+
+
 
 function App() {
     const [user, setUser] = useState(localData);

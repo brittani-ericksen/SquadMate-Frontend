@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Paper, Grid } from '@material-ui/core';
+import { Paper, Grid, Container } from '@material-ui/core';
+import PermissionsComponent from './PermissionsComponent';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -11,6 +12,14 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'left',
         color: theme.palette.text.secondary,
     },
+    permissions: {
+        width: 400
+    },
+    permissionsHeader: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        borderBottom: '1px solid #000'
+    }
 }));
 
 const AdminForms = ({user}) =>{
@@ -26,7 +35,7 @@ const AdminForms = ({user}) =>{
         })();
     }, [setTeamMembers, user]);
     
-    
+
     return (
         <>
             <div className={classes.root}>
@@ -61,6 +70,13 @@ const AdminForms = ({user}) =>{
                     </Grid>
                 </Grid>
             </div>
+            <Container className={classes.permissions}>
+                <h2>Permissions</h2>
+                <div className={classes.permissionsHeader}><h4>Member</h4><h4>Is Admin</h4></div>
+                {teamMembers.map(member => (
+                    <PermissionsComponent member={member} />
+                ))}
+            </Container>
         </>
     );
 }

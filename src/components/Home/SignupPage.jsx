@@ -44,6 +44,7 @@ export default function SignUp(props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [cellPhone, setCellPhone] = useState("");
   const [password, setPassword] = useState("");
   const [checked, setChecked] = useState(false);
   const [checkedText, setCheckedText] = useState(false);
@@ -54,6 +55,9 @@ export default function SignUp(props) {
   }
   const _handleLastName = input => {
     setLastName(input);
+  }
+  const _handleCellPhone = input => {
+    setCellPhone(input);
   }
   const _handleEmail = input => {
     setEmail(input);
@@ -79,6 +83,9 @@ export default function SignUp(props) {
         parentOne: {
           firstName: firstName,
           lastName: lastName,
+            phone:{
+              cell: cellPhone,
+            },
         }
       }
     }
@@ -139,6 +146,19 @@ export default function SignUp(props) {
                 autoComplete="lname"
                 onChange={e => _handleLastName(e.target.value)}
                 value={lastName}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                name="cellPhone"
+                label="cellPhone"
+                type="tel"
+                id="cellPhone"
+                autoComplete="cPhone"
+                onChange={e => _handleCellPhone(e.target.value)}
+                value={cellPhone}
               />
             </Grid>
             <Grid item xs={12}>

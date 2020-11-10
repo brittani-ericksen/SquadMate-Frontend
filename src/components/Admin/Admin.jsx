@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import AdminEmergencyCards from "./AdminEmergencyCards";
 import AdminForms from "./AdminForms";
 import AdminProfile from "./AdminProfile";
-import MemberList from "./MemberList";
+import TeamList from "./TeamList";
 import Avatar from 'react-avatar';
 import GhostLoad from '../Layout/GhostLoad';
 import { Switch, Route, Link } from 'react-router-dom';
@@ -24,7 +24,7 @@ const Admin = (props) =>  {
         <Switch>
             <Route exact path="/admin">
                 <div>
-                <Avatar  src="/avatar-placeholder.png" size="105" round />                   
+                <Avatar  githubHandle={user.github} src="/avatar-placeholder.png" size="105" round />                   
                 <h1>Welcome {user.firstName}</h1>
                     <Link to="/admin/profile"><button>Profile</button></Link>
                     <Link to="/admin/memberlist"><button>Members</button></Link>
@@ -39,12 +39,9 @@ const Admin = (props) =>  {
             <Route path="/admin/memberlist">
                 <h1>Members</h1>
                 {!!ghostLoad === true ? <GhostLoad /> :
-                <MemberList />}
+                <TeamList />}
             </Route>
-            <Route path="/admin/forms">
-                <h1>Forms</h1>
-                <AdminForms user={user}/>
-            </Route>
+            
             <Route path="/admin/emergencycards">
                 <h1 className="removePrint">Emergency Cards</h1>
                 <AdminEmergencyCards user={user}/>

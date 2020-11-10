@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import localData from './localData.js';
 
 function App() {
-    const [user, setUser] = useState(localData);
+    const [user, setUser] = useState();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     return (

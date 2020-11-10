@@ -24,7 +24,7 @@ const Admin = (props) =>  {
         <Switch>
             <Route exact path="/admin">
                 <div>
-                <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="105" round />                   
+                <Avatar  src="/avatar-placeholder.png" size="105" round />                   
                 <h1>Welcome {user.firstName}</h1>
                     <Link to="/admin/profile"><button>Profile</button></Link>
                     <Link to="/admin/memberlist"><button>Members</button></Link>

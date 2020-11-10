@@ -6,6 +6,7 @@ import Carousel from "./Carousel";
 import LazyHero from 'react-lazy-hero';
 import Signin from "./SigninPage";
 import Signup from "./SignupPage";
+import "./Home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +28,8 @@ const Home = props => {
     <>
       <div>Home</div>
       <LazyHero color="#ffffff" imageSrc="/heroimage.jpg" opacity="0.7" parallaxOffset="100">
-                <h1>SquadMate</h1>
+                <img className="logo" src="squadmatelogo.png" />
+                <br />
                 <Link to="/signup"><Button variant="contained">Sign Up</Button></Link>
       </LazyHero>
       <Carousel />

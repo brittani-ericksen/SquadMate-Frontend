@@ -8,7 +8,7 @@ import Alert from '@material-ui/lab/Alert';
 import Grid from '@material-ui/core/Grid';
 import UserProfile from "./UserProfile";
 import InitialForm from "./InitialForm";
-import Team from "./Team";
+//import Team from "./Team";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -93,7 +93,7 @@ const User = (props) => {
                 <Link to="/user">
                     Go Back
                 </Link>
-                <Team />
+                {/* <Team /> */}
             </Route>
 
       </Switch>

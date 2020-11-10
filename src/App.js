@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Layout from './components/Layout/Layout';
 import 'fontsource-roboto';
 import './App.css';
@@ -12,11 +12,12 @@ function App() {
     return (
         <div className='App'>
             <Router>
-                <Layout 
-                    user={user} 
-                    setUser={setUser} 
-                    isLoggedIn={isLoggedIn} 
-                    setIsLoggedIn={setIsLoggedIn}/>     
+                <Layout
+                    user={user}
+                    setUser={setUser}
+                    isLoggedIn={isLoggedIn}
+                    setIsLoggedIn={setIsLoggedIn}
+                />
             </Router>
         </div>
     );

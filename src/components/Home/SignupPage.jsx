@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  red: {
+    color: 'red'
+  }
 }));
 
 export default function SignUp(props) {
@@ -42,6 +45,8 @@ export default function SignUp(props) {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [checked, setChecked] = useState(false);
+  const [checkedText, setCheckedText] = useState(false);
   const history = useHistory();
 
   const _handleFirstName = input => {
@@ -57,13 +62,25 @@ export default function SignUp(props) {
     setPassword(input);
   }
 
+  const _handleCheck = input => {
+    setChecked(true);
+  }
+
   const _handleSubmit = async(e) => {
     e.preventDefault();
+    if (checked) {
+      
     let data = {
       firstName: firstName,
       lastName: lastName,
       email: email,
-      password: password
+      password: password,
+      parentForm: {
+        parentOne: {
+          firstName: firstName,
+          lastName: lastName,
+        }
+      }
     }
 
     const response = await fetch(`http://localhost:3333/user/`, {
@@ -79,7 +96,11 @@ export default function SignUp(props) {
     setEmail('');
     setPassword('');
     history.push('/user');
-  }
+    }else {
+      setCheckedText(true);
+    }
+    
+  } 
 
   return (
     <Container component="main" maxWidth="xs">
@@ -91,7 +112,7 @@ export default function SignUp(props) {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate onSubmit={e => _handleSubmit(e)}>
+        <form className={classes.form} validate onSubmit={e => _handleSubmit(e)}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -125,6 +146,7 @@ export default function SignUp(props) {
                 variant="outlined"
                 required
                 fullWidth
+                type='email'
                 id="email"
                 label="Email Address"
                 name="email"
@@ -148,9 +170,11 @@ export default function SignUp(props) {
               />
             </Grid>
             <Grid item xs={12}>
+              {checkedText ? <span className={classes.red}>Please click box</span> : ''}
               <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+                required={true}
+                control={<Checkbox value={checked} onClick={e => _handleCheck(e)} color="primary" />}
+                label="I acknowledge that I am a parent/legal guardian of a rider and I am above the age of 18."
               />
             </Grid>
           </Grid>

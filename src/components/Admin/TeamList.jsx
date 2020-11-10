@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Avatar from 'react-avatar';
-import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardActions, CardActionArea, CardMedia, CardContent, Button, Typography, Grid } from '@material-ui/core';
-import GhostLoad from '../Layout/GhostLoad';
+import { Card, CardActions, CardContent, Button, Typography, Grid } from '@material-ui/core';
+
 
 const useStyles = makeStyles((theme) => ({
     gridRoot: {
@@ -26,10 +25,9 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const MemberList = () =>{
+const TeamList = () =>{
     const classes = useStyles();
     const[teamData, setTeamData] = useState([]);
-    const [ghostLoad, setGhostLoad] =useState(false);
 
     useEffect(() => {
         let teamId = '5fa2dd0998fe8fbfdf5eaac2';
@@ -40,6 +38,7 @@ const MemberList = () =>{
             setTeamData(data);
             console.log(data);
         })();
+        
     },[setTeamData])
     
 
@@ -57,13 +56,18 @@ const MemberList = () =>{
                                 <Typography gutterBottom
                                 variant="h5"
                                 component="h2">
-                                    {mate.firstName}
-                                    {mate.lastName}
+                                    {mate.parentForm.rider.firstName}
+                                    {mate.parentForm.rider.lastName}
                                 </Typography>
                                 <Typography variant="h6"
                                 color="textSecondary"
                                 component="p">
-
+                                    Parent: 
+                                </Typography>
+                                <Typography varriant="body1"
+                                color="textSecondary"
+                                component="p">
+                                    {mate.parentForm.parentOne.firstName} {mate.parentForm.parentOne.lastName}
                                 </Typography>
                             </CardContent>
                             <CardActions>
@@ -90,4 +94,4 @@ const MemberList = () =>{
     );
 }
 
-export default MemberList;
+export default TeamList;

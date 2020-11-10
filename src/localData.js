@@ -18,7 +18,7 @@ const localUser = {
             email: '',
             phone: {
                 cell: '',
-                home: ''
+                home: '',
             }
         },
         parentOne: {

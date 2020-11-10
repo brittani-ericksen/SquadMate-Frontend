@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const MemberList = () =>{
+const TeamList = () =>{
     const classes = useStyles();
     const[teamData, setTeamData] = useState([]);
 
@@ -94,4 +94,4 @@ const MemberList = () =>{
     );
 }
 
-export default MemberList;
+export default TeamList;

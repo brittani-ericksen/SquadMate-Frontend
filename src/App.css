@@ -2,3 +2,42 @@
   text-align: center;
 }
 
+.dark-blue {
+  background-color: 0x132143;
+  color: black;
+}
+
+.blue {
+  background-color: 0x223F84;
+  color: white;
+}
+
+.light-blue{
+  background-color: 0x223F84;
+  color: black;
+}
+
+.dark-yellow{
+  background-color: 0xFFBA00;
+  color: black;
+}
+
+.yellow{
+  background-color: 0xFFDB00;
+  color: black;
+}
+
+.dark-red{
+  background-color: 0xD60808;
+  color: black;
+}
+
+.red{
+  background-color: 0xFF3B29;
+  color: black;
+}
+
+.eggshell{
+  background-color: 0xE6EAF3;
+  color: black;
+}

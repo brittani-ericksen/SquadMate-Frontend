@@ -6,9 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Alert from '@material-ui/lab/Alert';
 import Grid from '@material-ui/core/Grid';
-
 import UserProfile from "./UserProfile";
-import Forms from "./Forms";
+import InitialForm from "./InitialForm";
 import Team from "./Team";
 
 const useStyles = makeStyles((theme) => ({
@@ -62,7 +61,6 @@ const User = (props) => {
                     </Link>
                 </Grid>
 
-
                 <Grid item xs={2}>
                     <Link to="/user/team" >
                         <Paper className={classes.paper}>
@@ -88,7 +86,7 @@ const User = (props) => {
                 <Link to="/user">
                     Go Back
                 </Link>
-                <Forms user={user} setUser={setUser}/>
+                <InitialForm user={user} setUser={setUser}/>
             </Route>
             <Route path="/user/team">
                 <h1>Team</h1>

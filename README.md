@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# Capstone Application Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## SquadMate
 
-## Available Scripts
+<h1>SquadMate is an application built for the use of online form completions by groups of people to gather information on new member registration, medical need to know basis information, event and who makes up the team, all that will help you gather information of any member to be prepared for their team events.<h1>
 
-In the project directory, you can run:
+## Motivation
 
-### `yarn start`
+<h2>Need an easy access functionality to complete the mandated forms nessasary by parents of minors participating in team sports in a timely manner. And the abbility to link information to medics on the scene in abbsence of the parents while riding in case of emergency.<h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshot
+Front end view of Project:
+![intro_screen]()
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `yarn build`
+To install SquadMate use the package-management system:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+Front-End:
+npm install 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Back-End:
+npm run dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech/framework Usage
 
-### `yarn eject`
+```
+The MERN Stack:
+Mongodb
+Express
+React
+```
+## Code Style
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+Material UI
+Custom Styled Components
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Build Status
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Completed.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Stretch Goals
 
-## Learn More
+Add Calendar.
+Add Team Chatroom.
+Add Coach Notification Board.
+Add Random Picture Display of team events.
+Add Abitilty to give notifications of an alert to be completed.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Turn the custom application into a globbal, use
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributers
 
-### Code Splitting
+-Front-End and LOGO-Design by Brittany:
+  https://github.com/brittani-ericksen
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-Back-End and Front-End  by Justin:
+  https://github.com/JustinSGardner
 
-### Analyzing the Bundle Size
+-Back-End and Front-End by Chris:
+  https://github.com/chrisowensdev
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-PM/Scrum and Full-Stack Developer Ryan:
+  https://github.com/rynoschni
 
-### Making a Progressive Web App
+-Framing and ReadMe-file by Annemarie:
+  https://github.com/Athomas9sa
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Build Status
 
-### Advanced Configuration
+Completed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Data References
 
-### Deployment
+Custom Secured Data usage.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## How to use?
 
-### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Presentation Input
+
+Presentation Steps: 
+Demo the site ()
+To introduce our individual struggles and triumphs ()
+View and explain how Back-End works ()
+View and explain how Front-End works ()
+
+## Team Nemesis
+```
+B. Erickson
+J. Gardner
+C. Owens
+R. Schniederjan
+A. Thomas
+
+Frontend:
+https://github.com/brittani-ericksen/capstone-frontend/tree/main
+
+Backend: 
+https://github.com/JustinSGardner/CapStoneProject-Backend/tree/main
+```
+
+## Miscellaneous 
+
+Git and GitHub Commits, Merges and Branching.
+Used Trello as our guide for completing tasks from: To Do, Doing, Done.
+Trello provided the ability to have up to date comunications on our project for all group members.
+Made use of colaborating on LiveShare VSCode when code-along was neccesary for portions of the project.
+
+## The End.

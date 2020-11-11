@@ -43,7 +43,6 @@ const Layout = props =>{
                     </Route>
                 </Switch>        
             <Footer />
-
         </div>
         </>
     );

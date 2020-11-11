@@ -33,7 +33,7 @@ const Header = (props) => {
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h1" className={classes.title}>
+          <Typography variant="h3" className={classes.title}>
             SquadMate
           </Typography>
           <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="75" round onClick={e => _handleClick(e)}/>

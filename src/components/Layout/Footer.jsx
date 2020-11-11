@@ -32,9 +32,11 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     padding: theme.spacing(3, 2),
     marginTop:theme.spacing(2),
-    backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
+    backgroundColor: '#132143',
   },
+  button: {
+    color: "white"
+  }
 }));
 
 const Footer = () => {
@@ -46,13 +48,13 @@ const Footer = () => {
       <footer className={classes.footer}>
         <Container maxWidth="s">
           <Typography variant="body6">
-            <Button color="primary">Home</Button>
-            <Button color="primary">Terms of Service</Button>
-            <Button color="primary">About Us</Button>
-            <Button color="primary">Download the app</Button>
-            <Button color="primary">Contact us</Button>
-            <Button color="primary">How it works</Button>
-            <Button color="primary">Privacy Policy</Button>
+            <Button className={classes.button}>Home</Button>
+            <Button className={classes.button}>Terms of Service</Button>
+            <Button className={classes.button}>About Us</Button>
+            <Button className={classes.button}>Download the app</Button>
+            <Button className={classes.button}>Contact us</Button>
+            <Button className={classes.button}>How it works</Button>
+            <Button className={classes.button}>Privacy Policy</Button>
           </Typography>
           <Copyright />
         </Container>

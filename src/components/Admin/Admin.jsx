@@ -4,13 +4,12 @@ import AdminForms from "./AdminForms";
 import AdminProfile from "./AdminProfile";
 import TeamList from "./TeamList";
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, Container } from '@material-ui/core';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import Avatar from 'react-avatar';
 import { Switch, Route, Link } from 'react-router-dom';
 import RiderCard from './RiderCard';
-import UploadPhoto from './UploadPhoto';
+
 
 const images = [
 {
@@ -123,7 +122,7 @@ const Admin = (props) =>  {
     const { user, setUser } = props;
     const classes = useStyles();
     const [profilePicture, setProfilePicture] = useState(user.avatarUrl)
-    const [updateProfilePicture, setUpdateProfilePicture] = useState(false);
+    
 
     let profilePic = profilePicture === "" ? null : profilePicture;
     let githubPic = profilePicture === "" ? user.github : '';
@@ -135,9 +134,8 @@ const Admin = (props) =>  {
             <Route exact path="/admin">
                 <div>
                 <Avatar githubHandle={githubPic} src={profilePic} size="105" round /> 
-                <Container>
-                {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
-                </Container>                 
+                
+           
                 
                 <h1>Welcome {user.firstName}</h1>
                     <div className={classes.root}>
@@ -177,7 +175,7 @@ const Admin = (props) =>  {
             </Route>
             <Route path="/admin/profile">
                 <h1>Profile</h1>
-                <AdminProfile user={user} setUser={setUser}/>
+                <AdminProfile user={user} setUser={setUser} setProfilePicture={setProfilePicture} profilePicture={profilePicture}/>
                 
             </Route>
             <Route path="/admin/team">

@@ -4,11 +4,10 @@ import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import { Container, Button } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 import UserProfile from "./UserProfile";
 import InitialForm from "./InitialForm";
-import UploadPhoto from '../Admin/UploadPhoto';
+import UserDocuments from './UserDocuments';
 import UserTeamList from "./UserTeamList";
 
 
@@ -16,15 +15,21 @@ const images = [
   {
     url: '/userProfile.jpg',
     title: 'Profile',
-    width: '50%',
+    width: '33%',
     href: '/user/profile'
   },
   {
     url: '/userTeam.jpg',
     title: 'Team',
-    width: '50%',
+    width: '33%',
     href: '/user/team'
   },
+  {
+    url: '/adminUserList.jpg',
+    title: 'Documents & Info',
+    width: '33%',
+    href: '/user/info',
+},
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -116,7 +121,7 @@ const User = (props) => {
     const { user, setUser } = props;
     const classes = useStyles();
     const [profilePicture, setProfilePicture] = useState(user.avatarUrl)
-    const [updateProfilePicture, setUpdateProfilePicture] = useState(false);
+    
 
     let profilePic = profilePicture === "" ? null : profilePicture;
     let githubPic = profilePicture === "" ? user.github : '';
@@ -129,9 +134,7 @@ const User = (props) => {
 
         <div>
         <Avatar githubHandle={githubPic} src={profilePic}  size="100" round /> 
-                <Container>
-                {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
-                </Container>                 
+                
                 <h1>Welcome {user.firstName}</h1>
         </div>
         {!!user.emergencyFormDone ? "" : (
@@ -186,7 +189,7 @@ const User = (props) => {
                 <Link to="/user">
                     Go Back
                 </Link>
-                <UserProfile user={user} setUser={setUser}/>
+                <UserProfile user={user} setUser={setUser} setProfilePicture={setProfilePicture} profilePicture={profilePicture}/>
             </Route>
             <Route path="/user/forms">
                 <h1>Forms</h1>
@@ -201,6 +204,13 @@ const User = (props) => {
                     Go Back
                 </Link>
                 <UserTeamList />
+            </Route>
+            <Route path="/user/info">
+                <h1>Documents and Info</h1>
+                <Link to="/user">
+                    Go Back
+                </Link>
+                <UserDocuments user={user}/>
             </Route>
 
       </Switch>

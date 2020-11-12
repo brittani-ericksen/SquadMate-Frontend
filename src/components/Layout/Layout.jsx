@@ -7,7 +7,7 @@ import Admin from '../Admin/Admin';
 import User from "../User/User";
 import Signin from "../Home/SigninPage";
 import Signup from "../Home/SignupPage";
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import GetCardInfo from "../Admin/GetCardInfo";
 
 const Layout = props =>{
@@ -33,10 +33,12 @@ const Layout = props =>{
                         <Signup user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                     </Route>
                     <Route path="/admin">
-                        <Admin user={user} setUser={setUser}/>
+                        {isLoggedIn ? <Admin user={user} setUser={setUser}/> : <Redirect to="/signin" />}
+                        
                     </Route>
                     <Route path="/user">
-                        <User user={user} setUser={setUser}/>
+                        {isLoggedIn ? <User user={user} setUser={setUser}/> : <Redirect to="/signin" />}
+                        
                     </Route>
                     <Route path="/getCardInfo/:id">
                         <GetCardInfo />

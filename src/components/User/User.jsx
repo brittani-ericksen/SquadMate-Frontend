@@ -138,10 +138,9 @@ const User = (props) => {
     const classes = useStyles();
     const [profilePicture, setProfilePicture] = useState(user.avatarUrl)
     
-
     let profilePic = profilePicture === "" ? null : profilePicture;
-    let githubPic = profilePicture === "" ? user.github : '';
-    console.log(profilePic)
+    let initials = profilePicture === "" ? (user.firstName + ' ' + user.lastName)  : '';
+
   return (
     <>
       <Switch>
@@ -149,7 +148,7 @@ const User = (props) => {
         <Route exact path="/user">
 
         <div>
-        <Avatar githubHandle={githubPic} src={profilePic}  size="100" round /> 
+        <Avatar name={initials} src={profilePic}  size="100" round /> 
                 
                 <h1>Welcome {user.firstName}</h1>
         </div>

@@ -125,15 +125,14 @@ const Admin = (props) =>  {
     
 
     let profilePic = profilePicture === "" ? null : profilePicture;
-    let githubPic = profilePicture === "" ? user.github : '';
-    console.log(profilePic)
+    let initials = profilePicture === "" ? (user.firstName + ' ' + user.lastName)  : '';
 
     return (
         <>
         <Switch>
             <Route exact path="/admin">
                 <div>
-                <Avatar githubHandle={githubPic} src={profilePic} size="105" round /> 
+                <Avatar name={initials} src={profilePic} size="105" round /> 
                 
            
                 

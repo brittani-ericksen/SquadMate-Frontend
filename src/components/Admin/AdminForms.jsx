@@ -52,7 +52,6 @@ const AdminForms = ({user}) =>{
                                 return (<li key={member._id}>{member.firstName}</li>)
                             })}
                         </ul>
-                        <button>Send form reminder email</button>
 
                         <p>Riders with all forms submitted</p>
                         <ul>

@@ -33,7 +33,6 @@ const UploadDocument = ({user, setShowDocumentButton, documents, setDocuments}) 
             'state_changed',
             (snapshot) => {},
             (error) => {
-                console.log(error);
             },
             () => {
                 storage
@@ -56,7 +55,6 @@ const UploadDocument = ({user, setShowDocumentButton, documents, setDocuments}) 
                         );
                         const resdata = await response.json();
                         setShowDocumentButton(false);
-                        console.log('upload', resdata);
                         setDocuments([...documents, resdata]);
                     })  
                   

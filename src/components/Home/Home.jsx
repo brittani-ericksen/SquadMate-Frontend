@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, Grid, Paper, Typography } from '@material-ui/core';
+import { Grid, Paper, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 import Carousel from "./Carousel";
 import LazyHero from 'react-lazy-hero';
@@ -43,7 +42,6 @@ img {
 `;
 
 const Home = props => {
-  const { user, setUser, isLoggedIn, setIsLoggedIn } = props;
   const classes = useStyles();
   
   const playSound= () => {
@@ -54,8 +52,8 @@ const Home = props => {
   return (
     <>
       <div>Home</div>
-      <LazyHero color="#ffffff" imageSrc="/heroimage.jpg" opacity="0.7" parallaxOffset="100">
-        <img className="logo" src="squadmatelogo.png" />
+      <LazyHero color="#ffffff" imageSrc="/heroimage.jpg" opacity={0.7} parallaxOffset={100}>
+        <img className="logo" src="squadmatelogo.png" alt="logo"/>
       </LazyHero>
       <Carousel />
       <div className={classes.root}>
@@ -79,13 +77,13 @@ const Home = props => {
             </Grid>
             <Grid item xs={4}>
               <Paper className={classes.paper}>
-                <img src="iconimages/memberlist.png" />
+                <img src="iconimages/memberlist.png" alt="memberlist"/>
                 <p className={classes.text}>View a List of Team Members</p>
               </Paper>
             </Grid>
             <Grid item xs={4}>
               <Paper className={classes.paper}>
-                <img src="iconimages/pageimage.png" />
+                <img src="iconimages/pageimage.png" alt="paperImage"/>
                 <p className={classes.text}>Update Profile</p>
               </Paper>
             </Grid>
@@ -98,13 +96,13 @@ const Home = props => {
             </Grid>
             <Grid item xs={4}>
               <Paper className={classes.paper}>
-                <img src="iconimages/emergencycardslist.png" />
+                <img src="iconimages/emergencycardslist.png" alt="cardList"/>
                 <p className={classes.text}>Print Emergency Contact Cards for all Members</p>
               </Paper>
             </Grid>
             <Grid item xs={4}>
               <Paper className={classes.paper}>
-                <img src="iconimages/emergencycard.png" />
+                <img src="iconimages/emergencycard.png" alt="emergencycard"/>
                 <p className={classes.text}>Update Emergency Contact Info Anytime</p>
               </Paper>
             </Grid>
@@ -117,13 +115,13 @@ const Home = props => {
             </Grid>
             <Grid item xs={4}>
               <Paper className={classes.paper}>
-                <img src="iconimages/uploadreceiveforms.png" />
+                <img src="iconimages/uploadreceiveforms.png" alt="receiveForm"/>
                 <p className={classes.text}>Upload and Receive Completed Forms</p>
               </Paper>
             </Grid>
             <Grid item xs={4}>
               <Paper className={classes.paper}>
-                <img src="iconimages/filloutforms.png" />
+                <img src="iconimages/filloutforms.png" alt="fillout-forms"/>
                 <p className={classes.text}>Fill Out and Submit Forms</p>
               </Paper>
             </Grid>

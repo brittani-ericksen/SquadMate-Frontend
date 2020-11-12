@@ -22,12 +22,9 @@ const Documents = ({user}) => {
         (async function(){
             const response = await fetch(`http://localhost:3333/document/team/${user.team}`);
             const data = await response.json();
-            console.log(data);
             setDocuments(data);
         })();
     }, [setDocuments, user]);
-
-    console.log('Documents', documents);
 
     return (
         <div>

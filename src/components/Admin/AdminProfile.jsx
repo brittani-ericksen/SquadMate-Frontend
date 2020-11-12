@@ -75,15 +75,13 @@ const AdminProfile = (props) =>{
     }
 
     let profilePic = profilePicture === "" ? null : profilePicture;
-    let githubPic = profilePicture === "" ? user.github : '';
-    console.log(profilePic)
-
+    let initials = profilePicture === "" ? (user.firstName + ' ' + user.lastName)  : '';
 
     return (
         <>
             <div>
                 {/* upload profile pic */}
-                <Avatar githubHandle={githubPic} src={profilePic} size="105" round />
+                <Avatar name={initials} src={profilePic}  size="100" round />
                 <Container>
                 {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
                 </Container>      

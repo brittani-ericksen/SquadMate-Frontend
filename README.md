@@ -1,42 +1,53 @@
-# Capstone Application Project
+<p align="center">
+  <a href="" rel="" target="_blank"><img width="150" src="" alt="SquadMate Logo"></a></p>
+</p>
 
-https://img.shields.io/badge/<GitHub followers:>-</github/followers/:user?label=Follow>-<informational>
+<h1 align="center">SquadMate</h1>
 
-## SquadMate
+<div align="center">
 
-<h1>SquadMate is an application built for the use of online form completions by groups of people to gather information on new member registration, medical need to know basis information, events and who makes up the team, all to assist in helping you gather information of any member to be prepared for their team events.<h1>
+[React](https://reactjs.org/) components for faster and simpler web development. Build your own design system, or start with [Material Design](https://material.io/design/introduction/).
+[![Crowdin](https://badges.crowdin.net/material-ui-docs/localized.svg)](https://translate.material-ui.com/project/material-ui-docs)
+
+</div>
+
+SquadMate
+<h2>SquadMate is an application built for the use of online form completions by groups of people to gather information on new member registration, medical need to know basis information, events and who makes up the team, all to assist in helping you gather information of any member to be prepared for their team events.<h2>
 
 ## Motivation
+<h3>The need for an easy access functionality to complete the mandated forms nessasary by parents of minors participating in team events in a timely manner. And the abbility to link information to medics on the scene in abbsence of the parents in case of emergency and with the focus of being prepared.<h3>
 
-<h2>The need for an easy access functionality to complete the mandated forms nessasary by parents of minors participating in team events in a timely manner. And the abbility to link information to medics on the scene in abbsence of the parents in case of emergency and with the focus of being prepared.<h2>
-
-## BlockQuote
-
-<h3>*As Maya Angelou would say:*
+BlockQuote
+*Per Maya Angelou:*
 > **Ask for what you want,
-> and be prepared to get it.**<h3>
+> and be prepared to get it.**
 
-## Screenshot
-Front end view of Project:
+Screenshot
+
 ![intro_screen]()
 
-## Video
-Presentation Snippet:
-![intro_screen]()
+Video
 
-## Images
-Format: ![Alt Text](url)
+![presentation_snippet]()
+
+Images
+
+![Alt Text](url)
 
 ## Features
-*Custom designed and uploaded Logo
-*User login, sign up and log out
-*Konami Code
-*Carousal
-*Document Upload 
-*Print Function and icon for Emenrgency Cards
-*User Profile Picture
-*Breadcrumb Navigation
-*Made use of a Master Component Layout with Integrated Components file system.
+
+- Carousal
+- Konami Code
+- Document Upload 
+- File-system Routing
+- User Profile Picture
+- Breadcrumb Navigation
+- Built-in Markdown Page
+- Built-in CSS(Less) Support
+- User Log-in, Sign-up and Log-out
+- Custom Designed and uploaded Logo
+- Print Function and icon for Emenrgency Cards
+- Made use of a Master Component Layout with Integrated Components file system
 
 
 ## Installation
@@ -44,31 +55,50 @@ Format: ![Alt Text](url)
 To install SquadMate use the package-management system:
 
 *Front-End:
-**npm install**
+**[npm install](https://www.npmjs.com/package/npm-install**)
 
 *Back-End:
-**npm run dev**
+**[npm run dev](https://dev.to/lukeocodes/enny-stack-the-express-ngrok-and-nodemon-stack-23j)**
 
-## Tech/framework Usage
+## Technical Framework Usage
 
 The MERN Stack:
-*Mongodb
-*Express
-*React
-*Node
+- Mongodb
+- Express
+- React
+- Node
 
 ## Code Style
 
-*Material UI
-*Custom Styled Components
+- Material UI
+- Custom Styled Components
+
+## Data References
+
+Custom Secured Data usage.
 
 ## Code Example Extraction
 
-```javascript
-function test() {
- console.log("cool code of’, SquadMates");
+Here is a quick example to get you started, **it's all you need**:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Button from '@material-ui/core/Button';
+
+function App() {
+  return <Button variant="contained">Hello SquadMate</Button>;
 }
+
+ReactDOM.render(<App />, document.querySelector('#app'));
 ```
+
+Yes, it's really all you need to get started as you can see in this live and interactive demo:
+
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/4j7m47vlm4)
+```
+```
+
 ## Build Status
 
 Completed.
@@ -83,7 +113,7 @@ Completed.
 - [ ] Add Abitilty to give notifications of an alert to be completed.
 - [ ] Turn the custom application into a global functional use for simialer needs in other areas.
 
-## Contributers
+## Credits
 
 -Front End, LOGO Design and WireFrame Layout and full web site color-styling by Brittany:
   [GitHub](https://github.com/brittani-ericksen)
@@ -100,12 +130,7 @@ Completed.
 -WireFrame Layout and ReadMe-file by Annemarie:
   [GitHub](https://github.com/Athomas9sa)
 
-## Data References
-
-Custom Secured Data usage.
-
-## How To Use?
-
+## Usage
 Sign in and Sign up as either the administartor of a team or the team members point of contact. Each having their own and shared documentation privileges to navigate to with named buttons to click on functionality. Keeps communication between the two parties open and timely for events to happen in a more organized fasion. Forms to be completed by team members as needed. Administartion will have documentation abilities to update, upload and prepared for the upcoming events and due dates, especially highlighting the function for printing the emergency cards needs.
 
   Component Buttons for each setup:
@@ -122,37 +147,50 @@ Sign in and Sign up as either the administartor of a team or the team members po
 
 ## Presentation Input
 
-Presentation Steps: 
-Demo the site ()
-To introduce our individual struggles and triumphs ()
-View and explain how Back-End works ()
-View and explain how Front-End works ()
+- Presentation Steps: 
+- Demo the site ()
+- To introduce our individual challenges and triumphs ()
+- View and explain how Back-End works ()
+- View and explain how Front-End works ()
+
+## Challenges
+
+## Triumphs
 
 ## Team Nemesis
 
-B. Erickson
-J. Gardner
-C. Owens
-R. Schniederjan
-A. Thomas
+B. Erickson,
+J. Gardner,
+C. Owens,
+R. Schniederjan,
+A. Thomas,
 
-## GitHubLinks:
-```
-Frontend:
-https://github.com/brittani-ericksen/capstone-frontend/tree/main
+## GitHub Project Links:
 
-Backend: 
-https://github.com/JustinSGardner/CapStoneProject-Backend/tree/main
-```
+*Front-End:
+**[Frontend:](https://github.com/brittani-ericksen/capstone-frontend/tree/main)**
+
+*Back-End:
+**[Backend:] (https://github.com/JustinSGardner/CapStoneProject-Backend/tree/main)**
 
 ## Miscellaneous 
-```
-Git and GitHub Commits, Merges and Branching.
-Used Trello as our guide for completing tasks from: To Do, Doing, Done.
-Trello provided the ability to have up to date comunications on our project for all group members.
-Made use of colaborating on LiveShare VSCode when code-along was neccesary for portions of the project.
-```
+
+- Git and GitHub Commits, Merges and Branching.
+- Used Trello as our guide for completing tasks from: To Do, Doing, Done.
+- Trello provided the ability to have up to date - comunications on our project for all group members.
+- Made use of colaborating on LiveShare VSCode when code-along was neccesary for portions of the project.
+
+## Support services
+
+These great services support SquadMate's core infrastructure:
+
+[<img loading="lazy" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" height="25">](https://github.com/).
+
+
+[<img loading="lazy" alt="Material-UI logo" alt="Material-UI logo" src="https://material-ui.com/static/logo.svg" width="25">](https://www.npmjs.com/package/@material-ui/core).
+
+## Questions
+## Documentation
+
 ## The End.
-GitHub supports emoji!
-:+1: :sparkles: :camel: :tada:
-:rocket: :metal: :octocat: 
+:+1: :sparkles: :rocket: :metal: :octocat: 

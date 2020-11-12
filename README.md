@@ -17,11 +17,12 @@
 ## Motivation
 <h2>The need for an easy access functionality to complete the mandated forms nessasary by parents of minors participating in team events in a timely manner. And the abbility to link information to medics on the scene in abbsence of the parents in case of emergency and with the focus of being prepared.<h2>
 
-
+## Quote
+*Per Maya Angelou:*
+```
 > **Ask for what you want,
 > and be prepared to get it.**
-*Per Maya Angelou:*
-
+```
 
 
 <p align="center">
@@ -143,7 +144,7 @@ Sign-in and/or Sign-up as either the administartor of a team or the team members
 
 ## Presentation Input
 <h6>Presentation Steps:</h6> 
-1. Demo the site ()
+1. Demo the WebSite ()
 2. To introduce our individual challenges and triumphs ()
 3. View and explain how Back-End works ()
 4. View and explain how Front-End works ()

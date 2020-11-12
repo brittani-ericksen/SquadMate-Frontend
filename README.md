@@ -20,8 +20,7 @@
 ## Quote
 *Per Maya Angelou:*
 ```
-> **Ask for what you want,
-> and be prepared to get it.**
+Ask for what you want, and be prepared to get it.
 ```
 
 

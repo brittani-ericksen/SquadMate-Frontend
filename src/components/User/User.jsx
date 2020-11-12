@@ -2,9 +2,13 @@ import React, {useState} from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Typography from '@material-ui/core/Typography';
-import Alert from '@material-ui/lab/Alert';
+import { ButtonBase, Typography, Breadcrumbs } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import HomeIcon from '@material-ui/icons/Home';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import GroupIcon from '@material-ui/icons/Group';
+import AssignmentIcon from '@material-ui/icons/Assignment';
 import UserProfile from "./UserProfile";
 import InitialForm from "./InitialForm";
 import UserDocuments from './UserDocuments';
@@ -62,6 +66,17 @@ const useStyles = makeStyles((theme) => ({
         border: '4px solid currentColor',
       },
     },
+    link: {
+      display: 'flex',
+      color: '#225AEE',
+      alignItems: 'center',
+    },
+    icon: {
+      marginRight: "5px",
+      width: 20,
+      height: 20,
+    },
+
   },
   focusVisible: {},
   imageButton: {
@@ -117,15 +132,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 const User = (props) => {
     const { user, setUser } = props;
     const classes = useStyles();
     const [profilePicture, setProfilePicture] = useState(user.avatarUrl)
     
-
     let profilePic = profilePicture === "" ? null : profilePicture;
-    let githubPic = profilePicture === "" ? user.github : '';
-    console.log(profilePic)
+    let initials = profilePicture === "" ? (user.firstName + ' ' + user.lastName)  : '';
+
   return (
     <>
       <Switch>
@@ -133,7 +148,7 @@ const User = (props) => {
         <Route exact path="/user">
 
         <div>
-        <Avatar githubHandle={githubPic} src={profilePic}  size="100" round /> 
+        <Avatar name={initials} src={profilePic}  size="100" round /> 
                 
                 <h1>Welcome {user.firstName}</h1>
         </div>
@@ -185,31 +200,48 @@ const User = (props) => {
         </Route>
 
             <Route path="/user/profile">
-                <div>Profile</div>
-                <Link to="/user">
-                    Go Back
-                </Link>
+                <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+                  <Link className={classes.link} to="/user">
+                    <HomeIcon className={classes.icon} />
+                    User Home
+                  </Link>
+                  <Typography color="textPrimary">
+                    <AccountCircleIcon className={classes.icon} />
+                    Account Profile</Typography>
+                </Breadcrumbs>
                 <UserProfile user={user} setUser={setUser} setProfilePicture={setProfilePicture} profilePicture={profilePicture}/>
             </Route>
             <Route path="/user/forms">
                 <h1>Forms</h1>
-                <Link to="/user">
-                    Go Back
-                </Link>
+                
                 <InitialForm user={user} setUser={setUser}/>
             </Route>
             <Route path="/user/team">
-                <h1>Team</h1>
-                <Link to="/user">
-                    Go Back
-                </Link>
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+                  <Link className={classes.link} to="/user">
+                    <HomeIcon className={classes.icon} />
+                    User Home
+                  </Link>
+                  <Typography color="textPrimary">
+                  <GroupIcon className={classes.icon} />
+                    Team Members
+                    </Typography>
+                </Breadcrumbs>
+                
                 <UserTeamList />
             </Route>
             <Route path="/user/info">
-                <h1>Documents and Info</h1>
-                <Link to="/user">
-                    Go Back
-                </Link>
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+                  <Link className={classes.link} to="/user">
+                    <HomeIcon className={classes.icon} />
+                    User Home
+                  </Link>
+                  <Typography color="textPrimary">
+                  <AssignmentIcon className={classes.icon} />
+                    Documents and Forms
+                    </Typography>
+                </Breadcrumbs>
+                
                 <UserDocuments user={user}/>
             </Route>
 

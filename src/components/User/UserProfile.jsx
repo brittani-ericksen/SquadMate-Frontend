@@ -218,20 +218,20 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
         
 
         const resdata = await response.json();
-        console.log('res', resdata);
         setUser(resdata);
         history.push('/user');
     }
 
     let profilePic = profilePicture === "" ? null : profilePicture;
-    let githubPic = profilePicture === "" ? user.github : '';
-    console.log(profilePic)
+    let initials = profilePicture === "" ? (user.firstName + ' ' + user.lastName)  : '';
+
+    
 
     return (
         <>
             {/* pulls info in from completed form, editable and updates db when changed */}
             <div>
-            <Avatar githubHandle={githubPic} src={profilePic}  size="100" round /> 
+            <Avatar name={initials} src={profilePic}  size="100" round />
                 <form className={classes.root} validation autoComplete="off" onSubmit={e => _handleSubmit(e)}>
                 <Container>
                 {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 

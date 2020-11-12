@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from 'react-router-dom';
 import LogoutButton from "./LogoutButton";
 import Avatar from 'react-avatar';
-import { AppBar, Toolbar, Typography, IconButton } from "@material-ui/core";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({

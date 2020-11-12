@@ -114,8 +114,8 @@ Completed.
 - [ ] Random Picture Display of the Events, Teams or Individual players.
 - [ ] Ability to give message alerts to parents if a telephone number or signed off form is incomplete.
 
-## Credits To The Builders
-- Front-End, LOGO-Design and WireFrame Layout and Full Web Site color-styling by Brittany:
+## Capstone Project Credits To The Builders
+- Front-End, LOGO-Design and WireFrame Layout and Full Web Site Coloring by Brittany:
   [GitHub](https://github.com/brittani-ericksen)
 
 - Full-Stack, Design-Styles and Design-Ideas by Justin:
@@ -127,7 +127,7 @@ Completed.
 - Project Manager/Scrum Master, Full-Stack Developer and WireFrame-Layout Ryan:
   [GitHub](https://github.com/rynoschni)
 
-- WireFrame-Layout and ReadMe-File by Annemarie:
+- Master Layout Components, WireFrame-Layout and ReadMe-File by Annemarie:
   [GitHub](https://github.com/Athomas9sa)
 
 ## Usage

@@ -52,13 +52,8 @@ const TeamList = () =>{
 
     return (
         <>
-<<<<<<< HEAD
-        <Typography variant="h2">
-            Team
-=======
         <Typography className={classes.title} variant='h3' component='h1'>
             Team {teamName.teamName}
->>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
         </Typography>
         <div className={classes.gridRoot}>
         <Grid container spacing={3}       

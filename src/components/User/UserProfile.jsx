@@ -3,8 +3,8 @@ import { TextField, Container, Button, FormControl, Radio, RadioGroup, FormLabel
 import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
-<<<<<<< HEAD
 import styled from "styled-components";
+import UploadPhoto from '../Admin/UploadPhoto';
 
 const Wrapper = styled.div`
   border-radius: 5px;
@@ -31,9 +31,7 @@ const Title = styled.div`
 const Detail = styled.div`
     padding: 5px 20px;
 `;
-=======
-import UploadPhoto from '../Admin/UploadPhoto';
->>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -266,19 +264,12 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
           </Typography>
             {/* pulls info in from completed form, editable and updates db when changed */}
             <div>
-<<<<<<< HEAD
-            <Avatar src="/avatar-placeholder.png" size="75" round />
-                
-            <Wrapper>          
-
-
-=======
             <Avatar name={initials} src={profilePic}  size="100" round />
->>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
                 <form className={classes.root} validation autoComplete="off" onSubmit={e => _handleSubmit(e)}>
                 <Container>
                 {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
                 </Container>                 
+
 
 
           <Container component='RiderInformation'>
@@ -541,7 +532,6 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
           
           </Container>
           </form>
-        </Wrapper>
       </div>      
     </>
   );

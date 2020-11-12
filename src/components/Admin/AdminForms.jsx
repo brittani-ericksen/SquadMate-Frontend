@@ -80,7 +80,6 @@ const AdminForms = ({user}) =>{
                 <Grid container spacing={3}>
                     <Grid item xs={6}>
                         <Paper className={classes.paper}>
-<<<<<<< HEAD
                             <Section>
                                 <Title>
                                     <h4>Riders missing forms</h4>
@@ -105,21 +104,6 @@ const AdminForms = ({user}) =>{
                                     })}
                                 </ul>
                             </Section>
-=======
-                        <p>Riders missing forms</p>
-                        <ul>
-                            {teamMembers.filter(member => !member.emergencyFormDone).map(member => {
-                                return (<li key={member._id}>{member.firstName}</li>)
-                            })}
-                        </ul>
-
-                        <p>Riders with all forms submitted</p>
-                        <ul>
-                            {teamMembers.filter(member => member.emergencyFormDone).map(member => {
-                                return (<li key={member._id}>{member.firstName}</li>)
-                            })}
-                        </ul>
->>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
                         </Paper>
                     </Grid>
 

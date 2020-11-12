@@ -32,12 +32,9 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     backgroundColor: '#223F84',
     margin: theme.spacing(3, 0, 2),
-<<<<<<< HEAD
   },
   input: {
     color: '#132143'
-=======
->>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
   }
 }));
 
@@ -120,18 +117,10 @@ export default function SignIn(props) {
             onChange={e => _handlePassword(e.target.value)}
             value={password}
           />
-<<<<<<< HEAD
-          <FormControlLabel
-            className={classes.input}
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
-=======
 
           <Container className={classes.error}>
           {!!signInError ? signInError : ""}
           </Container>
->>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
           <Button
             type="submit"
             fullWidth

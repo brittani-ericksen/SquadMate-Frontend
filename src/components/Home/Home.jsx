@@ -54,11 +54,7 @@ const Home = props => {
 
   return (
     <>
-<<<<<<< HEAD
-      <LazyHero color="#E6EAF3" imageSrc="/heroimage.jpg" opacity="0.6" parallaxOffset="100">
-=======
       <LazyHero color="#ffffff" imageSrc="/heroimage.jpg" opacity="0.7" parallaxOffset="100">
->>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
         <img className="logo" src="squadmatelogo.png" />
       </LazyHero>
       <Carousel />

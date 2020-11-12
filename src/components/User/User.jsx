@@ -154,15 +154,8 @@ const User = (props) => {
         <Route exact path="/user">
 
         <div>
-<<<<<<< HEAD
-        <Avatar githubHandle={githubPic} src={profilePic}  size="100" round /> 
-                <Container className={classes.upload}>
-                {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
-                </Container>                 
-=======
         <Avatar name={initials} src={profilePic}  size="100" round /> 
                 
->>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
                 <h1>Welcome {user.firstName}</h1>
         </div>
         {!!user.emergencyFormDone ? "" : (
@@ -213,23 +206,6 @@ const User = (props) => {
         </Route>
 
             <Route path="/user/profile">
-<<<<<<< HEAD
-                <Link to="/user">
-                    Go Back
-                </Link>
-                <UserProfile user={user} setUser={setUser}/>
-            </Route>
-            <Route path="/user/forms">
-                <Link to="/user">
-                    Go Back
-                </Link>
-                <InitialForm user={user} setUser={setUser}/>
-            </Route>
-            <Route path="/user/team">
-                <Link to="/user">
-                    Go Back
-                </Link>
-=======
                 <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
                   <Link className={classes.link} to="/user">
                     <HomeIcon className={classes.icon} />
@@ -258,7 +234,6 @@ const User = (props) => {
                     </Typography>
                 </Breadcrumbs>
                 
->>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
                 <UserTeamList />
             </Route>
             <Route path="/user/info">

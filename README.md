@@ -7,35 +7,36 @@
 <div align="center">
 
 [React](https://reactjs.org/) components for faster and simpler web development. Build your own design system, or start with [Material Design](https://material.io/design/introduction/).
-[![Crowdin](https://badges.crowdin.net/material-ui-docs/localized.svg)](https://translate.material-ui.com/project/material-ui-docs)
-
+```
+[![Crowdin](https://img.shields.io/badge/left-right-f39f37
+```
 </div>
 
-SquadMate
-<h2>SquadMate is an application built for the use of online form completions by groups of people to gather information on new member registration, medical need to know basis information, events and who makes up the team, all to assist in helping you gather information of any member to be prepared for their team events.<h2>
+<h3>SquadMate is an application built for the use of online form completions by groups of people to gather information on new member registration, medical need to know basis information, events and who makes up the team, all to assist in helping you gather information of any member to be prepared for their team events.<h3>
 
 ## Motivation
-<h3>The need for an easy access functionality to complete the mandated forms nessasary by parents of minors participating in team events in a timely manner. And the abbility to link information to medics on the scene in abbsence of the parents in case of emergency and with the focus of being prepared.<h3>
+<h2>The need for an easy access functionality to complete the mandated forms nessasary by parents of minors participating in team events in a timely manner. And the abbility to link information to medics on the scene in abbsence of the parents in case of emergency and with the focus of being prepared.<h2>
 
-BlockQuote
-*Per Maya Angelou:*
+
 > **Ask for what you want,
 > and be prepared to get it.**
+*Per Maya Angelou:*
 
-Screenshot
+
+
+<p align="center">
 
 ![intro_screen]()
 
-Video
-
 ![presentation_snippet]()
-
-Images
 
 ![Alt Text](url)
 
-## Features
+</p>
 
+
+
+## Features
 - Carousal
 - Konami Code
 - Document Upload 
@@ -51,13 +52,12 @@ Images
 
 
 ## Installation
-
 To install SquadMate use the package-management system:
 
-*Front-End:
-**[npm install](https://www.npmjs.com/package/npm-install**)
+Front-End:
+**[npm install](https://www.npmjs.com/package/npm-install**)**
 
-*Back-End:
+Back-End:
 **[npm run dev](https://dev.to/lukeocodes/enny-stack-the-express-ngrok-and-nodemon-stack-23j)**
 
 ## Technical Framework Usage
@@ -68,7 +68,7 @@ The MERN Stack:
 - React
 - Node
 
-## Code Style
+## Code Framework Style
 
 - Material UI
 - Custom Styled Components
@@ -87,7 +87,7 @@ import ReactDOM from 'react-dom';
 import Button from '@material-ui/core/Button';
 
 function App() {
-  return <Button variant="contained">Hello SquadMate</Button>;
+  return <Button variant="contained">Hello World</Button>;
 }
 
 ReactDOM.render(<App />, document.querySelector('#app'));
@@ -105,12 +105,12 @@ Completed.
 
 ## Stretch Goals
 
-- [ ] Add AuthO
-- [ ] Add Calendar.
-- [ ] Add Team Chatroom.
-- [ ] Add Coach Notification Board.
-- [ ] Add Random Picture Display of team events.
-- [ ] Add Abitilty to give notifications of an alert to be completed.
+- [ ] AuthO
+- [ ] Calendar.
+- [ ] Team Chatroom.
+- [ ] Coach Notification Board.
+- [ ] Random Picture Display of team events.
+- [ ] Abitilty to give notifications of an alert to be completed.
 - [ ] Turn the custom application into a global functional use for simialer needs in other areas.
 
 ## Credits
@@ -124,16 +124,16 @@ Completed.
 -Full Satck and Design Implementations by Chris:
   [GitHub](https://github.com/chrisowensdev)
 
--PM/Scrum, Full-Stack Developer and WireFrame Layout Ryan:
+-Project Manager/Scrum Master, Full-Stack Developer and WireFrame Layout Ryan:
   [GitHub](https://github.com/rynoschni)
 
--WireFrame Layout and ReadMe-file by Annemarie:
+-WireFrame Layout and ReadMe-File by Annemarie:
   [GitHub](https://github.com/Athomas9sa)
 
 ## Usage
 Sign in and Sign up as either the administartor of a team or the team members point of contact. Each having their own and shared documentation privileges to navigate to with named buttons to click on functionality. Keeps communication between the two parties open and timely for events to happen in a more organized fasion. Forms to be completed by team members as needed. Administartion will have documentation abilities to update, upload and prepared for the upcoming events and due dates, especially highlighting the function for printing the emergency cards needs.
 
-  Component Buttons for each setup:
+  <h4>Component Buttons for each setup:</h4>
 
         Administration          | Team User
         ----------------------- | -------------
@@ -171,7 +171,7 @@ A. Thomas,
 **[Frontend:](https://github.com/brittani-ericksen/capstone-frontend/tree/main)**
 
 *Back-End:
-**[Backend:] (https://github.com/JustinSGardner/CapStoneProject-Backend/tree/main)**
+**[Backend:](https://github.com/JustinSGardner/CapStoneProject-Backend/tree/main)**
 
 ## Miscellaneous 
 
@@ -184,13 +184,13 @@ A. Thomas,
 
 These great services support SquadMate's core infrastructure:
 
-[<img loading="lazy" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" height="25">](https://github.com/).
+[<img loading="lazy" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" height="15">](https://github.com/):octocat:
 
 
-[<img loading="lazy" alt="Material-UI logo" alt="Material-UI logo" src="https://material-ui.com/static/logo.svg" width="25">](https://www.npmjs.com/package/@material-ui/core).
+[<img loading="lazy" alt="Material-UI logo" alt="Material-UI logo" src="https://material-ui.com/static/logo.svg" width="35">](https://www.npmjs.com/package/@material-ui/core)
 
 ## Questions
 ## Documentation
 
 ## The End.
-:+1: :sparkles: :rocket: :metal: :octocat: 
+:sparkles: :rocket: :metal: 

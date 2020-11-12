@@ -1,14 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
+import { Container, Button } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
-import Grid from '@material-ui/core/Grid';
 import UserProfile from "./UserProfile";
 import InitialForm from "./InitialForm";
+import UploadPhoto from '../Admin/UploadPhoto';
 
 
 const images = [
@@ -34,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     
   },
+  picButton: {
+    dipslay: 'block'
+},
   image: {
     position: 'relative',
     height: 200,
@@ -111,6 +114,12 @@ const useStyles = makeStyles((theme) => ({
 const User = (props) => {
     const { user, setUser } = props;
     const classes = useStyles();
+    const [profilePicture, setProfilePicture] = useState(user.avatarUrl)
+    const [updateProfilePicture, setUpdateProfilePicture] = useState(false);
+
+    let profilePic = profilePicture === "" ? null : profilePicture;
+    let githubPic = profilePicture === "" ? user.github : '';
+    console.log(profilePic)
   return (
     <>
       <Switch>
@@ -118,7 +127,10 @@ const User = (props) => {
         <Route exact path="/user">
 
         <div>
-            <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="75" round />
+        <Avatar githubHandle={githubPic} src={profilePic}  size="100" round /> 
+                <Container>
+                {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
+                </Container>                 
                 <h1>Welcome {user.firstName}</h1>
         </div>
         {!!user.emergencyFormDone ? "" : (

@@ -12,16 +12,21 @@
 
 </div>
 
-<h3>SquadMate is an application built for the use of online form completions by groups of people to gather information on new member registration, medical need to know basis information, events and who makes up the team, all to assist in helping you gather information of any member to be prepared for their team events.<h3>
+<h3>SquadMate is an application built to complete online forms by groups of organizers responsible for teams. 
+- To gather information on member registration, medical need to know basis information.
+- For events and who makes up the team, all to assist in helping you gather information of any member to be prepared for the events.<h3>
+
 
 ## Motivation
-<h2>The need for an easy access functionality to complete the mandated forms nessasary by parents of minors participating in team events in a timely manner. And the abbility to link information to medics on the scene in abbsence of the parents in case of emergency and with the focus of being prepared.<h2>
+<h4>To assist people in need of assistance in areas where managers and coaches work with teams of minors for an event/tournament/match. An easy accessible function to complete the required forms necessary by parents of minors participating in team events in a timely manner. The ability to link information to medics (and other) in absence of the parents with the focus of being prepared.<h4>
 
-## Quote
+## Preparedness Quote
 *Per Maya Angelou:*
+<h4>
 ```
 Ask for what you want, and be prepared to get it.
 ```
+</h4>
 
 
 <p align="center">
@@ -34,8 +39,6 @@ Ask for what you want, and be prepared to get it.
 
 </p>
 
-
-
 ## Features
 - Carousal
 - Konami Code
@@ -47,7 +50,7 @@ Ask for what you want, and be prepared to get it.
 - Built-in CSS(Less) Support
 - User Log-in, Sign-up and Log-out
 - Custom Designed and uploaded Logo
-- Print Function and icon for Emenrgency Cards
+- Print Function and icon for Emergency Cards
 - Made use of a Master Component Layout with Integrated Components file system
 
 
@@ -106,18 +109,19 @@ Completed.
 - [ ] AuthO
 - [ ] Calendar.
 - [ ] Team Chatroom.
-- [ ] Testing Components.
-- [ ] Random Picture Display of team events.
-- [ ] Turn the custom application into more use.
+- [ ] Coach and Manager Notification Board.
+- [ ] Turn the Custom Application into more widely used app.
+- [ ] Random Picture Display of the Events, Teams or Individual players.
+- [ ] Ability to give message alerts to parents if a telephone number or signed off form is incomplete.
 
 ## Credits To The Builders
 - Front-End, LOGO-Design and WireFrame Layout and Full Web Site color-styling by Brittany:
   [GitHub](https://github.com/brittani-ericksen)
 
-- Full-Satck, Design-Styles and Design-Ideas by Justin:
+- Full-Stack, Design-Styles and Design-Ideas by Justin:
   [GitHub](https://github.com/JustinSGardner)
 
-- Full-Satck and Design-Implementations by Chris:
+- Full-Stack and Design-Implementations by Chris:
   [GitHub](https://github.com/chrisowensdev)
 
 - Project Manager/Scrum Master, Full-Stack Developer and WireFrame-Layout Ryan:
@@ -127,19 +131,20 @@ Completed.
   [GitHub](https://github.com/Athomas9sa)
 
 ## Usage
-Sign-in and/or Sign-up as either the administartor of a team or the team members point of contact. Each having their own and shared documentation privileges to navigate to with named buttons to click on functionality. Keeps communication between the two parties open and timely for events to happen in a more organized fasion. Forms to be completed by team members as needed. Administartion will have documentation abilities to update, upload and prepared for the upcoming events and due dates, especially highlighting the function for printing the emergency cards needs.
+Sign-in and/or Sign-up as either the manager/coach of a team OR the person responsible for team members. Each having their own documentation privileges to navigate to with buttons. And shared viewing capabilities for managers/coaches. Keeps communication between the two parties, (- the parents and organizers), open and timely for team events to happen in a more organized fashion. Forms to be completed by team member's parents as needed and before the minor may participate. Administration will have documentation abilities to input, update, upload and prepare for the upcoming events and due dates, especially highlighting the function for printing the emergency cards needs for use at the event sites itself when you do not have the whole database with you.
+
 
   <h4>Component Buttons for each setup:</h4>
 
-        Administration          | Team User
-        ----------------------- | -------------
-        Admin HomePage          | User HomePage
-        AdminProfile            | UserProfile
-        GetCardInfo             | InitialForm
-        TeamList                | 
-        UserCard                | 
-        EmergencyCard           | 
-        PermissionsComponent    | 
+        Administration          | Home Landing     | Team User
+       ------------------------- ------------------ ------------
+        Admin HomePage          | Sign-in Button   | User HomePage
+        AdminProfile            | Sign-up Button   | UserProfile
+        GetCardInfo             | Log-out Button   | InitialForm
+        TeamList                | Picture Carousel |
+        UserCard                | Documents        |
+        EmergencyCard           | Lists            |
+        PermissionsComponent    |                  |
 
 ## Presentation Input
 <h6>Presentation Steps:</h6> 
@@ -169,9 +174,10 @@ A. Thomas
 
 ## Miscellaneous 
 - Git and GitHub Commits, Merges and Branching.
+- Firebase Google storage.
 - Used Trello as our guide for completing tasks from: To Do, Doing, Done.
-- Trello provided the ability to have up to date - comunications on our project for all group members.
-- Made use of colaborating on LiveShare VSCode when code-along was neccesary for portions of the project.
+- Trello provided the ability to have up to date - communications on our project for all group members.
+- Made use of collaborating on LiveShare VSCode when code-along was necessary for portions of the project.
 
 ## Support Services
 These great services support SquadMate's core infrastructure:

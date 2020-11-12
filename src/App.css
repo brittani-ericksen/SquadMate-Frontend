@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.dark-blue-fade {
+  background-color: #132143a8;
+  color: black;
+}
+
 .dark-blue {
   background-color: #132143;
   color: black;

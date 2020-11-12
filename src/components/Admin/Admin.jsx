@@ -27,7 +27,7 @@ const images = [
 },
 {
     url: '/adminUserList.jpg',
-    title: 'User List',
+    title: 'Documents & Permissions',
     width: '25%',
     href: '/admin/userlist',
 },
@@ -185,7 +185,7 @@ const Admin = (props) =>  {
                 <TeamList />
             </Route>
             <Route path="/admin/userlist">
-                <h1>User List</h1>
+                <h1>Documents and Permissions</h1>
                 <AdminForms user={user}/>
             </Route>
             <Route path="/admin/emergencycards">

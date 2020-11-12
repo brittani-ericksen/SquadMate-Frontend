@@ -9,6 +9,7 @@ import Alert from '@material-ui/lab/Alert';
 import UserProfile from "./UserProfile";
 import InitialForm from "./InitialForm";
 import UploadPhoto from '../Admin/UploadPhoto';
+import UserTeamList from "./UserTeamList";
 
 
 const images = [
@@ -199,6 +200,7 @@ const User = (props) => {
                 <Link to="/user">
                     Go Back
                 </Link>
+                <UserTeamList />
             </Route>
 
       </Switch>

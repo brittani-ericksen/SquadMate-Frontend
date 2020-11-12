@@ -71,19 +71,7 @@ const TeamList = () =>{
                                     {mate.parentForm.parentOne.firstName} {mate.parentForm.parentOne.lastName}
                                 </Typography>
                             </CardContent>
-                            <CardActions>
-                                <Button size="small"
-                                color="primary"
-                                href={`/admin/rider/${mate._id}`}>
-                                View Profile
-                                </Button>
-                                
-                                <Button size="small"
-                                color="primary"
-                                href={`/getCardInfo/${mate._id}`}>
-                                View Emergency Card
-                                </Button>
-                            </CardActions>
+                            
                         </Card>
                     </Grid>    
                 

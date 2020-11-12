@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+# Capstone Application Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## SquadMate
 
-## Available Scripts
+<h1>SquadMate is an application built for the use of online form completions by groups of people to gather information on new member registration, medical need to know basis information, events and who makes up the team, all to assist in helping you gather information of any member to be prepared for their team events.<h1>
 
-In the project directory, you can run:
+## Motivation
 
-### `yarn start`
+<h2>The need for an easy access functionality to complete the mandated forms nessasary by parents of minors participating in team events in a timely manner. And the abbility to link information to medics on the scene in abbsence of the parents in case of emergency and with the focus of being prepared.<h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## BlockQuote
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h3>*As Maya Angelou would say:*
+> **Ask for what you want,
+> and be prepared to get it.**<h3>
 
-### `yarn test`
+## Screenshot
+Front end view of Project:
+![intro_screen]()
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Video
+Presentation Snippet:
+![intro_screen]()
 
-### `yarn build`
+## Images
+Format: ![Alt Text](url)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
+*Custom designed and uploaded Logo
+*User login, sign up and log out
+*Konami Code
+*Carousal
+*Document Upload 
+*Print Function and icon for Emenrgency Cards
+*User Profile Picture
+*Breadcrumb Navigation
+*Made use of a Master Component Layout with Integrated Components file system.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `yarn eject`
+To install SquadMate use the package-management system:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+*Front-End:
+**npm install**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+*Back-End:
+**npm run dev**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Tech/framework Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The MERN Stack:
+*Mongodb
+*Express
+*React
+*Node
 
-## Learn More
+## Code Style
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+*Material UI
+*Custom Styled Components
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Code Example Extraction
 
-### Code Splitting
+```javascript
+function test() {
+ console.log("cool code of’, SquadMates");
+}
+```
+## Build Status
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Completed.
 
-### Analyzing the Bundle Size
+## Stretch Goals
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [ ] Add AuthO
+- [ ] Add Calendar.
+- [ ] Add Team Chatroom.
+- [ ] Add Coach Notification Board.
+- [ ] Add Random Picture Display of team events.
+- [ ] Add Abitilty to give notifications of an alert to be completed.
+- [ ] Turn the custom application into a global functional use for simialer needs in other areas.
 
-### Making a Progressive Web App
+## Contributers
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+-Front End, LOGO Design and WireFrame Layout and full web site color-styling by Brittany:
+  [GitHub](https://github.com/brittani-ericksen)
 
-### Advanced Configuration
+-Full Satck, Design Styles and Design Ideas by Justin:
+  [GitHub](https://github.com/JustinSGardner)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-Full Satck and Design Implementations by Chris:
+  [GitHub](https://github.com/chrisowensdev)
 
-### Deployment
+-PM/Scrum, Full-Stack Developer and WireFrame Layout Ryan:
+  [GitHub](https://github.com/rynoschni)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+-WireFrame Layout and ReadMe-file by Annemarie:
+  [GitHub](https://github.com/Athomas9sa)
 
-### `yarn build` fails to minify
+## Data References
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Custom Secured Data usage.
+
+## How To Use?
+
+Sign in and Sign up as either the administartor of a team or the team members point of contact. Each having their own and shared documentation privileges to navigate to with named buttons to click on functionality. Keeps communication between the two parties open and timely for events to happen in a more organized fasion. Forms to be completed by team members as needed. Administartion will have documentation abilities to update, upload and prepared for the upcoming events and due dates, especially highlighting the function for printing the emergency cards needs.
+
+  Component Buttons for each setup:
+
+        Administration          | Team User
+        ----------------------- | -------------
+        Admin HomePage          | User HomePage
+        AdminProfile            | UserProfile
+        GetCardInfo             | InitialForm
+        TeamList                | 
+        UserCard                | 
+        EmergencyCard           | 
+        PermissionsComponent    | 
+
+## Presentation Input
+
+Presentation Steps: 
+Demo the site ()
+To introduce our individual struggles and triumphs ()
+View and explain how Back-End works ()
+View and explain how Front-End works ()
+
+## Team Nemesis
+
+B. Erickson
+J. Gardner
+C. Owens
+R. Schniederjan
+A. Thomas
+
+## GitHubLinks:
+```
+Frontend:
+https://github.com/brittani-ericksen/capstone-frontend/tree/main
+
+Backend: 
+https://github.com/JustinSGardner/CapStoneProject-Backend/tree/main
+```
+
+## Miscellaneous 
+```
+Git and GitHub Commits, Merges and Branching.
+Used Trello as our guide for completing tasks from: To Do, Doing, Done.
+Trello provided the ability to have up to date comunications on our project for all group members.
+Made use of colaborating on LiveShare VSCode when code-along was neccesary for portions of the project.
+```
+## The End.
+GitHub supports emoji!
+:+1: :sparkles: :camel: :tada:
+:rocket: :metal: :octocat: 

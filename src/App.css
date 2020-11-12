@@ -3,33 +3,38 @@
   text-align: center;
 }
 
+.dark-blue-fade {
+  background-color: #132143a8;
+  color: black;
+}
+
 .dark-blue {
-  background-color: 0x132143;
+  background-color: #132143;
   color: black;
 }
 
 .blue {
-  background-color: 0x223F84;
+  background-color: #223F84;
   color: white;
 }
 
 .light-blue{
-  background-color: 0x225AEE;
+  background-color: #225AEE;
   color: black;
 }
 
 .dark-yellow{
-  background-color: 0xFFBA00;
+  background-color: #FFBA00;
   color: black;
 }
 
 .yellow{
-  background-color: 0xFFDB00;
+  background-color: #FFDB00;
   color: black;
 }
 
 .dark-red{
-  background-color: 0xD60808;
+  background-color: #D60808;
   color: black;
 }
 

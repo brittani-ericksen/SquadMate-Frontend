@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Paper, Grid, Container } from '@material-ui/core';
 import PermissionsComponent from './PermissionsComponent';
+import Documents from './Documents';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -11,6 +12,10 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         textAlign: 'left',
         color: theme.palette.text.secondary,
+    },
+    picButton: {
+        display: 'block',
+        margin: 'auto'
     },
     permissions: {
         width: 400
@@ -25,8 +30,7 @@ const useStyles = makeStyles((theme) => ({
 const AdminForms = ({user}) =>{
     const classes = useStyles();
     const [teamMembers, setTeamMembers] = useState([]);
-
-
+    
     useEffect(() => {
         (async function(){
             const response = await fetch(`http://localhost:3333/team/${user.team}/users`);
@@ -61,11 +65,7 @@ const AdminForms = ({user}) =>{
 
                     <Grid item xs={6}>
                         <Paper className={classes.paper}>
-                        Forms 
-                        <ul>
-                            <li>Form</li>
-                        </ul>
-                        <button>View/Edit form</button>
+                    <Documents user={user}/>
                         </Paper>
                     </Grid>
                 </Grid>
@@ -74,7 +74,7 @@ const AdminForms = ({user}) =>{
                 <h2>Permissions</h2>
                 <div className={classes.permissionsHeader}><h4>Member</h4><h4>Is Admin</h4></div>
                 {teamMembers.map(member => (
-                    <PermissionsComponent member={member} />
+                    <PermissionsComponent key={member._id} member={member} />
                 ))}
             </Container>
         </>

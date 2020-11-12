@@ -4,10 +4,13 @@ import AdminForms from "./AdminForms";
 import AdminProfile from "./AdminProfile";
 import TeamList from "./TeamList";
 import { makeStyles } from '@material-ui/core/styles';
+import { Button, Container } from '@material-ui/core';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import Avatar from 'react-avatar';
 import { Switch, Route, Link } from 'react-router-dom';
+import RiderCard from './RiderCard';
+import UploadPhoto from './UploadPhoto';
 
 const images = [
 {
@@ -24,7 +27,7 @@ const images = [
 },
 {
     url: '/adminUserList.jpg',
-    title: 'User List',
+    title: 'Documents & Permissions',
     width: '25%',
     href: '/admin/userlist',
 },
@@ -42,6 +45,9 @@ root: {
     flexWrap: 'wrap',
     minWidth: 300,
     width: '100%',
+},
+picButton: {
+    dipslay: 'block'
 },
 image: {
     position: 'relative',
@@ -116,14 +122,23 @@ imageMarked: {
 const Admin = (props) =>  {
     const { user, setUser } = props;
     const classes = useStyles();
+    const [profilePicture, setProfilePicture] = useState(user.avatarUrl)
+    const [updateProfilePicture, setUpdateProfilePicture] = useState(false);
 
+    let profilePic = profilePicture === "" ? null : profilePicture;
+    let githubPic = profilePicture === "" ? user.github : '';
+    console.log(profilePic)
 
     return (
         <>
         <Switch>
             <Route exact path="/admin">
                 <div>
-                <Avatar  githubHandle={user.github} src="/avatar-placeholder.png" size="105" round />                   
+                <Avatar githubHandle={githubPic} src={profilePic} size="105" round /> 
+                <Container>
+                {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
+                </Container>                 
+                
                 <h1>Welcome {user.firstName}</h1>
                     <div className={classes.root}>
                         {images.map((image) => (
@@ -170,14 +185,16 @@ const Admin = (props) =>  {
                 <TeamList />
             </Route>
             <Route path="/admin/userlist">
-                <h1>User List</h1>
+                <h1>Documents and Permissions</h1>
                 <AdminForms user={user}/>
             </Route>
             <Route path="/admin/emergencycards">
                 <h1 className="removePrint">Emergency Cards</h1>
                 <AdminEmergencyCards user={user}/>
             </Route>
-        
+            <Route path="/admin/rider/:id">
+                <RiderCard />
+            </Route>
             
             
             

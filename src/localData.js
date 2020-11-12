@@ -2,14 +2,14 @@ const localUser = {
     firstName: '',
     lasName: '',
     email: '',
-    avatarUrl: '',
+    avatarUrl: 'avatar-placeholder.png',
     password: '',
     phone: {
         home: '',
         cell: '',
     },
     isAdmin: false,
-    team: '',
+    team: '5fa2dd0998fe8fbfdf5eaac2',
     parentForm: {
         rider: {
             firstName: '',
@@ -19,7 +19,7 @@ const localUser = {
             phone: {
                 cell: '',
                 home: '',
-            }
+            },
         },
         parentOne: {
             phone: {
@@ -61,4 +61,3 @@ const localUser = {
 };
 
 export default localUser;
-

@@ -7,9 +7,9 @@
 <div align="center">
 
 [React](https://reactjs.org/) components for faster and simpler web development. Build your own design system, or start with [Material Design](https://material.io/design/introduction/).
-```
-[![Crowdin](https://img.shields.io/badge/left-right-f39f37
-```
+
+[Crowdin](https://img.shields.io/badge/left-right-f39f37)
+
 </div>
 
 <h3>SquadMate is an application built for the use of online form completions by groups of people to gather information on new member registration, medical need to know basis information, events and who makes up the team, all to assist in helping you gather information of any member to be prepared for their team events.<h3>

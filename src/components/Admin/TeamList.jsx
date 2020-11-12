@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Avatar from 'react-avatar';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActions, CardContent, Button, Typography, Grid } from '@material-ui/core';
 
@@ -41,7 +42,6 @@ const TeamList = () =>{
             const response = await fetch(`http://localhost:3333/team/${teamId}/users`);
             const data = await response.json();
             setTeamData(data);
-            console.log(data);
         })();
         
     },[setTeamData])
@@ -80,14 +80,19 @@ const TeamList = () =>{
                             <CardActions>
                                 <Button size="small"
                                 color="primary"
-                                href={`/admin/rider/${mate._id}`}>
+                                >
+                                    <Link to={`/admin/rider/${mate._id}`}>
                                 View Profile
+                                </Link>
                                 </Button>
                                 
                                 <Button size="small"
                                 color="primary"
-                                href={`/getCardInfo/${mate._id}`}>
-                                View Emergency Card
+                                >
+                                    <Link to={`/getCardInfo/${mate._id}`}>
+                                    View Emergency Card
+                                    </Link>
+                                
                                 </Button>
                             </CardActions>
                         </Card>

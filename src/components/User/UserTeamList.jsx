@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActions, CardContent, Button, Typography, Grid } from '@material-ui/core';
 
 
-
 const useStyles = makeStyles((theme) => ({
     gridRoot: {
         flexGrow: 1,
@@ -21,16 +20,19 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 auto',
         width: 200,
     },
+    title: {
+        margin: '15px 0 40px',
+    },
     center: {
         margin: '0 auto',
     }
 }));
 
 
-
 const TeamList = () =>{
     const classes = useStyles();
     const[teamData, setTeamData] = useState([]);
+    const[teamName, setTeamName] = useState([]);
     
 
     useEffect(() => {
@@ -40,7 +42,9 @@ const TeamList = () =>{
             const response = await fetch(`http://localhost:3333/team/${teamId}/users`);
             const data = await response.json();
             setTeamData(data);
-            console.log(data);
+            const response2 = await fetch(`http://localhost:3333/team/${teamId}`);
+            const data2 = await response2.json();
+            setTeamName(data2);
         })();
         
     },[setTeamData])
@@ -48,8 +52,13 @@ const TeamList = () =>{
 
     return (
         <>
+<<<<<<< HEAD
         <Typography variant="h2">
             Team
+=======
+        <Typography className={classes.title} variant='h3' component='h1'>
+            Team {teamName.teamName}
+>>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
         </Typography>
         <div className={classes.gridRoot}>
         <Grid container spacing={3}       

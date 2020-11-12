@@ -23,15 +23,12 @@ const UploadPhoto = ({user, setUser, setProfilePicture, setUpdateProfilePicture}
         }
     };
 
-    console.log('image: ', image);
-
     const handleUpload = async () => { 
         const uploadTask = storage.ref(`images/${image.name}`).put(image);
         uploadTask.on(
             'state_changed',
             (snapshot) => {},
             (error) => {
-                console.log(error);
             },
             () => {
                 storage
@@ -51,7 +48,6 @@ const UploadPhoto = ({user, setUser, setProfilePicture, setUpdateProfilePicture}
                             }
                         );
                         const resdata = await response.json();
-                        console.log('Response', resdata);
                         setUser(resdata);
                         setProfilePicture(resdata.avatarUrl);
                         setUpdateProfilePicture(false);

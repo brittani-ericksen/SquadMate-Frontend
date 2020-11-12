@@ -2,13 +2,16 @@ import React, {useState} from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Typography from '@material-ui/core/Typography';
-import { Container, Button } from '@material-ui/core';
-import Alert from '@material-ui/lab/Alert';
+import { ButtonBase, Typography, Breadcrumbs } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import HomeIcon from '@material-ui/icons/Home';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import GroupIcon from '@material-ui/icons/Group';
+import AssignmentIcon from '@material-ui/icons/Assignment';
 import UserProfile from "./UserProfile";
 import InitialForm from "./InitialForm";
-import UploadPhoto from '../Admin/UploadPhoto';
+import UserDocuments from './UserDocuments';
 import UserTeamList from "./UserTeamList";
 
 
@@ -16,15 +19,21 @@ const images = [
   {
     url: '/userProfile.jpg',
     title: 'Profile',
-    width: '50%',
+    width: '33%',
     href: '/user/profile'
   },
   {
     url: '/userTeam.jpg',
     title: 'Team',
-    width: '50%',
+    width: '33%',
     href: '/user/team'
   },
+  {
+    url: '/adminUserList.jpg',
+    title: 'Documents & Info',
+    width: '33%',
+    href: '/user/info',
+},
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -58,6 +67,17 @@ const useStyles = makeStyles((theme) => ({
         border: '4px solid currentColor',
       },
     },
+    link: {
+      display: 'flex',
+      color: '#225AEE',
+      alignItems: 'center',
+    },
+    icon: {
+      marginRight: "5px",
+      width: 20,
+      height: 20,
+    },
+
   },
   focusVisible: {},
   imageButton: {
@@ -118,15 +138,15 @@ const useStyles = makeStyles((theme) => ({
 }
 }));
 
+
 const User = (props) => {
     const { user, setUser } = props;
     const classes = useStyles();
     const [profilePicture, setProfilePicture] = useState(user.avatarUrl)
-    const [updateProfilePicture, setUpdateProfilePicture] = useState(false);
-
+    
     let profilePic = profilePicture === "" ? null : profilePicture;
-    let githubPic = profilePicture === "" ? user.github : '';
-    console.log(profilePic)
+    let initials = profilePicture === "" ? (user.firstName + ' ' + user.lastName)  : '';
+
   return (
     <>
       <Switch>
@@ -134,10 +154,15 @@ const User = (props) => {
         <Route exact path="/user">
 
         <div>
+<<<<<<< HEAD
         <Avatar githubHandle={githubPic} src={profilePic}  size="100" round /> 
                 <Container className={classes.upload}>
                 {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
                 </Container>                 
+=======
+        <Avatar name={initials} src={profilePic}  size="100" round /> 
+                
+>>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
                 <h1>Welcome {user.firstName}</h1>
         </div>
         {!!user.emergencyFormDone ? "" : (
@@ -188,6 +213,7 @@ const User = (props) => {
         </Route>
 
             <Route path="/user/profile">
+<<<<<<< HEAD
                 <Link to="/user">
                     Go Back
                 </Link>
@@ -203,7 +229,51 @@ const User = (props) => {
                 <Link to="/user">
                     Go Back
                 </Link>
+=======
+                <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+                  <Link className={classes.link} to="/user">
+                    <HomeIcon className={classes.icon} />
+                    User Home
+                  </Link>
+                  <Typography color="textPrimary">
+                    <AccountCircleIcon className={classes.icon} />
+                    Account Profile</Typography>
+                </Breadcrumbs>
+                <UserProfile user={user} setUser={setUser} setProfilePicture={setProfilePicture} profilePicture={profilePicture}/>
+            </Route>
+            <Route path="/user/forms">
+                <h1>Forms</h1>
+                
+                <InitialForm user={user} setUser={setUser}/>
+            </Route>
+            <Route path="/user/team">
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+                  <Link className={classes.link} to="/user">
+                    <HomeIcon className={classes.icon} />
+                    User Home
+                  </Link>
+                  <Typography color="textPrimary">
+                  <GroupIcon className={classes.icon} />
+                    Team Members
+                    </Typography>
+                </Breadcrumbs>
+                
+>>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
                 <UserTeamList />
+            </Route>
+            <Route path="/user/info">
+            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+                  <Link className={classes.link} to="/user">
+                    <HomeIcon className={classes.icon} />
+                    User Home
+                  </Link>
+                  <Typography color="textPrimary">
+                  <AssignmentIcon className={classes.icon} />
+                    Documents and Forms
+                    </Typography>
+                </Breadcrumbs>
+                
+                <UserDocuments user={user}/>
             </Route>
 
       </Switch>

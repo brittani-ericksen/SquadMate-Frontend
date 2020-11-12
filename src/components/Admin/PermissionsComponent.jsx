@@ -34,9 +34,14 @@ const PermissionsComponent = ({member}) => {
             method: 'PUT',
             headers: { 'Content-Type' : 'application/json' },
             body: JSON.stringify(data)
+<<<<<<< HEAD
         });
         // const resdata = await response.json();
         // console.log(resdata)
+=======
+          });
+
+>>>>>>> fef690676d40f03082be4106fabcbf4720c0ee75
 
     }
 

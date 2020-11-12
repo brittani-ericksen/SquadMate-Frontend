@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import { Typography, TextField, Container, Button, FormControl, Radio, RadioGroup, FormLabel, FormControlLabel} from '@material-ui/core';
+import { Typography, TextField, Container, Button } from '@material-ui/core';
 import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import UploadPhoto from './UploadPhoto';
 
 const Wrapper = styled.div`
     border-radius: 5px;
@@ -50,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AdminProfile = (props) =>{
-    const { user, setUser } = props;
+    const { user, setUser, setProfilePicture, profilePicture } = props;
 
     const classes = useStyles();
     const history = useHistory();
@@ -59,6 +60,9 @@ const AdminProfile = (props) =>{
     const [lastName, setLastName] = useState(user.lastName);
     const [cellPhone, setCellPhone] = useState(user.phone.cell);
     const [email, setEmail] = useState(user.email);
+
+    const [updateProfilePicture, setUpdateProfilePicture] = useState(false);
+    
 
 
     const _handleFirstName = input => {
@@ -98,6 +102,8 @@ const AdminProfile = (props) =>{
         history.push('/admin');
     }
 
+    let profilePic = profilePicture === "" ? null : profilePicture;
+    let initials = profilePicture === "" ? (user.firstName + ' ' + user.lastName)  : '';
 
     return (
         <>
@@ -107,7 +113,10 @@ const AdminProfile = (props) =>{
 
             <div className={classes.root}>
                 {/* upload profile pic */}
-                <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="105" round />
+                <Avatar name={initials} src={profilePic}  size="100" round />
+                <Container>
+                {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
+                </Container>      
                 <form onSubmit={e => _handleSubmit(e)}>
 
 <Wrapper>

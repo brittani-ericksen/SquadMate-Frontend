@@ -28,7 +28,6 @@ function EmergencyCard(props) {
             const response = await fetch(`http://localhost:3333/team/${user.team}/users`);
             const data = await response.json();
             setTeamMembers(data);
-            console.log(data);
         })();
     }, [setTeamMembers, user]);
 

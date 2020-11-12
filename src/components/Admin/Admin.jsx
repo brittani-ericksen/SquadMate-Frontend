@@ -8,6 +8,7 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 import Avatar from 'react-avatar';
 import { Switch, Route, Link } from 'react-router-dom';
+import RiderCard from './RiderCard';
 
 const images = [
 {
@@ -177,7 +178,9 @@ const Admin = (props) =>  {
                 <h1 className="removePrint">Emergency Cards</h1>
                 <AdminEmergencyCards user={user}/>
             </Route>
-        
+            <Route path="/admin/rider/:id">
+                <RiderCard />
+            </Route>
             
             
             

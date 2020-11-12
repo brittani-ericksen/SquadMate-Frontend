@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {TextField, Container, Button, FormControl, Radio, RadioGroup, FormLabel, FormControlLabel} from '@material-ui/core';
+import {TextField, Container, Button} from '@material-ui/core';
 import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
+import UploadPhoto from './UploadPhoto';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 const AdminProfile = (props) =>{
-    const { user, setUser } = props;
+    const { user, setUser, setProfilePicture, profilePicture } = props;
 
     const classes = useStyles();
     const history = useHistory();
@@ -31,6 +32,9 @@ const AdminProfile = (props) =>{
     const [lastName, setLastName] = useState(user.lastName);
     const [cellPhone, setCellPhone] = useState(user.phone.cell);
     const [email, setEmail] = useState(user.email);
+
+    const [updateProfilePicture, setUpdateProfilePicture] = useState(false);
+    
 
 
     const _handleFirstName = input => {
@@ -70,12 +74,19 @@ const AdminProfile = (props) =>{
         history.push('/admin');
     }
 
+    let profilePic = profilePicture === "" ? null : profilePicture;
+    let githubPic = profilePicture === "" ? user.github : '';
+    console.log(profilePic)
+
 
     return (
         <>
             <div>
                 {/* upload profile pic */}
-                <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="105" round />
+                <Avatar githubHandle={githubPic} src={profilePic} size="105" round />
+                <Container>
+                {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
+                </Container>      
                 <form onSubmit={e => _handleSubmit(e)}>
         <Container component='AdminInformation'>
             <h2>User Information</h2>

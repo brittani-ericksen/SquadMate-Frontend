@@ -3,6 +3,7 @@ import {TextField, Container, Button, FormControl, Radio, RadioGroup, FormLabel,
 import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
+import UploadPhoto from '../Admin/UploadPhoto';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,10 +21,11 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
 
-const UserProfile = ({user, setUser}) =>{
+const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
     const classes = useStyles();
     const history = useHistory();
 
+    const [updateProfilePicture, setUpdateProfilePicture] = useState(false);
 
     const [riderFirstName, setRiderFirstName] = useState(user.parentForm.rider.firstName);
     const [riderLastName, setRiderLastName] = useState(user.parentForm.rider.lastName);
@@ -221,13 +223,19 @@ const UserProfile = ({user, setUser}) =>{
         history.push('/user');
     }
 
+    let profilePic = profilePicture === "" ? null : profilePicture;
+    let githubPic = profilePicture === "" ? user.github : '';
+    console.log(profilePic)
+
     return (
         <>
             {/* pulls info in from completed form, editable and updates db when changed */}
             <div>
-            <Avatar src="/avatar-placeholder.png" size="75" round />
+            <Avatar githubHandle={githubPic} src={profilePic}  size="100" round /> 
                 <form className={classes.root} validation autoComplete="off" onSubmit={e => _handleSubmit(e)}>
-
+                <Container>
+                {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
+                </Container>                 
 
           
 

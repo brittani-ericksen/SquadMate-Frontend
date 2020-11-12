@@ -100,38 +100,34 @@ Yes, it's really all you need to get started as you can see in this live and int
 ```
 
 ## Build Status
-
 Completed.
 
 ## Stretch Goals
-
 - [ ] AuthO
 - [ ] Calendar.
 - [ ] Team Chatroom.
-- [ ] Coach Notification Board.
+- [ ] Testing Components.
 - [ ] Random Picture Display of team events.
-- [ ] Abitilty to give notifications of an alert to be completed.
-- [ ] Turn the custom application into a global functional use for simialer needs in other areas.
+- [ ] Turn the custom application into more use.
 
-## Credits
-
--Front End, LOGO Design and WireFrame Layout and full web site color-styling by Brittany:
+## Credits To The Builders
+- Front-End, LOGO-Design and WireFrame Layout and Full Web Site color-styling by Brittany:
   [GitHub](https://github.com/brittani-ericksen)
 
--Full Satck, Design Styles and Design Ideas by Justin:
+- Full-Satck, Design-Styles and Design-Ideas by Justin:
   [GitHub](https://github.com/JustinSGardner)
 
--Full Satck and Design Implementations by Chris:
+- Full-Satck and Design-Implementations by Chris:
   [GitHub](https://github.com/chrisowensdev)
 
--Project Manager/Scrum Master, Full-Stack Developer and WireFrame Layout Ryan:
+- Project Manager/Scrum Master, Full-Stack Developer and WireFrame-Layout Ryan:
   [GitHub](https://github.com/rynoschni)
 
--WireFrame Layout and ReadMe-File by Annemarie:
+- WireFrame-Layout and ReadMe-File by Annemarie:
   [GitHub](https://github.com/Athomas9sa)
 
 ## Usage
-Sign in and Sign up as either the administartor of a team or the team members point of contact. Each having their own and shared documentation privileges to navigate to with named buttons to click on functionality. Keeps communication between the two parties open and timely for events to happen in a more organized fasion. Forms to be completed by team members as needed. Administartion will have documentation abilities to update, upload and prepared for the upcoming events and due dates, especially highlighting the function for printing the emergency cards needs.
+Sign-in and/or Sign-up as either the administartor of a team or the team members point of contact. Each having their own and shared documentation privileges to navigate to with named buttons to click on functionality. Keeps communication between the two parties open and timely for events to happen in a more organized fasion. Forms to be completed by team members as needed. Administartion will have documentation abilities to update, upload and prepared for the upcoming events and due dates, especially highlighting the function for printing the emergency cards needs.
 
   <h4>Component Buttons for each setup:</h4>
 
@@ -146,51 +142,44 @@ Sign in and Sign up as either the administartor of a team or the team members po
         PermissionsComponent    | 
 
 ## Presentation Input
-
-- Presentation Steps: 
-- Demo the site ()
-- To introduce our individual challenges and triumphs ()
-- View and explain how Back-End works ()
-- View and explain how Front-End works ()
+<h6>Presentation Steps:</h6> 
+1. Demo the site ()
+2. To introduce our individual challenges and triumphs ()
+3. View and explain how Back-End works ()
+4. View and explain how Front-End works ()
+5. Questions and Summary ()
 
 ## Challenges
-
 ## Triumphs
-
 ## Team Nemesis
+B. Erickson
 
-B. Erickson,
-J. Gardner,
-C. Owens,
-R. Schniederjan,
-A. Thomas,
+J. Gardner
+
+C. Owens
+
+R. Schniederjan
+
+A. Thomas
 
 ## GitHub Project Links:
 
-*Front-End:
-**[Frontend:](https://github.com/brittani-ericksen/capstone-frontend/tree/main)**
-
-*Back-End:
-**[Backend:](https://github.com/JustinSGardner/CapStoneProject-Backend/tree/main)**
+**[Frontend Design](https://github.com/brittani-ericksen/capstone-frontend/tree/main)**
+**[Backend Built](https://github.com/JustinSGardner/CapStoneProject-Backend/tree/main)**
 
 ## Miscellaneous 
-
 - Git and GitHub Commits, Merges and Branching.
 - Used Trello as our guide for completing tasks from: To Do, Doing, Done.
 - Trello provided the ability to have up to date - comunications on our project for all group members.
 - Made use of colaborating on LiveShare VSCode when code-along was neccesary for portions of the project.
 
-## Support services
-
+## Support Services
 These great services support SquadMate's core infrastructure:
 
 [<img loading="lazy" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" height="15">](https://github.com/):octocat:
-
-
-[<img loading="lazy" alt="Material-UI logo" alt="Material-UI logo" src="https://material-ui.com/static/logo.svg" width="35">](https://www.npmjs.com/package/@material-ui/core)
+[<img loading="lazy" alt="Material-UI logo" alt="Material-UI logo" src="https://material-ui.com/static/logo.svg" width="30">](https://www.npmjs.com/package/@material-ui/core)
 
 ## Questions
 ## Documentation
-
 ## The End.
 :sparkles: :rocket: :metal: 

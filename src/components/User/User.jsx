@@ -25,7 +25,7 @@ const images = [
     href: '/user/team'
   },
   {
-    url: '/adminUserList.jpg',
+    url: '/documentsInfo.jpg',
     title: 'Documents & Info',
     width: '33%',
     href: '/user/info',

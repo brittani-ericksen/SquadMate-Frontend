@@ -8,21 +8,21 @@ export default () => (
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="team-image-1.jpg"
+                src="carrouselImage1.jpg"
                 alt="First slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="team-image-2.jpg"
+                src="carrouselImage2.jpg"
                 alt="Third slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="team-image-3.jpg"
+                src="carrouselImage3.jpg"
                 alt="Third slide"
                 />
             </Carousel.Item>

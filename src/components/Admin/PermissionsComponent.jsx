@@ -34,7 +34,7 @@ const PermissionsComponent = ({member}) => {
             method: 'PUT',
             headers: { 'Content-Type' : 'application/json' },
             body: JSON.stringify(data)
-          });
+        });
         // const resdata = await response.json();
         // console.log(resdata)
 
@@ -44,10 +44,10 @@ const PermissionsComponent = ({member}) => {
         <div className={classes.memberPermissions}>      
             {member.firstName} {member.lastName}
             <Checkbox
-        checked={isAdmin}
-        onChange={_handleChange}
-        inputProps={{ 'aria-label': 'primary checkbox' }}
-      />
+                checked={isAdmin}
+                onChange={_handleChange}
+                inputProps={{ 'aria-label': 'primary checkbox' }}
+            />
         </div>
     )
 }

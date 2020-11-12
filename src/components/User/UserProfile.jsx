@@ -1,8 +1,35 @@
 import React, {useState} from 'react';
-import {TextField, Container, Button, FormControl, Radio, RadioGroup, FormLabel, FormControlLabel} from '@material-ui/core';
+import { TextField, Container, Button, FormControl, Radio, RadioGroup, FormLabel, FormControlLabel, Typography } from '@material-ui/core';
 import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  border-radius: 5px;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding-top: 5px;
+  margin-top: 15px;
+`;
+
+const Section = styled.div`
+  background-color: white;
+  border-radius: 7px;
+  margin: 30px;
+`;
+
+const Title = styled.div`
+  background-color:  #223F84;
+  color: white;
+  border-radius: 7px 7px 0 0;
+  padding: 0 7px;
+  margin: 0;
+`;
+
+const Detail = styled.div`
+    padding: 5px 20px;
+`;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -12,12 +39,14 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     form: {
+      color: 'black',
       display: 'flex',
       alignItems: 'center'
     },
-    marginTop: {
-      marginTop: '4rem'
-    }
+    margin: {
+      marginTop: '2rem',
+      marginBottom: '20px',
+    },
   }));
 
 const UserProfile = ({user, setUser}) =>{
@@ -223,236 +252,284 @@ const UserProfile = ({user, setUser}) =>{
 
     return (
         <>
+          <Typography variant="h2">
+            Profile
+          </Typography>
             {/* pulls info in from completed form, editable and updates db when changed */}
             <div>
             <Avatar src="/avatar-placeholder.png" size="75" round />
+                
+            <Wrapper>          
+
+
                 <form className={classes.root} validation autoComplete="off" onSubmit={e => _handleSubmit(e)}>
 
 
-          
 
           <Container component='RiderInformation'>
-              <h2>Rider Information</h2>
-              <TextField
-                  required
-                  id="riderFirstName"
-                  label="Rider First Name"
-                  defaultValue={riderFirstName}
-                  variant="outlined"
-                  onChange={e => _handleRiderFirstName(e.target.value)}
-              />
-              <TextField
-                  required
-                  id="riderLastName"
-                  label="Rider last Name"
-                  defaultValue={riderLastName}
-                  variant="outlined"
-                  onChange={e => _handleRiderLastName(e.target.value)}
-              />
-              <TextField
-                  id="riderEmail"
-                  label="Rider Email"
-                  defaultValue={riderEmail}
-                  variant="outlined"
-                  onChange={e => _handleRiderEmail(e.target.value)}
-              />
-              <TextField
-                  id="riderCellPhone"
-                  label="Rider Cell Phone"
-                  defaultValue={riderCellPhone}
-                  variant="outlined"
-                  onChange={e => _handleRiderCellPhone(e.target.value)}
-              />
+            <Section>
+              <Title>
+                <h2>Rider Information</h2>
+              </Title>
+              <Detail>
+                <TextField
+                    required
+                    id="riderFirstName"
+                    label="Rider First Name"
+                    defaultValue={riderFirstName}
+                    variant="outlined"
+                    onChange={e => _handleRiderFirstName(e.target.value)}
+                />
+                <TextField
+                    required
+                    id="riderLastName"
+                    label="Rider last Name"
+                    defaultValue={riderLastName}
+                    variant="outlined"
+                    onChange={e => _handleRiderLastName(e.target.value)}
+                />
+                <TextField
+                    id="riderEmail"
+                    label="Rider Email"
+                    defaultValue={riderEmail}
+                    variant="outlined"
+                    onChange={e => _handleRiderEmail(e.target.value)}
+                />
+                <TextField
+                    id="riderCellPhone"
+                    label="Rider Cell Phone"
+                    defaultValue={riderCellPhone}
+                    variant="outlined"
+                    onChange={e => _handleRiderCellPhone(e.target.value)}
+                />
+              </Detail>
+              </Section>
           </Container>
 
+
+
           <Container component='ParentOneInformation' className={classes.marginTop}>
-              <h2>Parent One Information</h2>
+              <Section>
+              <Title>
+                <h2>Parent One Information</h2>
+              </Title>
+              <Detail>
+                <TextField
+                    required
+                    id="parentOneFirstName"
+                    label="Parent One First Name"
+                    defaultValue={parentOneFirstName}
+                    variant="outlined"
+                    onChange={e => _handleParentOneFirstName(e.target.value)}
+                />
+                <TextField
+                    required
+                    id="parentOneLastName"
+                    label="Parent One Last Name"
+                    defaultValue={parentOneLastName}
+                    variant="outlined"
+                    onChange={e => _handleParentOneLastName(e.target.value)}
+                />
+                <TextField
+                    required
+                    id="parentOneCellPhone"
+                    label="Parent One Cell Phone"
+                    defaultValue={parentOneCellPhone}
+                    variant="outlined"
+                    onChange={e => _handleParentOneCellPhone(e.target.value)}
+                />
               <TextField
-                  required
-                  id="parentOneFirstName"
-                  label="Parent One First Name"
-                  defaultValue={parentOneFirstName}
+                  id="parentOneHomePhone"
+                  label="Parent One Home Phone"
+                  defaultValue={parentOneHomePhone}
                   variant="outlined"
-                  onChange={e => _handleParentOneFirstName(e.target.value)}
+                  onChange={e => _handleParentOneHomePhone(e.target.value)}
               />
-              <TextField
-                  required
-                  id="parentOneLastName"
-                  label="Parent One Last Name"
-                  defaultValue={parentOneLastName}
-                  variant="outlined"
-                  onChange={e => _handleParentOneLastName(e.target.value)}
-              />
-              <TextField
-                  required
-                  id="parentOneCellPhone"
-                  label="Parent One Cell Phone"
-                  defaultValue={parentOneCellPhone}
-                  variant="outlined"
-                  onChange={e => _handleParentOneCellPhone(e.target.value)}
-              />
-            <TextField
-                id="parentOneHomePhone"
-                label="Parent One Home Phone"
-                defaultValue={parentOneHomePhone}
-                variant="outlined"
-                onChange={e => _handleParentOneHomePhone(e.target.value)}
-            />
+            </Detail>
+            </Section>
         </Container>
 
         <Container component='ParentTwoInformation' className={classes.marginTop}>
-            <h2>Parent Two Information</h2>
-            <TextField
-                id="parentTwoFirstName"
-                label="Parent Two First Name"
-                defaultValue={parentTwoFirstName}
-                variant="outlined"
-                onChange={e => _handleParentTwoFirstName(e.target.value)}
-            />
-            <TextField
-                id="parentTwoLastName"
-                label="Parent Two Last Name"
-                defaultValue={parentTwoLastName}
-                variant="outlined"
-                onChange={e => _handleParentTwoLastName(e.target.value)}
+          <Section>
+            <Title>
+              <h2>Parent Two Information</h2>
+            </Title>
+            <Detail>
+              <TextField
+                  id="parentTwoFirstName"
+                  label="Parent Two First Name"
+                  defaultValue={parentTwoFirstName}
+                  variant="outlined"
+                  onChange={e => _handleParentTwoFirstName(e.target.value)}
+              />
+              <TextField
+                  id="parentTwoLastName"
+                  label="Parent Two Last Name"
+                  defaultValue={parentTwoLastName}
+                  variant="outlined"
+                  onChange={e => _handleParentTwoLastName(e.target.value)}
+                  />
+              <TextField
+                  id="parentTwoCellPhone"
+                  label="Paren Two Cell Phone"
+                  defaultValue={parentTwoCellPhone}
+                  variant="outlined"
+                  onChange={e => _handleParentTwoCellPhone}
+              />
+              <TextField
+                  id="parentTwoHomePhone"
+                  label="Parent Two Home Phone"
+                  defaultValue={parentTwoHomePhone}
+                  variant="outlined"
+                  onChange={e => _handleParentTwoHomePhone(e.target.value)}
+              />
+            </Detail>
+          </Section>
+        </Container>
+
+        <Container component="Emergencycontact" className={classes.marginTop}>
+          <Section>
+            <Title>
+              <h2>Emergency Contact One</h2>
+            </Title>
+            <Detail>
+              <TextField
+                  required
+                  id="emergencyContactFirstName"
+                  label="Emergency Contact First Name"
+                  defaultValue={emergencyContactOneFirstName}
+                  variant="outlined"
+                  onChange={e => _handleEmergencyContactOneFirstName(e.target.value)}
                 />
-            <TextField
-                id="parentTwoCellPhone"
-                label="Paren Two Cell Phone"
-                defaultValue={parentTwoCellPhone}
-                variant="outlined"
-                onChange={e => _handleParentTwoCellPhone}
-            />
-            <TextField
-                id="parentTwoHomePhone"
-                label="Parent Two Home Phone"
-                defaultValue={parentTwoHomePhone}
-                variant="outlined"
-                onChange={e => _handleParentTwoHomePhone(e.target.value)}
-            />
+
+              <TextField
+                  required
+                  id="emergencyContactLastName"
+                  label="Emergency Contact Last Name"
+                  defaultValue={emergencyContactOneLastName}
+                  variant="outlined"
+                  onChange={e => _handleEmergencyContactOneLastName(e.target.value)}
+                />
+
+              <TextField
+                  required
+                  id="emergencyContactOneCellPhone"
+                  label="Emergency Contact One Cell Phone"
+                  defaultValue={emergencyContactOneCellPhone}
+                  variant="outlined"
+                  onChange={e => _handleEmergencyContactOneCellPhone(e.target.value)}
+                />
+
+              <TextField
+                  id="emergencyContactOneHomePhone"
+                  label="Emergency Contact One Home Phone"
+                  defaultValue={emergencyContactOneHomePhone}
+                  variant="outlined"
+                  onChange={e => _handleEmergencyContactOneHomePhone(e.target.value)}
+                />
+            </Detail>
+          </Section>
         </Container>
 
         <Container component="Emergencycontact" className={classes.marginTop}>
-          <h2>Emergency Contact One</h2>
-            <TextField
-                required
-                id="emergencyContactFirstName"
-                label="Emergency Contact First Name"
-                defaultValue={emergencyContactOneFirstName}
-                variant="outlined"
-                onChange={e => _handleEmergencyContactOneFirstName(e.target.value)}
-              />
+          <Section>
+            <Title>
+              <h2>Emergency Contact Two</h2>
+            </Title>
+            <Detail>
+              <TextField
+                  id="emergencyContactTwoFirstName"
+                  label="Emergency Contact Two First Name"
+                  defaultValue={emergencyContactTwoFirstName}
+                  variant="outlined"
+                  onChange={e => _handleEmergencyContactTwoFirstName(e.target.value)}
+                />
 
-            <TextField
-                required
-                id="emergencyContactLastName"
-                label="Emergency Contact Last Name"
-                defaultValue={emergencyContactOneLastName}
-                variant="outlined"
-                onChange={e => _handleEmergencyContactOneLastName(e.target.value)}
-              />
+              <TextField
+                  id="emergencyContactTwoLastName"
+                  label="Emergency Contact Two Last Name"
+                  defaultValue={emergencyContactTwoLastName}
+                  variant="outlined"
+                  onChange={e => _handleEmergencyContactTwoLastName(e.target.value)}
+                />
 
-            <TextField
-                required
-                id="emergencyContactOneCellPhone"
-                label="Emergency Contact One Cell Phone"
-                defaultValue={emergencyContactOneCellPhone}
-                variant="outlined"
-                onChange={e => _handleEmergencyContactOneCellPhone(e.target.value)}
-              />
+              <TextField
+                  id="emergencyContactTwoCellPhone"
+                  label="Emergency Contact Two Cell Phone"
+                  defaultValue={emergencyContactTwoCellPhone}
+                  variant="outlined"
+                  onChange={e => _handleEmergencyContactTwoCellPhone(e.target.value)}
+                />
 
-            <TextField
-                id="emergencyContactOneHomePhone"
-                label="Emergency Contact One Home Phone"
-                defaultValue={emergencyContactOneHomePhone}
-                variant="outlined"
-                onChange={e => _handleEmergencyContactOneHomePhone(e.target.value)}
-              />
-
+              <TextField
+                  id="emergencyContactHomePhone"
+                  label="Emergency Contact Two Home Phone"
+                  defaultValue={emergencyContactTwoHomePhone}
+                  variant="outlined"
+                  onChange={e => _handleEmergencyContactTwoHomePhone(e.target.value)}
+                />
+            </Detail>
+          </Section>
         </Container>
 
-        <Container component="Emergencycontact" className={classes.marginTop}>
-          <h2>Emergency Contact Two</h2>
-            <TextField
-                id="emergencyContactTwoFirstName"
-                label="Emergency Contact Two First Name"
-                defaultValue={emergencyContactTwoFirstName}
-                variant="outlined"
-                onChange={e => _handleEmergencyContactTwoFirstName(e.target.value)}
-              />
-
-            <TextField
-                id="emergencyContactTwoLastName"
-                label="Emergency Contact Two Last Name"
-                defaultValue={emergencyContactTwoLastName}
-                variant="outlined"
-                onChange={e => _handleEmergencyContactTwoLastName(e.target.value)}
-              />
-
-            <TextField
-                id="emergencyContactTwoCellPhone"
-                label="Emergency Contact Two Cell Phone"
-                defaultValue={emergencyContactTwoCellPhone}
-                variant="outlined"
-                onChange={e => _handleEmergencyContactTwoCellPhone(e.target.value)}
-              />
-
-            <TextField
-                id="emergencyContactHomePhone"
-                label="Emergency Contact Two Home Phone"
-                defaultValue={emergencyContactTwoHomePhone}
-                variant="outlined"
-                onChange={e => _handleEmergencyContactTwoHomePhone(e.target.value)}
-              />
-
+        <Container component='Insurance' className={classes.marginTop}>
+          <Section> 
+            <Title>
+              <h2>Insurance Information</h2>
+            </Title>
+            <Detail>
+              <TextField
+                  required
+                  id="insuranceProvider"
+                  label="Insurance Provider"
+                  defaultValue={insuranceProvider}
+                  variant="outlined"
+                  onChange={e => _handleInsuranceProvider(e.target.value)}
+                />
+              <TextField
+                  required
+                  id="policyNumber"
+                  label="Policy Number"
+                  defaultValue={insurancePolicyNumber}
+                  variant="outlined"
+                  onChange={e => _handleInsurancePolicyNumber(e.target.value)}
+                />
+              <TextField
+                  required
+                  id="insuranceGroup"
+                  label="Group"
+                  defaultValue={insuranceGroup}
+                  variant="outlined"
+                  onChange={e => _handleInsuranceGroup(e.target.value)}
+                />
+            </Detail>
+          </Section>
         </Container>
-
-        <Container component='Insurance' className={classes.marginTop}> 
-
-      <TextField
-          required
-          id="insuranceProvider"
-          label="Insurance Provider"
-          defaultValue={insuranceProvider}
-          variant="outlined"
-          onChange={e => _handleInsuranceProvider(e.target.value)}
-        />
-
-      <TextField
-          required
-          id="policyNumber"
-          label="Policy Number"
-          defaultValue={insurancePolicyNumber}
-          variant="outlined"
-          onChange={e => _handleInsurancePolicyNumber(e.target.value)}
-        />
-
-      <TextField
-          required
-          id="insuranceGroup"
-          label="Group"
-          defaultValue={insuranceGroup}
-          variant="outlined"
-          onChange={e => _handleInsuranceGroup(e.target.value)}
-        />
-        </Container>
-        <FormControl component="fieldset" className={classes.form}>
-        <FormLabel component="legend">Ibuprofen Release</FormLabel>
-        <RadioGroup aria-label="ibReleaseRadio" name="ibRelease" value={ibReleaseRadio} onChange={e => _handleIbReleaseRadio(e)}>
-          <FormControlLabel value="false" control={<Radio />} label="No" />
-          <FormControlLabel value="true" control={<Radio />} label="Yes" />
-        </RadioGroup>
-      </FormControl>
-        
-
-<Button size="large" variant="contained" className={classes.margin} color="primary" type="submit">
-          Save 
-        </Button>
-                </form>
-            </div>
-            
-        </>
-    );
+        <Container>
+        <Section>
+        <Title>
+              <h2>Ibuprofen Release</h2>
+        </Title>
+        <Detail>
+          <FormControl component="fieldset" className={classes.form}>
+            <FormLabel component="legend"></FormLabel>
+              <RadioGroup aria-label="ibReleaseRadio" name="ibRelease" value={ibReleaseRadio} onChange={e => _handleIbReleaseRadio(e)}>
+              <FormControlLabel value="false" control={<Radio />} label="No" />
+              <FormControlLabel value="true" control={<Radio />} label="Yes" />
+            </RadioGroup>
+          </FormControl>
+          </Detail>
+          </Section>
+          <Button size="large" variant="contained" className={classes.margin} color="primary" type="submit">
+            Save 
+          </Button>
+          
+          </Container>
+          </form>
+        </Wrapper>
+      </div>      
+    </>
+  );
 }
 
 export default UserProfile;

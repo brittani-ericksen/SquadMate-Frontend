@@ -41,6 +41,7 @@ const images = [
 
 const useStyles = makeStyles((theme) => ({
 root: {
+    color: '#E6EAF3',
     display: 'flex',
     flexWrap: 'wrap',
     minWidth: 300,
@@ -115,6 +116,11 @@ imageMarked: {
     left: 'calc(50% - 9px)',
     transition: theme.transitions.create('opacity'),
 },
+upload: {
+    backgroundColor: '#E6EAF3',
+    borderRadius: '30px',
+    width: '210px'
+}
 }));
 
 
@@ -135,10 +141,10 @@ const Admin = (props) =>  {
             <Route exact path="/admin">
                 <div>
                 <Avatar githubHandle={githubPic} src={profilePic} size="105" round /> 
-                <Container>
+                <Container className={classes.upload}>
                 {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
                 </Container>                 
-                
+                <br />
                 <h1>Welcome {user.firstName}</h1>
                     <div className={classes.root}>
                         {images.map((image) => (
@@ -176,16 +182,13 @@ const Admin = (props) =>  {
             </div>
             </Route>
             <Route path="/admin/profile">
-                <h1>Profile</h1>
                 <AdminProfile user={user} setUser={setUser}/>
                 
             </Route>
             <Route path="/admin/team">
-                <h1>Team</h1>
                 <TeamList />
             </Route>
             <Route path="/admin/userlist">
-                <h1>Documents and Permissions</h1>
                 <AdminForms user={user}/>
             </Route>
             <Route path="/admin/emergencycards">

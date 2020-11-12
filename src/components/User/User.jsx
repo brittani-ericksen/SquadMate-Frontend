@@ -29,6 +29,7 @@ const images = [
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    color: '#E6EAF3',
     display: 'flex',
     flexWrap: 'wrap',
     minWidth: 300,
@@ -110,6 +111,11 @@ const useStyles = makeStyles((theme) => ({
     alignContent: 'center',
     paddingLeft: '120px',
   },
+  upload: {
+    backgroundColor: '#E6EAF3',
+    borderRadius: '30px',
+    width: '210px'
+}
 }));
 
 const User = (props) => {
@@ -129,7 +135,7 @@ const User = (props) => {
 
         <div>
         <Avatar githubHandle={githubPic} src={profilePic}  size="100" round /> 
-                <Container>
+                <Container className={classes.upload}>
                 {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
                 </Container>                 
                 <h1>Welcome {user.firstName}</h1>
@@ -182,21 +188,18 @@ const User = (props) => {
         </Route>
 
             <Route path="/user/profile">
-                <div>Profile</div>
                 <Link to="/user">
                     Go Back
                 </Link>
                 <UserProfile user={user} setUser={setUser}/>
             </Route>
             <Route path="/user/forms">
-                <h1>Forms</h1>
                 <Link to="/user">
                     Go Back
                 </Link>
                 <InitialForm user={user} setUser={setUser}/>
             </Route>
             <Route path="/user/team">
-                <h1>Team</h1>
                 <Link to="/user">
                     Go Back
                 </Link>

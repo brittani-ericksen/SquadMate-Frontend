@@ -1,13 +1,33 @@
 import React, {useState} from 'react';
-import {TextField, Container, FormControl, FormLabel, FormControlLabel, RadioGroup, Radio, Button }  from '@material-ui/core';
+import { TextField, Container, FormControl, FormLabel, FormControlLabel, RadioGroup, Radio, Button, Typography }  from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Section = styled.div`
+    background-color: white;
+    border-radius: 7px;
+    color: black;
+    margin: 30px;
+`;
+
+const Title = styled.div`
+    background-color:  #223F84;
+    color: white;
+    border-radius: 7px 7px 0 0;
+    padding: 0 7px;
+    margin: 0;
+`;
+
+const Detail = styled.div`
+    padding: 5px 20px;
+`;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
-      width: '50ch',
+      width: '40ch',
     },
   },
   form: {
@@ -16,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
   },
   marginTop: {
     marginTop: '4rem'
+  },
+  important: {
+    color: '#D60808',
   }
 }));
 
@@ -180,10 +203,20 @@ function Forms({user, setUser}) {
 
   return (
     <form className={classes.root} autoComplete="off" onSubmit={e => _handleSubmit(e)}>
-      <p>*  Required</p>
+        <Typography variant="h2">
+            Initial Form
+        </Typography>
+      
       <div>
+
         <Container component='riderInfo'>
-          <h2>Rider Information</h2>
+        
+        <Section>
+          <Title>
+            <h2>Rider Information</h2>
+          </Title>
+          <Detail>
+          <p className={classes.important}>*  Required</p>
           <TextField
               required
               id="riderFirstName"
@@ -201,8 +234,16 @@ function Forms({user, setUser}) {
               variant="outlined"
               onChange={e => _handleRiderLastName(e.target.value)}
             />
+            </Detail>
+            </Section>
         </Container>
+
       <Container component="Emergencycontact" className={classes.marginTop}>
+      <Section>
+          <Title>
+            <h2>Emergency Contact Information</h2>
+          </Title>
+          <Detail>
       <TextField
           required
           id="emergencyContactFirstName"
@@ -237,11 +278,16 @@ function Forms({user, setUser}) {
           variant="outlined"
           onChange={e => _handleEmergencyContactOneHomePhone(e.target.value)}
         />
-
+        </Detail>
+</Section>
 </Container>
 
 <Container component='Insurance' className={classes.marginTop}> 
-
+<Section>
+          <Title>
+            <h2>Emergency Contact Information</h2>
+          </Title>
+          <Detail>
       <TextField
           required
           id="insuranceProvider"
@@ -268,19 +314,34 @@ function Forms({user, setUser}) {
           variant="outlined"
           onChange={e => _handleInsuranceGroup(e.target.value)}
         />
+        </Detail>
+        </Section>
         </Container>
 
+        <Container>
+        <Section>
+          <Title>
+            <h2>Ibuprofen Release</h2>
+          </Title>
+          <Detail>
+            
       <FormControl component="fieldset" className={classes.form}>
-        <FormLabel component="legend">Ibuprofen Release</FormLabel>
+        <FormLabel component="legend"></FormLabel>
         <RadioGroup aria-label="ibReleaseRadio" name="ibRelease" value={ibReleaseRadio} onChange={e => _handleIbReleaseRadio(e)}>
           <FormControlLabel value="false" control={<Radio />} label="No" />
           <FormControlLabel value="true" control={<Radio />} label="Yes" />
         </RadioGroup>
       </FormControl>
+      </Detail>
+      </Section>
+      </Container>
+
+
 
         <Button size="large" variant="contained" className={classes.margin} color="primary" type="submit">
           Submit Form
         </Button>
+
       </div>
     </form>
   );

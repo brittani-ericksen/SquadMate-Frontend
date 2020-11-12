@@ -10,7 +10,7 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+    color: black;
 `;
 
 const RemovePrint = styled.div`

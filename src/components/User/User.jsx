@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Alert from '@material-ui/lab/Alert';
 import UserProfile from "./UserProfile";
 import InitialForm from "./InitialForm";
-
+import UserDocuments from './UserDocuments';
 import UserTeamList from "./UserTeamList";
 
 
@@ -15,15 +15,21 @@ const images = [
   {
     url: '/userProfile.jpg',
     title: 'Profile',
-    width: '50%',
+    width: '33%',
     href: '/user/profile'
   },
   {
     url: '/userTeam.jpg',
     title: 'Team',
-    width: '50%',
+    width: '33%',
     href: '/user/team'
   },
+  {
+    url: '/adminUserList.jpg',
+    title: 'Documents & Info',
+    width: '33%',
+    href: '/user/info',
+},
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -198,6 +204,13 @@ const User = (props) => {
                     Go Back
                 </Link>
                 <UserTeamList />
+            </Route>
+            <Route path="/user/info">
+                <h1>Documents and Info</h1>
+                <Link to="/user">
+                    Go Back
+                </Link>
+                <UserDocuments user={user}/>
             </Route>
 
       </Switch>

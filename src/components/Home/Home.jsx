@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Grid, Paper } from '@material-ui/core';
+import styled from 'styled-components';
 import Carousel from "./Carousel";
 import LazyHero from 'react-lazy-hero';
+import Konami from 'react-konami-code';
 import Signin from "./SigninPage";
 import Signup from "./SignupPage";
 import "./Home.css";
@@ -23,9 +25,30 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+const KonamiImg = styled.div`
+position: fixed;
+z-index: 5;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+
+img {
+  width: 600px;
+}
+`;
+
 const Home = props => {
   const { user, setUser, isLoggedIn, setIsLoggedIn } = props;
   const classes = useStyles();
+  
+  const playSound= () => {
+    const audio = new Audio('Excellent.wav');
+    audio.play();
+  }
 
   return (
     <>
@@ -109,6 +132,12 @@ const Home = props => {
             </Grid>
           </Grid>
         </Grid>
+
+        <Konami action={playSound} timeout={1000}>   
+      <KonamiImg>
+        <img src="https://github.com/chrisowensdev/terminal-kombat/raw/master/images/intro_screen.png" alt="terminal-kombat" />
+      </KonamiImg>
+    </Konami>
     </div>
     </>
   );

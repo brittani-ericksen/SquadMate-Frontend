@@ -4,7 +4,6 @@ import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import { Container, Button } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 import UserProfile from "./UserProfile";
 import InitialForm from "./InitialForm";

@@ -35,8 +35,7 @@ const PermissionsComponent = ({member}) => {
             headers: { 'Content-Type' : 'application/json' },
             body: JSON.stringify(data)
           });
-        // const resdata = await response.json();
-        // console.log(resdata)
+
 
     }
 

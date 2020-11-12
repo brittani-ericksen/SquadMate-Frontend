@@ -38,7 +38,6 @@ const TeamList = () =>{
             const response = await fetch(`http://localhost:3333/team/${teamId}/users`);
             const data = await response.json();
             setTeamData(data);
-            console.log(data);
         })();
         
     },[setTeamData])

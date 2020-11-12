@@ -7,7 +7,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -46,7 +45,6 @@ export default function SignUp(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checked, setChecked] = useState(false);
-  const [checkedText, setCheckedText] = useState(false);
   const history = useHistory();
 
   const _handleFirstName = input => {
@@ -62,13 +60,12 @@ export default function SignUp(props) {
     setPassword(input);
   }
 
-  const _handleCheck = input => {
-    setChecked(true);
+  const _handleCheck = (value) => {
+    setChecked(!checked);
   }
 
   const _handleSubmit = async(e) => {
     e.preventDefault();
-    if (checked) {
       
     let data = {
       firstName: firstName,
@@ -96,9 +93,6 @@ export default function SignUp(props) {
     setEmail('');
     setPassword('');
     history.push('/user');
-    }else {
-      setCheckedText(true);
-    }
     
   } 
 
@@ -170,16 +164,16 @@ export default function SignUp(props) {
               />
             </Grid>
             <Grid item xs={12}>
-              {checkedText ? <span className={classes.red}>Please click box</span> : ''}
               <FormControlLabel
-                required={true}
-                control={<Checkbox value={checked} onClick={e => _handleCheck(e)} color="primary" />}
+                required
+                control={<Checkbox value={checked} onClick={e => _handleCheck(e.target.value)} color="primary" />}
                 label="I acknowledge that I am a parent/legal guardian of a rider and I am above the age of 18."
               />
             </Grid>
           </Grid>
           <Button
             type="submit"
+            disabled={!checked}
             fullWidth
             variant="contained"
             color="primary"

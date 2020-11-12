@@ -160,8 +160,6 @@ function Forms({user, setUser}) {
     emergencyFormDone: true,
   }
 
-  console.log('Data', data);
-
   const response = await fetch(`http://localhost:3333/user/update/${user._id}`, {
         method: 'PUT',
         headers: { 'Content-Type' : 'application/json' },
@@ -169,7 +167,6 @@ function Forms({user, setUser}) {
     });
 
     const resdata = await response.json();
-    console.log('res', resdata);
     setUser(resdata);
     history.push('/user');
   }

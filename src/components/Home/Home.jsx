@@ -53,7 +53,6 @@ const Home = props => {
 
   return (
     <>
-      <div>Home</div>
       <LazyHero color="#ffffff" imageSrc="/heroimage.jpg" opacity="0.7" parallaxOffset="100">
         <img className="logo" src="squadmatelogo.png" />
       </LazyHero>

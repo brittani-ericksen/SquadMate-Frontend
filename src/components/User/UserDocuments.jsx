@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Container } from '@material-ui/core';
+import { Card, Typography, Button, CardActions, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -8,8 +8,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'block',
         margin: 'auto'
     },
-    container: {
-        maxWidth: '500px'
+    root: {
+        maxWidth: '700px',
+        display: 'flex',
+        margin: '0 auto',
     }
 }));
 
@@ -31,14 +33,23 @@ const Documents = ({user}) => {
 
     return (
         <div>
-            <h3>Forms</h3>
-            <Container className={classes.container}>
-                {documents.map(document => 
-                    <a href={document.url} rel="noreferrer" target="_blank">
-                    {!!document.formName ? document.formName: 'Form'}
-                </a>
-                )}
-            </Container>
+            <Typography className={classes.title} variant='h3' component='h1'>
+            Document and Forms
+            </Typography>
+            <Card className={classes.root} >
+                <CardActions>
+                    {documents.map(document => 
+                    <>
+                        <Link href={document.url} rel="noreferrer" target="_blank">
+                            <Button variant="h5"
+                            component="h2" >
+                            {!!document.formName ? document.formName: 'Form'}
+                            </Button>
+                        </Link>
+                    </>
+                    )}
+                </CardActions>
+            </Card>
 
         </div>
     )

@@ -1,5 +1,7 @@
 # Capstone Application Project
 
+https://img.shields.io/badge/<GitHub followers:>-</github/followers/:user?label=Follow>-<informational>
+
 ## SquadMate
 
 <h1>SquadMate is an application built for the use of online form completions by groups of people to gather information on new member registration, medical need to know basis information, events and who makes up the team, all to assist in helping you gather information of any member to be prepared for their team events.<h1>

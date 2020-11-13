@@ -50,7 +50,7 @@ const GetCardInfo = (props) => {
 
     useEffect(() => {
         (async function(){
-            const response = await fetch(`http://localhost:3333/user/${user_id}`);
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/user/${user_id}`);
             const data = await response.json();
             setMember(data);
         })();
@@ -81,7 +81,7 @@ const GetCardInfo = (props) => {
             </div>
             </CardContent>
             
-            <QRCode src={`https://api.qrserver.com/v1/create-qr-code/?data=http://localhost:3000/getCardInfo/${member._id}`} alt="qr-code"/>
+            <QRCode src={`https://api.qrserver.com/v1/create-qr-code/?data=${process.env.REACT_APP_QR_CODE_URL}/getCardInfo/${member._id}`} alt="qr-code"/>
         
         </Card>
         ) : null}

@@ -107,29 +107,7 @@ function Forms({user, setUser}) {
     } else {
       ib = false
     }
-  //   let data = { 
-  //     parentForm: {
-  //       rider: {
-  //         firstName: riderFirstName,
-  //         lastName: riderLastName
-  //       },
-  //       emergencyContactOne: {
-  //         firstName: emergencyContactOneFirstName,
-  //         lastName: emergencyContactOneLastName,
-  //         phone: {
-  //           cell: emergencyContactOneCell,
-  //           home: emergencyContactOneHome
-  //         }
-  //       }
-  //     },
-  //     insurance: {
-  //       provider: insuranceProvider,
-  //       group: insuranceGroup,
-  //       number: insurancePolicyNumber
-  //     },
-  //     ibuprofenRelease: ib,
-  //     emergencyFormDone: true,
-  // }
+
   let data = {
     parentForm: {
       rider: {
@@ -183,7 +161,7 @@ function Forms({user, setUser}) {
     emergencyFormDone: true,
   }
 
-  const response = await fetch(`http://localhost:3333/user/update/${user._id}`, {
+  const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/user/update/${user._id}`, {
         method: 'PUT',
         headers: { 'Content-Type' : 'application/json' },
         body: JSON.stringify(data)

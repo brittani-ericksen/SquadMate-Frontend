@@ -80,7 +80,7 @@ export default function SignUp(props) {
       }
     }
 
-    const response = await fetch(`http://localhost:3333/user/`, {
+    const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/user/`, {
       method: 'POST',
       headers: { 'Content-Type' : 'application/json' },
       body: JSON.stringify(data)

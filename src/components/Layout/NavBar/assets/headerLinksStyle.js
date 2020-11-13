@@ -11,7 +11,9 @@ const headerLinksStyle = theme => ({
     listStyle: "none",
     paddingTop: "0",
     paddingBottom: "0",
-    color: "inherit"
+    color: "inherit",
+    flexDirection: "row",
+    alignItems: "center",
   },
   listItem: {
     float: "left",
@@ -50,7 +52,7 @@ const headerLinksStyle = theme => ({
     display: "inline-flex",
     "&:hover,&:focus": {
       color: "inherit",
-      background: "rgba(200, 200, 200, 0.2)"
+      background: "rgba(255, 219, 0, 0.2)"
     },
     [theme.breakpoints.down("sm")]: {
       width: "calc(100% - 30px)",

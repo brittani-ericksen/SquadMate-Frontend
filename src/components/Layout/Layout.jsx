@@ -16,8 +16,6 @@ import Signup from "../Home/SignupPage";
 import { Switch, Route, Redirect } from 'react-router-dom';
 import GetCardInfo from "../Admin/GetCardInfo";
 
-
-
 const Layout = props =>{
     const { user, setUser, isLoggedIn, setIsLoggedIn, isAdmin, setIsAdmin, ...rest } = props;
     

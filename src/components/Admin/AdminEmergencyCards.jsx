@@ -31,7 +31,7 @@ function EmergencyCard(props) {
 
     useEffect(() => {
         (async function(){
-            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/team/${user.team}/users`);
+            const response = await fetch(`http://localhost:3333/team/${user.team}/users`);
             const data = await response.json();
             setTeamMembers(data);
         })();

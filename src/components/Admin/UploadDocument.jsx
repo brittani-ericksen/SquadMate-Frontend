@@ -42,7 +42,7 @@ const UploadDocument = ({user, setShowDocumentButton, documents, setDocuments}) 
                     .then(async function(url) {
                         
                         const response = await fetch(
-                            `${process.env.REACT_APP_SERVER_URL}/document/`,
+                            `http://localhost:3333/document/`,
                             {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },

@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignIn(props) {
-  const { setUser, setIsLoggedIn } = props;
+  const { setUser, setIsLoggedIn, setIsAdmin } = props;
   const classes = useStyles();
 
   const [email, setEmail] = useState("");
@@ -77,6 +77,7 @@ export default function SignIn(props) {
       setUser(resdata);
       setIsLoggedIn(true);
       if (resdata.isAdmin) {
+        setIsAdmin(true);
         history.push('/admin');
       } else {
         history.push('/user');

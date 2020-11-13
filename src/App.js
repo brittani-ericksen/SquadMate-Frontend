@@ -11,6 +11,7 @@ import './App.css';
 function App() {
     const [user, setUser] = useState(localData);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
 
     return (
         <div className='App'>
@@ -20,6 +21,8 @@ function App() {
                     setUser={setUser}
                     isLoggedIn={isLoggedIn}
                     setIsLoggedIn={setIsLoggedIn}
+                    isAdmin={isAdmin}
+                    setIsAdmin={setIsAdmin}
                 />
             </Router>
         </div>

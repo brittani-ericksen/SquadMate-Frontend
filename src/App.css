@@ -1,7 +1,13 @@
 .App {
+  height: 100vh;
   background-color: #132143;
   color: #E6EAF3;
   text-align: center;
+}
+
+.dark-blue-fade-2 {
+  background-color: #02091c80;
+  color: black;
 }
 
 .dark-blue-fade {

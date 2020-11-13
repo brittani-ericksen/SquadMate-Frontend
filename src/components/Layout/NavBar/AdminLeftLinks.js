@@ -14,7 +14,7 @@ import "./Logo.css";
 
 const useStyles = makeStyles(styles);
 
-export default function LeftLinks(props) {
+export default function AdminLeftLinks(props) {
   const { user, setUser, setIsLoggedIn } = props;
   const history = useHistory();
 
@@ -23,7 +23,7 @@ export default function LeftLinks(props) {
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-      <Link to="/user">
+      <Link to="/admin">
       <img className="head-logo" src="squadmatelogo.png" />
       </Link>
       </ListItem>

@@ -106,13 +106,12 @@ Completed.
 
 ## Capstone Project Credits Go To The Builders
 Team Nemesis: 
-
 B. Erickson
 J. Gardner
 C. Owens
 R. Schniederjan
 A. Thomas
-```
+
 - Front-End, LOGO-Design and WireFrame Layout and Full Web Site Coloring by Brittany:
   [GitHub](https://github.com/brittani-ericksen)
 
@@ -127,7 +126,7 @@ A. Thomas
 
 - Master Layout Components, WireFrame-Layout and ReadMe-File by Annemarie:
   [GitHub](https://github.com/Athomas9sa)
-```
+
 ## Usage
 Sign-in and/or Sign-up as either the manager/coach of a team OR the person responsible for team members. Each having their own documentation privileges to navigate to with buttons. And shared viewing capabilities for managers/coaches. Keeps communication between the two parties, (- the parents and organizers), open and timely for team events to happen in a more organized fashion. Forms to be completed by team member's parents as needed and before the minor may participate. Administration will have documentation abilities to input, update, upload and prepare for the upcoming events and due dates, especially highlighting the function for printing the emergency cards needs for use at the event sites itself when you do not have the whole database with you.
 

@@ -216,11 +216,11 @@ const User = (props) => {
                 </Breadcrumbs>
                 <UserProfile user={user} setUser={setUser} setProfilePicture={setProfilePicture} profilePicture={profilePicture}/>
             </Route>
+
             <Route path="/user/forms">
-                <h1>Forms</h1>
-                
                 <InitialForm user={user} setUser={setUser}/>
             </Route>
+            
             <Route path="/user/team">
             <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
                   <Link className={classes.link} to="/user">

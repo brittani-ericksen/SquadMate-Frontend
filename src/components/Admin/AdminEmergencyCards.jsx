@@ -19,6 +19,12 @@ const RemovePrint = styled.div`
     }
 `;
 
+const PrintBg = styled.div`
+    background-color: white;
+    border-radius: 50%;
+    padding: 4px;
+`;
+
 function EmergencyCard(props) {
     const { user } = props;
     const [teamMembers, setTeamMembers] = useState([]);
@@ -36,7 +42,7 @@ function EmergencyCard(props) {
     return (
         <>
         <RemovePrint className=".removePrint">
-        <Button onClick={window.print}><PrintIcon /></Button>
+        <Button onClick={window.print}><PrintBg><PrintIcon /></PrintBg></Button>
         </RemovePrint>
         <Container className="printCard">
         {team.map((member) => (            

@@ -48,6 +48,11 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '2rem',
         marginBottom: '20px',
     },
+    upload: {
+        backgroundColor: 'white',
+        borderRadius: '15px',
+        width: '210px',
+    }
 }));
 
 const AdminProfile = (props) =>{
@@ -114,7 +119,7 @@ const AdminProfile = (props) =>{
             <div className={classes.root}>
                 {/* upload profile pic */}
                 <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round /> 
-                <Container>
+                <Container className={classes.upload}>
                 {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
                 </Container>      
                 <form onSubmit={e => _handleSubmit(e)}>

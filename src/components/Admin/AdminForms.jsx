@@ -7,12 +7,18 @@ import styled from 'styled-components';
 
 const Section = styled.div`
     background-color: white;
-    //border: 1px solid lightgray;
     border-radius: 7px;
     padding-bottom: 5px;
 `;
 const Title = styled.div`
     background-color:  #223F84;
+    color: white;
+    border-radius: 7px 7px 0 0;
+    padding: 0 7px;
+    margin: 0;
+`;
+const PermTitle = styled.div`
+    background-color:  #D60808;
     color: white;
     border-radius: 7px 7px 0 0;
     padding: 0 7px;
@@ -34,24 +40,17 @@ const useStyles = makeStyles((theme) => ({
         margin: 'auto'
     },
     permissions: {
-        backgroundColor: 'white',
-        borderRadius: '5px',
+        borderRadius: '7px',
         color: '#132143',
         width: 400,
         margin: '5px',
         marginTop: '20px',
-        padding: '10px 10px 10px 10px'
-    },
-    permissionsTitle: {
-        backgroundColor: '#D60808',
-        borderRadius: '7px 7px 0 0',
-        color: 'white',
-        padding: '5px'
     },
     permissionsHeader: {
         display: 'flex',
         justifyContent: 'space-between',
-        borderBottom: '1px solid #000'
+        borderBottom: '1px solid #000',
+        padding: '5px',
     },
     button: {
         color: '#D60808',
@@ -111,7 +110,7 @@ const AdminForms = ({user}) =>{
                         <Paper className={classes.paper}>
                             <Section>
                                 <Title>
-                                    <h2>Forms</h2>
+                                    <h3>Forms</h3>
                                 </Title>
                                 <Documents user={user}/>
                             </Section>
@@ -120,13 +119,15 @@ const AdminForms = ({user}) =>{
                 </Grid>
             </div>
             <Container className={classes.permissions}>
-                <h3 className={classes.permissionsTitle}>Permissions</h3>
+                <Section>
+                <PermTitle><h3>Permissions</h3></PermTitle>
                 <div className={classes.permissionsHeader}><
                     h4>Member</h4><h4>Is Admin</h4>
                 </div>
                 {teamMembers.map(member => (
                     <PermissionsComponent key={member._id} member={member} />
                 ))}
+                </Section>
             </Container>
         </>
     );

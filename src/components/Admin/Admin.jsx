@@ -177,7 +177,6 @@ const Admin = (props) =>  {
             </div>
             </Route>
             <Route path="/admin/profile">
-                <h1>Profile</h1>
                 <AdminProfile user={user} setUser={setUser} setProfilePicture={setProfilePicture} profilePicture={profilePicture}/>
                 
             </Route>

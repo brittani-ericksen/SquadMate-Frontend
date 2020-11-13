@@ -130,15 +130,13 @@ const Admin = (props) =>  {
     const [profilePicture, setProfilePicture] = useState(user.avatarUrl)
     
 
-    let profilePic = profilePicture === "" ? null : profilePicture;
-    let initials = profilePicture === "" ? (user.firstName + ' ' + user.lastName)  : '';
 
     return (
         <>
         <Switch>
             <Route exact path="/admin">
                 <div>
-                <Avatar name={initials} src={profilePic} size="105" round /> 
+                <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round />  
                 
            
                 

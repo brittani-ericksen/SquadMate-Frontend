@@ -19,16 +19,7 @@ Build your own design system, or start with [Material Design](https://material.i
 
 
 ## Motivation
-<h4>To assist people in need of assistance in areas where managers and coaches work with teams of minors for an event/tournament/match. An easy accessible function to complete the required forms necessary by parents of minors participating in team events in a timely manner. The ability to link information to medics (and other) in absence of the parents with the focus of being prepared.<h4>
-
-## Preparedness Quote
-*Per Maya Angelou:*
-<h4>
-```
-Ask for what you want, and be prepared to get it.
-```
-</h4>
-
+<h4>To assist people in need of assistance in areas where managers and coaches work with teams of minors for an event/tournament/match. An easy accessible function to complete the required forms necessary by parents of minors participating in team events in a timely manner. The ability to link information to medics (and other) in absence of the parents with the focus of being prepared. Quote by Maya Angelou:Ask for what you want, and be prepared to get it. <h4>
 
 <p align="center">
 
@@ -100,8 +91,6 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 Yes, it's really all you need to get started as you can see in this live and interactive demo:
 
 [![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/4j7m47vlm4)
-```
-```
 
 ## Build Status
 Completed.
@@ -115,7 +104,15 @@ Completed.
 - [ ] Random Picture Display of the Events, Teams or Individual players.
 - [ ] Ability to give message alerts to parents if a telephone number or signed off form is incomplete.
 
-## Capstone Project Credits To The Builders
+## Capstone Project Credits Go To The Builders
+Team Nemesis: 
+
+B. Erickson
+J. Gardner
+C. Owens
+R. Schniederjan
+A. Thomas
+```
 - Front-End, LOGO-Design and WireFrame Layout and Full Web Site Coloring by Brittany:
   [GitHub](https://github.com/brittani-ericksen)
 
@@ -130,12 +127,12 @@ Completed.
 
 - Master Layout Components, WireFrame-Layout and ReadMe-File by Annemarie:
   [GitHub](https://github.com/Athomas9sa)
-
+```
 ## Usage
 Sign-in and/or Sign-up as either the manager/coach of a team OR the person responsible for team members. Each having their own documentation privileges to navigate to with buttons. And shared viewing capabilities for managers/coaches. Keeps communication between the two parties, (- the parents and organizers), open and timely for team events to happen in a more organized fashion. Forms to be completed by team member's parents as needed and before the minor may participate. Administration will have documentation abilities to input, update, upload and prepare for the upcoming events and due dates, especially highlighting the function for printing the emergency cards needs for use at the event sites itself when you do not have the whole database with you.
 
 
-  <h4>Component Buttons for each setup:</h4>
+  <h4>Components for each setup:</h4>
 
         Administration          | Home Landing     | Team User
        ------------------------- ------------------ ------------
@@ -157,20 +154,11 @@ Sign-in and/or Sign-up as either the manager/coach of a team OR the person respo
 
 ## Challenges
 ## Triumphs
-## Team Nemesis
-B. Erickson
-
-J. Gardner
-
-C. Owens
-
-R. Schniederjan
-
-A. Thomas
-
 ## GitHub Project Links:
 
 **[Frontend Design](https://github.com/brittani-ericksen/capstone-frontend/tree/main)**
+
+
 **[Backend Built](https://github.com/JustinSGardner/CapStoneProject-Backend/tree/main)**
 
 ## Miscellaneous 

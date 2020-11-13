@@ -60,7 +60,7 @@ const GetCardInfo = (props) => {
 
     useEffect(() => {
         (async function(){
-            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/user/${user_id}`);
+            const response = await fetch(`http://localhost:3333/user/${user_id}`);
             const data = await response.json();
             setMember(data);
         })();

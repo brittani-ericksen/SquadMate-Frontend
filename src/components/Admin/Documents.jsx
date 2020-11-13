@@ -18,7 +18,7 @@ const Documents = ({user}) => {
 
     useEffect(() => {
         (async function(){
-            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/document/team/${user.team}`);
+            const response = await fetch(`http://localhost:3333/document/team/${user.team}`);
             const data = await response.json();
             setDocuments(data);
         })();

@@ -39,10 +39,10 @@ const TeamList = () =>{
         let teamId = '5fa2dd0998fe8fbfdf5eaac2';
 
         (async function() {
-            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/team/${teamId}/users`);
+            const response = await fetch(`http://localhost:3333/team/${teamId}/users`);
             const data = await response.json();
             setTeamData(data);
-            const response2 = await fetch(`${process.env.REACT_APP_SERVER_URL}/team/${teamId}`);
+            const response2 = await fetch(`http://localhost:3333/team/${teamId}`);
             const data2 = await response2.json();
             setTeamName(data2);
         })();

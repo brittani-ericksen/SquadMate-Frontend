@@ -105,7 +105,7 @@ Sign-in and/or Sign-up as either the manager/coach of a team OR the person respo
 ## Challenges
 ## Triumphs
 
-## Capstone Project Credits Go To The Builders
+## Capstone Project Credits Go To The Following Builders
 Team Nemesis: 
 B. Erickson,
 J. Gardner,

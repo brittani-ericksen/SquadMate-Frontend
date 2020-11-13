@@ -89,11 +89,11 @@ Sign-in and/or Sign-up as either the manager/coach of a team OR the person respo
 
 ## Presentation Input
 <h6>Presentation Steps:</h6> 
-- 1. Demo the WebSite ()
-- 2. To introduce our individual challenges and triumphs ()
-- 3. View and explain how Back-End works ()
-- 4. View and explain how Front-End works ()
-- 5. Questions and Summary ()
+- Demo the WebSite ()
+- To introduce our individual challenges and triumphs ()
+- View and explain how Back-End works ()
+- View and explain how Front-End works ()
+- Questions and Summary ()
 
 ## Challenges
 ## Triumphs
@@ -106,11 +106,11 @@ C. Owens
 R. Schniederjan
 A. Thomas
 
-- [GitHub](https://github.com/brittani-ericksen) Front-End, LOGO-Design and WireFrame Layout and Full Web Site Coloring by Brittany
-- [GitHub](https://github.com/JustinSGardner) Full-Stack, Design-Styles and Design-Ideas by Justin
-- [GitHub](https://github.com/chrisowensdev) Full-Stack and Design-Implementations by Chris
-- [GitHub](https://github.com/rynoschni) Project Manager/Scrum Master, Full-Stack Developer and WireFrame-Layout Ryan
-- [GitHub](https://github.com/Athomas9sa) Master Layout Components, WireFrame-Layout and ReadMe-File by Annemarie
+- [GitHub](https://github.com/brittani-ericksen) Front-End, LOGO-Design and WireFrame Layout and Full Web Site Coloring by B. Erickson.
+- [GitHub](https://github.com/JustinSGardner) Full-Stack, Design-Styles and Design-Ideas by J. Gardner.
+- [GitHub](https://github.com/chrisowensdev) Full-Stack and Design-Implementations by C. Owens.
+- [GitHub](https://github.com/rynoschni) Project Manager/Scrum Master, Full-Stack Developer and WireFrame-Layout R. Schniederjan.
+- [GitHub](https://github.com/Athomas9sa) Master Layout Components, WireFrame-Layout and ReadMe-File by A. Thomas
 
 ## GitHub Project Links:
 

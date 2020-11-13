@@ -13,7 +13,13 @@ import UserProfile from "./UserProfile";
 import InitialForm from "./InitialForm";
 import UserDocuments from './UserDocuments';
 import UserTeamList from "./UserTeamList";
+import styled from 'styled-components';
 
+const BreadcrumbWrapper = styled.div`
+  background-color: #FFBA00;
+  width: 350px;
+  border-radius: 0 7px 7px 0;
+`;
 
 const images = [
   {
@@ -47,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
   picButton: {
     dipslay: 'block'
-},
+  },
   image: {
     position: 'relative',
     height: 200,
@@ -69,7 +75,6 @@ const useStyles = makeStyles((theme) => ({
     },
     link: {
       display: 'flex',
-      color: '#225AEE',
       alignItems: 'center',
     },
     icon: {
@@ -77,7 +82,6 @@ const useStyles = makeStyles((theme) => ({
       width: 20,
       height: 20,
     },
-
   },
   focusVisible: {},
   imageButton: {
@@ -151,34 +155,32 @@ const User = (props) => {
       <Switch>
 
         <Route exact path="/user">
-
         <div>
-        <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round /> 
-                
-                <h1>Welcome {user.firstName}</h1>
+          <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round />       
+          <h1>Welcome {user.firstName}</h1>
         </div>
         {!!user.emergencyFormDone ? "" : (
           <Alert 
-          className={classes.alert}
-          variant="filled"
-          severity="error">
+            className={classes.alert}
+            variant="filled"
+            severity="error"
+          >
             Critical Profile Items Missing
           <br />
           {!!user.emergencyFormDone ? "" : <Link to='/user/forms'>Emergency Contact Form</Link>}
-      </Alert>
+          </Alert>
         )}
         <div className={classes.root}>
-      {images.map((image) => (
-        <ButtonBase
-          
-          focusRipple
-          key={image.title}
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: image.width,
-          }}
-        >
+        {images.map((image) => (
+          <ButtonBase
+            focusRipple
+            key={image.title}
+            className={classes.image}
+            focusVisibleClassName={classes.focusVisible}
+            style={{
+              width: image.width,
+            }}
+          >
           <Link to={image.href}>
           <span
             className={classes.imageSrc}
@@ -205,6 +207,7 @@ const User = (props) => {
         </Route>
 
             <Route path="/user/profile">
+              <BreadcrumbWrapper>
                 <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
                   <Link className={classes.link} to="/user">
                     <HomeIcon className={classes.icon} />
@@ -214,15 +217,17 @@ const User = (props) => {
                     <AccountCircleIcon className={classes.icon} />
                     Account Profile</Typography>
                 </Breadcrumbs>
-                <UserProfile user={user} setUser={setUser} setProfilePicture={setProfilePicture} profilePicture={profilePicture}/>
+              </BreadcrumbWrapper>
+              <UserProfile user={user} setUser={setUser} setProfilePicture={setProfilePicture} profilePicture={profilePicture}/>
             </Route>
+
             <Route path="/user/forms">
-                <h1>Forms</h1>
-                
                 <InitialForm user={user} setUser={setUser}/>
             </Route>
+            
             <Route path="/user/team">
-            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+              <BreadcrumbWrapper>
+                <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
                   <Link className={classes.link} to="/user">
                     <HomeIcon className={classes.icon} />
                     User Home
@@ -232,11 +237,13 @@ const User = (props) => {
                     Team Members
                     </Typography>
                 </Breadcrumbs>
-                
-                <UserTeamList />
+              </BreadcrumbWrapper>
+              <UserTeamList />
             </Route>
+
             <Route path="/user/info">
-            <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+              <BreadcrumbWrapper>
+                <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
                   <Link className={classes.link} to="/user">
                     <HomeIcon className={classes.icon} />
                     User Home
@@ -246,8 +253,8 @@ const User = (props) => {
                     Documents and Forms
                     </Typography>
                 </Breadcrumbs>
-                
-                <UserDocuments user={user}/>
+              </BreadcrumbWrapper>
+              <UserDocuments user={user}/>
             </Route>
 
       </Switch>

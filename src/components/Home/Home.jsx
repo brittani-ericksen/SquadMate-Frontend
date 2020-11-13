@@ -61,7 +61,7 @@ const Home = props => {
       <Carousel />
       <div className={classes.root}>
         <h2>Features</h2>
-        <Grid className="blue" container spacing={1}>
+        <Grid className="darkblue" container spacing={1}>
           <Grid container item xs={12} spacing={3}>
             <Grid item xs={2}>
             </Grid>

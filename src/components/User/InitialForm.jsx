@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center'
   },
   marginTop: {
-    marginTop: '4rem'
+    marginTop: '1rem'
   },
   important: {
     color: '#D60808',

@@ -10,9 +10,7 @@
 
 <h3>SquadMate is an application built to complete online forms by groups of organizers responsible for teams. The application gathers information on member registration, medical information needs for events and any other information needed to be prepared for the events.<h3>
 
-
-## Motivation
-<h4>To assist people in need of assistance in areas where managers and coaches work with teams of minors for an event/tournament/match. An easy accessible function to complete the required forms necessary by parents of minors participating in team events in a timely manner. The ability to link information to medics (and other) in absence of the parents with the focus of being prepared. Quote by Maya Angelou:Ask for what you want, and be prepared to get it. <h4>
+<h4>THe motivation behinde the application design was to assist people in need of assistance in areas where managers and coaches work with teams of minors for an event/tournament/match. An easy accessible function to complete the required forms necessary by parents of minors participating in team events in a timely manner. The ability to link information to medics (and other) in absence of the parents with the focus of being prepared. Quote by Maya Angelou:Ask for what you want, and be prepared to get it. <h4>
 
 <p align="center">
 

@@ -8,9 +8,9 @@
 
 </div>
 
-<h3>SquadMate is an application built to complete online forms by groups of organizers responsible for teams. The application gathers information on member registration, medical information needs for events and any other information needed to be prepared for the events.<h3>
+<h3>SquadMate is an application built to complete online forms by team members for organizers responsible for those teams. The application gathers information on member registration, medical information needs for events and any other information needed to be prepared for the events.<h3>
 
-<h4>THe motivation behinde the application design was to assist people in need of assistance in areas where managers and coaches work with teams of minors for an event/tournament/match. An easy accessible function to complete the required forms necessary by parents of minors participating in team events in a timely manner. The ability to link information to medics (and other) in absence of the parents with the focus of being prepared. Quote by Maya Angelou:Ask for what you want, and be prepared to get it. <h4>
+<h4>The motivation behind the application design was to assist people in need of assistance in areas where managers and coaches work with teams of minors for an event/tournament/match. An easy accessible function to complete the required forms necessary by parents of minors participating in team events. The ability to link information to medics (and other) in absence of the parents with the focus of being prepared.<h4>
 
 <p align="center">
 
@@ -89,11 +89,13 @@ Sign-in and/or Sign-up as either the manager/coach of a team OR the person respo
 
 ## Presentation Input
 <h6>Presentation Steps:</h6> 
+```
 1. Demo the WebSite ()
 2. To introduce our individual challenges and triumphs ()
 3. View and explain how Back-End works ()
 4. View and explain how Front-End works ()
 5. Questions and Summary ()
+```
 
 ## Challenges
 ## Triumphs
@@ -132,7 +134,7 @@ A. Thomas
 - Git and GitHub Commits, Merges and Branching.
 - Firebase Google storage.
 - Used Trello as our guide for completing tasks from: To Do, Doing, Done.
-- Trello provided the ability to have up to date - communications on our project for all group members.
+- Trello provided the ability to have up to date communications on our project for all group members.
 - Made use of collaborating on LiveShare VSCode when code-along was necessary for portions of the project.
 
 ## Code Example Extraction

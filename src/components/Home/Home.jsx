@@ -9,13 +9,16 @@ import "./Home.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    color: '#132143',
     flexGrow: 1,
   },
   paper: {
+    backgroundColor: '#E6EAF3',
+    border: '2px solid #FFBA00',
+    color: '#132143',
     paddingBottom: '10px',
     paddingTop: '20px',
     textAlign: 'center',
-    color: theme.palette.text.secondary,
   },
   text: {
     paddingTop: '16px',
@@ -57,7 +60,7 @@ const Home = props => {
       <Carousel />
       <div className={classes.root}>
         <h2>Features</h2>
-        <Grid container spacing={1}>
+        <Grid className="blue" container spacing={1}>
           <Grid container item xs={12} spacing={3}>
             <Grid item xs={2}>
             </Grid>

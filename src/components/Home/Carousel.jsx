@@ -8,21 +8,21 @@ const carousel = () => (
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="team-image-1.jpg"
+                src="carouselImage1.jpg"
                 alt="First slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="team-image-2.jpg"
+                src="carouselImage2.jpg"
                 alt="Third slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="team-image-3.jpg"
+                src="carouselImage3.jpg"
                 alt="Third slide"
                 />
             </Carousel.Item>

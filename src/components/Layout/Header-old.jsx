@@ -33,7 +33,7 @@ const Header = (props) => {
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h1" className={classes.title}>
+          <Typography variant="h3" className={classes.title}>
             SquadMate
           </Typography>
           <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="75" round /> 

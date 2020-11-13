@@ -25,7 +25,7 @@ const images = [
     href: '/admin/team',
 },
 {
-    url: '/adminUserList.jpg',
+    url: '/adminDocumentInfo.jpg',
     title: 'Documents & Permissions',
     width: '25%',
     href: '/admin/userlist',
@@ -40,6 +40,7 @@ const images = [
 
 const useStyles = makeStyles((theme) => ({
 root: {
+    color: '#E6EAF3',
     display: 'flex',
     flexWrap: 'wrap',
     minWidth: 300,
@@ -114,6 +115,11 @@ imageMarked: {
     left: 'calc(50% - 9px)',
     transition: theme.transitions.create('opacity'),
 },
+upload: {
+    backgroundColor: '#E6EAF3',
+    borderRadius: '30px',
+    width: '210px'
+}
 }));
 
 
@@ -176,11 +182,9 @@ const Admin = (props) =>  {
                 
             </Route>
             <Route path="/admin/team">
-                <h1>Team</h1>
                 <TeamList />
             </Route>
             <Route path="/admin/userlist">
-                <h1>Documents and Permissions</h1>
                 <AdminForms user={user}/>
             </Route>
             <Route path="/admin/emergencycards">

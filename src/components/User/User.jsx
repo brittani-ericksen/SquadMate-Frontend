@@ -29,7 +29,7 @@ const images = [
     href: '/user/team'
   },
   {
-    url: '/adminUserList.jpg',
+    url: '/documentsInfo.jpg',
     title: 'Documents & Info',
     width: '33%',
     href: '/user/info',
@@ -38,6 +38,7 @@ const images = [
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    color: '#E6EAF3',
     display: 'flex',
     flexWrap: 'wrap',
     minWidth: 300,
@@ -130,6 +131,11 @@ const useStyles = makeStyles((theme) => ({
     alignContent: 'center',
     paddingLeft: '120px',
   },
+  upload: {
+    backgroundColor: '#E6EAF3',
+    borderRadius: '30px',
+    width: '210px'
+}
 }));
 
 

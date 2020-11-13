@@ -1,4 +1,6 @@
 .App {
+  background-color: #132143;
+  color: #E6EAF3;
   text-align: center;
 }
 
@@ -38,11 +40,11 @@
 }
 
 .red{
-  background-color: 0xFF3B29;
+  background-color: #FF3B29;
   color: black;
 }
 
 .eggshell{
-  background-color: 0xE6EAF3;
+  background-color: #E6EAF3;
   color: black;
 }

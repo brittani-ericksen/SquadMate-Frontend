@@ -22,7 +22,7 @@ import styles from "./assets/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function HeaderLinks(props) {
+export default function AdminLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>

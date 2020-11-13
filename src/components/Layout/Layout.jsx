@@ -1,9 +1,10 @@
 import React from "react";
-import Header from "./NavBar/Header";
+import UserHeader from "./NavBar/UserHeader";
 import HomeHeader from "./NavBar/HomeHeader";
 import HomeHeaderLinks from "./NavBar/HomeHeaderLinks.js";
-import HeaderLinks from './NavBar/HeaderLinks.js'
-import Home from "../Home/Home"
+import UserLinks from './NavBar/UserLinks.js';
+import LeftLinks from './NavBar/LeftLinks.js';
+import Home from "../Home/Home";
 import Footer from "./Footer";
 import Admin from '../Admin/Admin';
 import User from "../User/User";
@@ -11,6 +12,7 @@ import Signin from "../Home/SigninPage";
 import Signup from "../Home/SignupPage";
 import { Switch, Route, Redirect } from 'react-router-dom';
 import GetCardInfo from "../Admin/GetCardInfo";
+
 
 const Layout = props =>{
     const { user, setUser, isLoggedIn, setIsLoggedIn, ...rest } = props;
@@ -20,10 +22,12 @@ const Layout = props =>{
         <div>
             <div className="removePrint">
             {!!isLoggedIn ?
-                <Header
+                <UserHeader
                     brand=""
-                    rightLinks={<HeaderLinks />}
-                    color="success"
+                    leftLinks={<LeftLinks />
+                    }
+                    rightLinks={<UserLinks user={user} setUser={setUser} setIsLoggedIn={setIsLoggedIn} />}
+                    color="dark"
                     {...rest}
                     isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} user={user}
                 />

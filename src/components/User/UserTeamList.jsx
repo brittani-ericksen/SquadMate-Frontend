@@ -10,8 +10,10 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-evenly",
     },
     cardRoot: {
+        color: '#132143',
         margin: '0 auto',
         maxWidth: 345,
+        paddingTop: '20px',
     },
     image: {
         height: "auto",

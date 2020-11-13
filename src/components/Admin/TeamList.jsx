@@ -12,8 +12,11 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-evenly",
     },
     cardRoot: {
+        backgroundColor: 'white',
+        color: '#132143',
         margin: '0 auto',
         maxWidth: 345,
+        paddingTop: '20px',
     },
     image: {
         height: "auto",
@@ -46,6 +49,9 @@ const TeamList = () =>{
 
     return (
         <>
+        <Typography variant="h2">
+            Team
+        </Typography>
         <div className={classes.gridRoot}>
         <Grid container spacing={3}       
         >

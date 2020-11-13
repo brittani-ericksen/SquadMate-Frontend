@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { storage } from '../../firebase';
 import styled from 'styled-components';
-import {Button, Input } from '@material-ui/core';
+import { Button, Input } from '@material-ui/core';
 
 const Upload = styled.div`
     display: flex;

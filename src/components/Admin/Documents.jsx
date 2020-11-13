@@ -27,7 +27,6 @@ const Documents = ({user}) => {
 
     return (
         <div>
-            <h3>Forms</h3>
             <Container>
                 {documents.map(document => 
                     <SingleDocumentItem key={document._id} user={user}document={document} documents={documents} setDocuments={setDocuments}/>

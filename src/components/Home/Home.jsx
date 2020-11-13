@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     paddingTop: '16px',
-  }
+  },
+  
 }));
 
 

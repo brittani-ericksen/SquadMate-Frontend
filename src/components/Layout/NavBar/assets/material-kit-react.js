@@ -34,16 +34,16 @@ const containerFluid = {
 const container = {
   ...containerFluid,
   "@media (min-width: 576px)": {
-    maxWidth: "540px"
+    maxWidth: "948px"
   },
   "@media (min-width: 768px)": {
-    maxWidth: "720px"
+    maxWidth: "1140px"
   },
   "@media (min-width: 992px)": {
-    maxWidth: "960px"
+    maxWidth: "1364px"
   },
   "@media (min-width: 1200px)": {
-    maxWidth: "1140px"
+    maxWidth: "1572px"
   }
 };
 

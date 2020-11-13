@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./NavBar/Header";
 import HomeHeader from "./NavBar/HomeHeader";
+import HomeHeaderLinks from "./NavBar/HomeHeaderLinks.js";
 import HeaderLinks from './NavBar/HeaderLinks.js'
 import Home from "../Home/Home"
 import Footer from "./Footer";
@@ -27,8 +28,8 @@ const Layout = props =>{
                     isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} user={user}
                 />
             :   <HomeHeader
-                    brand=""
-                    rightLinks={<HeaderLinks />}
+                    
+                    rightLinks={<HomeHeaderLinks />}
                     fixed
                     color="transparent"
                     changeColorOnScroll={{

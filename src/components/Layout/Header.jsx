@@ -33,10 +33,10 @@ const Header = (props) => {
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h1" className={classes.title}>
+          <Typography variant="h3" className={classes.title}>
             SquadMate
           </Typography>
-          <Avatar githubHandle={user.github} src="/avatar-placeholder.png" size="75" round onClick={e => _handleClick(e)}/>
+          <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="75" round /> 
           {!!isLoggedIn ? <LogoutButton setIsLoggedIn={setIsLoggedIn} setUser={setUser}/> : ''}
         </Toolbar>
       </AppBar>

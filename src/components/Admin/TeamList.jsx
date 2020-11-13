@@ -12,8 +12,11 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-evenly",
     },
     cardRoot: {
+        backgroundColor: 'white',
+        color: '#132143',
         margin: '0 auto',
         maxWidth: 345,
+        paddingTop: '20px',
     },
     image: {
         height: "auto",
@@ -46,6 +49,9 @@ const TeamList = () =>{
 
     return (
         <>
+        <Typography variant="h2">
+            Team
+        </Typography>
         <div className={classes.gridRoot}>
         <Grid container spacing={3}       
         >
@@ -53,7 +59,7 @@ const TeamList = () =>{
             <>
                     <Grid item className="center" xs={12} sm={9} md={6} lg={3} xl={3} >
                         <Card className={classes.cardRoot} >
-                        <Avatar githubHandle={mate.github} src="/avatar-placeholder.png" size="105" round /> 
+                        <Avatar src={mate.avatarUrl} name={mate.firstName + ' ' + mate.lastName}size="105" round /> 
                             <CardContent>
                                 <Typography gutterBottom
                                 variant="h5"

@@ -21,7 +21,7 @@ const HomeHeader = (props) => {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.root}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             SquadMate

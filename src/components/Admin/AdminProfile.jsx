@@ -1,26 +1,54 @@
 import React, {useState} from 'react';
-import {TextField, Container, Button} from '@material-ui/core';
+import { Typography, TextField, Container, Button } from '@material-ui/core';
 import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
+import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import UploadPhoto from './UploadPhoto';
 
+const Wrapper = styled.div`
+    border-radius: 5px;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding-top: 5px;
+    margin-top: 15px;
+`;
+
+const Section = styled.div`
+    background-color: white;
+    border-radius: 7px;
+    margin: 30px;
+`;
+
+const Title = styled.div`
+    background-color:  #223F84;
+    color: white;
+    border-radius: 7px 7px 0 0;
+    padding: 0 7px;
+    margin: 0;
+`;
+
+const Detail = styled.div`
+    padding: 5px 20px;
+`;
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      '& .MuiTextField-root': {
+        '& .MuiTextField-root': {
         margin: theme.spacing(1),
-        width: '50ch',
-      },
+        width: '40ch',
+        
+        },
     },
     form: {
-      display: 'flex',
-      alignItems: 'center'
+        display: 'flex',
+        alignItems: 'center'
     },
-    marginTop: {
-      marginTop: '4rem'
-    }
-  }));
+    margin: {
+        marginTop: '2rem',
+        marginBottom: '20px',
+    },
+}));
 
 const AdminProfile = (props) =>{
     const { user, setUser, setProfilePicture, profilePicture } = props;
@@ -79,15 +107,25 @@ const AdminProfile = (props) =>{
 
     return (
         <>
-            <div>
+        <Typography variant="h2">
+            Profile
+        </Typography>
+
+            <div className={classes.root}>
                 {/* upload profile pic */}
-                <Avatar name={initials} src={profilePic}  size="100" round />
+                <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round /> 
                 <Container>
                 {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
                 </Container>      
                 <form onSubmit={e => _handleSubmit(e)}>
+
+<Wrapper>
         <Container component='AdminInformation'>
+            <Section>
+            <Title>
             <h2>User Information</h2>
+            </Title>
+            <Detail>
             <TextField
                 required
                 id="adminFirstName"
@@ -99,7 +137,7 @@ const AdminProfile = (props) =>{
             <TextField
                 required
                 id="adminLastName"
-                label="Admin last Name"
+                label="Admin Last Name"
                 defaultValue={lastName}
                 variant="outlined"
                 onChange={e => _handleLastName(e.target.value)}
@@ -119,11 +157,17 @@ const AdminProfile = (props) =>{
                 variant="outlined"
                 onChange={e => _handleCellPhone(e.target.value)}
             />
+            </Detail>
+            
+            </Section>
         </Container>
         <Button size="large" variant="contained" className={classes.margin} color="primary" type="submit">
-          Save 
-        </Button>
+                Save 
+            </Button>
+
+            </Wrapper>
                 </form>
+    
             </div>
             
         </>

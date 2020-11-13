@@ -38,6 +38,7 @@ const images = [
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    color: '#E6EAF3',
     display: 'flex',
     flexWrap: 'wrap',
     minWidth: 300,
@@ -130,6 +131,11 @@ const useStyles = makeStyles((theme) => ({
     alignContent: 'center',
     paddingLeft: '120px',
   },
+  upload: {
+    backgroundColor: '#E6EAF3',
+    borderRadius: '30px',
+    width: '210px'
+}
 }));
 
 
@@ -138,8 +144,7 @@ const User = (props) => {
     const classes = useStyles();
     const [profilePicture, setProfilePicture] = useState(user.avatarUrl)
     
-    let profilePic = profilePicture === "" ? null : profilePicture;
-    let initials = profilePicture === "" ? (user.firstName + ' ' + user.lastName)  : '';
+
 
   return (
     <>
@@ -148,7 +153,7 @@ const User = (props) => {
         <Route exact path="/user">
 
         <div>
-        <Avatar name={initials} src={profilePic}  size="100" round /> 
+        <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round /> 
                 
                 <h1>Welcome {user.firstName}</h1>
         </div>

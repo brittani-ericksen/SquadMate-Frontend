@@ -40,6 +40,7 @@ const images = [
 
 const useStyles = makeStyles((theme) => ({
 root: {
+    color: '#E6EAF3',
     display: 'flex',
     flexWrap: 'wrap',
     minWidth: 300,
@@ -114,6 +115,11 @@ imageMarked: {
     left: 'calc(50% - 9px)',
     transition: theme.transitions.create('opacity'),
 },
+upload: {
+    backgroundColor: '#E6EAF3',
+    borderRadius: '30px',
+    width: '210px'
+}
 }));
 
 
@@ -124,15 +130,13 @@ const Admin = (props) =>  {
     const [profilePicture, setProfilePicture] = useState(user.avatarUrl)
     
 
-    let profilePic = profilePicture === "" ? null : profilePicture;
-    let initials = profilePicture === "" ? (user.firstName + ' ' + user.lastName)  : '';
 
     return (
         <>
         <Switch>
             <Route exact path="/admin">
                 <div>
-                <Avatar name={initials} src={profilePic} size="105" round /> 
+                <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round />  
                 
            
                 
@@ -178,11 +182,9 @@ const Admin = (props) =>  {
                 
             </Route>
             <Route path="/admin/team">
-                <h1>Team</h1>
                 <TeamList />
             </Route>
             <Route path="/admin/userlist">
-                <h1>Documents and Permissions</h1>
                 <AdminForms user={user}/>
             </Route>
             <Route path="/admin/emergencycards">

@@ -1,7 +1,8 @@
 import React from "react";
-import Header from "./Header";
+import Header from "./NavBar/Header";
+import HomeHeader from "./NavBar/HomeHeader";
+import HeaderLinks from './NavBar/HeaderLinks.js'
 import Home from "../Home/Home"
-import HomeHeader from "./homeHeader";
 import Footer from "./Footer";
 import Admin from '../Admin/Admin';
 import User from "../User/User";
@@ -11,13 +12,31 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import GetCardInfo from "../Admin/GetCardInfo";
 
 const Layout = props =>{
-    const { user, setUser, isLoggedIn, setIsLoggedIn } = props;
+    const { user, setUser, isLoggedIn, setIsLoggedIn, ...rest } = props;
     
     return (
         <>
         <div>
             <div className="removePrint">
-        {!!isLoggedIn ? <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} user={user}/> : <HomeHeader />}
+            {!!isLoggedIn ?
+                <Header
+                    brand=""
+                    rightLinks={<HeaderLinks />}
+                    color="success"
+                    {...rest}
+                    isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setUser={setUser} user={user}
+                />
+            :   <HomeHeader
+                    brand=""
+                    rightLinks={<HeaderLinks />}
+                    fixed
+                    color="transparent"
+                    changeColorOnScroll={{
+                    height: 400,
+                    color: "white"
+                    }}
+                    {...rest} 
+                />}
         </div>
                 <Switch>
                     <Route exact path="/">

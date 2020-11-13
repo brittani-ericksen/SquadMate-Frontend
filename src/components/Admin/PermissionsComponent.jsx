@@ -30,7 +30,7 @@ const PermissionsComponent = ({member}) => {
         }
 
         //let response;
-        await fetch(`http://localhost:3333/user/update/${member._id}`, {
+        await fetch(`${process.env.REACT_APP_SERVER_URL}/user/update/${member._id}`, {
             method: 'PUT',
             headers: { 'Content-Type' : 'application/json' },
             body: JSON.stringify(data)

@@ -46,15 +46,19 @@ Back-End:
 **[npm run dev](https://dev.to/lukeocodes/enny-stack-the-express-ngrok-and-nodemon-stack-23j)**
 
 ## Technical Framework Usage
-The MERN Stack:
+<h6>The MERN Stack:</h6>
+```
 - Mongodb
 - Express
 - React
 - Node
+```
 
 ## Code Framework Style
+```
 - Material UI
 - Custom Styled Components
+```
 
 ## Data References
 Custom Secured Data usage.
@@ -100,11 +104,11 @@ Sign-in and/or Sign-up as either the manager/coach of a team OR the person respo
 
 ## Capstone Project Credits Go To The Builders
 Team Nemesis: 
-B. Erickson
-J. Gardner
-C. Owens
-R. Schniederjan
-A. Thomas
+B. Erickson,
+J. Gardner,
+C. Owens,
+R. Schniederjan,
+A. Thomas.
 
 - [GitHub](https://github.com/brittani-ericksen) Front-End, LOGO-Design and WireFrame Layout and Full Web Site Coloring by B. Erickson.
 - [GitHub](https://github.com/JustinSGardner) Full-Stack, Design-Styles and Design-Ideas by J. Gardner.

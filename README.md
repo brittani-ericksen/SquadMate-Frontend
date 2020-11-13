@@ -4,11 +4,6 @@
 
 <h1 align="center">SquadMate</h1>
 
-<div align="center">
-
-[React](https://reactjs.org/) components for faster and simpler web development. 
-Build your own design system, or start with [Material Design](https://material.io/design/introduction/).
-
 [?](https://img.shields.io/badge/left-right-f39f37)
 
 </div>
@@ -169,7 +164,6 @@ Sign-in and/or Sign-up as either the manager/coach of a team OR the person respo
 
 ## Support Services
 These great services support SquadMate's core infrastructure:
-
 [<img loading="lazy" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" height="15">](https://github.com/):octocat:
 [<img loading="lazy" alt="Material-UI logo" alt="Material-UI logo" src="https://material-ui.com/static/logo.svg" width="30">](https://www.npmjs.com/package/@material-ui/core)
 

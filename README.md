@@ -10,7 +10,7 @@
 
 <h3>SquadMate is an application built to complete online forms by team members for organizers responsible for those teams. The application gathers information on member registration, medical information needs for events and any other information needed to be prepared for the events.<h3>
 
-<h4>The motivation behind the application design was to assist people in need of assistance in areas where managers and coaches work with teams of minors for an event/tournament/match. An easy accessible function to complete the required forms necessary by parents of minors participating in team events. The ability to link information to medics (and other) in absence of the parents with the focus of being prepared.<h4>
+<h3>The motivation behind the application design was to assist people in need of assistance in areas where managers and coaches work with teams of minors for an event/tournament/match. An easy accessible function to complete the required forms necessary by parents of minors participating in team events. The ability to link information to medics (and other) in absence of the parents with the focus of being prepared.<h3>
 
 <p align="center">
 
@@ -46,8 +46,8 @@ Back-End:
 **[npm run dev](https://dev.to/lukeocodes/enny-stack-the-express-ngrok-and-nodemon-stack-23j)**
 
 ## Technical Framework Usage
-<h6>The MERN Stack:</h6>
 ```
+<h6>The MERN Stack:</h6>
 - Mongodb
 - Express
 - React
@@ -103,6 +103,7 @@ Sign-in and/or Sign-up as either the manager/coach of a team OR the person respo
 ## Triumphs
 
 ## Capstone Project Credits Go To The Builders
+```
 Team Nemesis: 
 B. Erickson,
 J. Gardner,
@@ -115,14 +116,13 @@ A. Thomas.
 - [GitHub](https://github.com/chrisowensdev) Full-Stack and Design-Implementations by C. Owens.
 - [GitHub](https://github.com/rynoschni) Project Manager/Scrum Master, Full-Stack Developer and WireFrame-Layout R. Schniederjan.
 - [GitHub](https://github.com/Athomas9sa) Master Layout Components, WireFrame-Layout and ReadMe-File by A. Thomas
-
+```
 ## GitHub Project Links:
-
+```
 **[Frontend Design](https://github.com/brittani-ericksen/capstone-frontend/tree/main)**
-
-
+          &
 **[Backend Built](https://github.com/JustinSGardner/CapStoneProject-Backend/tree/main)**
-
+```
 ## Miscellaneous 
 - Git and GitHub Commits, Merges and Branching.
 - Firebase Google storage.

@@ -81,12 +81,12 @@ const AdminProfile = (props) =>{
         <>
             <div>
                 {/* upload profile pic */}
-                <Avatar name={initials} src={profilePic}  size="100" round />
+                <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round /> 
                 <Container>
                 {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 
                 </Container>      
                 <form onSubmit={e => _handleSubmit(e)}>
-        <Container component='AdminInformation'>
+        <Container>
             <h2>User Information</h2>
             <TextField
                 required

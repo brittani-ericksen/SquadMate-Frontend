@@ -6,22 +6,23 @@
 </div>
 
  ## 
- SquadMate was built to address the challenges a team manager faces regarding communication between themselves and the parents/guardians of the team of students they lead.The application stores data on member registration, medical information and any important documents needed to be prepared for upcoming events.
+ SquadMate was built to address the challenges a team manager faces regarding communication between themselves and the teams they lead.The application stores data on member registration, medical information and any important documents needed to be prepared for upcoming events. This application can be used by a variety of people class groups for different events.
 
 
 <p align="center">
 
 ![intro_screen]()
 
-![presentation_snippet]()
+![presentation_gifhy]()
 
-![Alt Text](url)
+![deployment_link](url)
 
 </p>
 
 ## Features
 - Carousel
 - Konami Code
+- Bcrypt Encoding
 - Document Upload 
 - File-system Routing
 - User Profile Picture
@@ -32,6 +33,8 @@
 - Custom Designed and uploaded Logo
 - Print Function and icon for Emergency Cards, including a QRCode
 - Made use of a Master Component Layout with Integrated Components file system
+- The ability to move past completing critical information fields pauses the moving forward process until completed. 
+- Acknowledgment of 18 years or older in the selection box provided at sign-up has to be selected in order to proceed.
 
 ## Installation
 To install SquadMate use the package-management system:
@@ -43,7 +46,6 @@ Back-End:
 **[npm install](https://dev.to/lukeocodes/enny-stack-the-express-ngrok-and-nodemon-stack-23j)**
 
 ## Technical Framework Usage: MERN Stack
-
 - MongoDB
 - Express
 - React
@@ -92,16 +94,16 @@ Sign-in and/or Sign-up. There is an admin and user option, each having their own
 
 ## Triumphs
 - The ability to update a Profile Photo.
-- Communication between team when pushing up code from a branch without merge conflicts was incredibly efficient.
-- Applied the knowledge form the sixteen(16)-week coarse at DigitalCrafts Bootcamp to incorporated that knowledge into using MangoDB Database we did not cover during class.
+- Communication between team when pushing up code from a branch without merge conflicts.
+- Applied the knowledge form the sixteen(16)-week coarse at DigitalCrafts Bootcamp to incorporate that knowledge into using MangoDB Database that was not cover during class period.
 
 ## Capstone Project Credits Go To The Following Builders
 Team Nemesis: 
-- [Brittani Erickson](https://github.com/brittani-ericksen) Front-End, LOGO-Design and WireFrame Layout and Full Web Site Coloring.
-- [Justin Gardner](https://github.com/JustinSGardner) Full-Stack, Design-Styles and Design-Ideas.
-- [Chris Owens](https://github.com/chrisowensdev) Full-Stack and Design-Implementations.
-- [Ryan Schniederjan](https://github.com/rynoschni) Project Manager/Scrum Master, Full-Stack Developer and WireFrame-Layout.
-- [Annemarie Thomas](https://github.com/Athomas9sa) Master Layout Components, WireFrame-Layout and ReadMe-File.
+- Full-Stack Developer:[Brittani Erickson](https://github.com/brittani-ericksen) Front-End, LOGO-Design and WireFrame Layout.
+- Full-Stack Developer:[Justin Gardner](https://github.com/JustinSGardner) Back-End, Design-Styles and Design-Ideas.
+- Full-Stack Developer:[Chris Owens](https://github.com/chrisowensdev) Back-End, Design-Implementations and Deployment.
+- Full-Stack Developer:[Ryan Schniederjan](https://github.com/rynoschni) PM/Scrum Master and LayoutWireFrames.
+- Full-Stack Developer:[Annemarie Thomas](https://github.com/Athomas9sa) Front-End, Master Layout Components and ReadMe-Files.
 
 ## GitHub Project Links:
 
@@ -176,8 +178,6 @@ const useStyles = makeStyles((theme) => ({
 These great services support SquadMate's core infrastructure:
 [<img loading="lazy" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" height="15">](https://github.com/):octocat:
 [<img loading="lazy" alt="Material-UI logo" alt="Material-UI logo" src="https://material-ui.com/static/logo.svg" width="30">](https://www.npmjs.com/package/@material-ui/core)
+[<img loading="lazy" alt="MongoDB" src="https://webassets.mongodb.com/_com_assets/cms/MongoDB_Logo_FullColorBlack_RGB-4td3yuxzjs.png" height="20">](https://www.mongodb.com/)
 
-## Questions
-## Documentation
 ## The End.
-:sparkles: :rocket: :metal: 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { StylesProvider } from '@material-ui/core/styles';
 import localData from './localData.js';
 import Layout from './components/Layout/Layout';
 import 'fontsource-roboto';
@@ -14,9 +15,10 @@ function App() {
     const [isAdmin, setIsAdmin] = useState(false);
 
     return (
-        <div className='App'>
+        <div className='App Site'>
+            <StylesProvider injectFirst>
             <Router>
-                <Layout
+                <Layout className="Site-content"
                     user={user}
                     setUser={setUser}
                     isLoggedIn={isLoggedIn}
@@ -24,7 +26,9 @@ function App() {
                     isAdmin={isAdmin}
                     setIsAdmin={setIsAdmin}
                 />
+
             </Router>
+            </StylesProvider>
         </div>
     );
 }

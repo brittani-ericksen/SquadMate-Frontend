@@ -71,6 +71,7 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
     const [parentOneLastName, setParentOneLastName] = useState(user.parentForm.parentOne.lastName);
     const [parentOneCellPhone, setParentOneCellPhone] = useState(user.parentForm.parentOne.phone.cell);
     const [parentOneHomePhone, setParentOneHomePhone] = useState(user.parentForm.parentOne.phone.home);
+    const [email, setEmail] = useState(user.email);
 
   const [parentTwoFirstName, setParentTwoFirstName] = useState(user.parentForm.parentTwo.firstName);
   const [parentTwoLastName, setParentTwoLastName] = useState(user.parentForm.parentTwo.lastName);
@@ -122,6 +123,10 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
   const _handleParentOneHomePhone = input => {
     setParentOneHomePhone(input);
 }
+
+  const _handleEmail = input => {
+    setEmail(input);
+  }
 
     const _handleParentTwoFirstName = input => {
         setParentTwoFirstName(input);
@@ -195,6 +200,9 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
           ib = false
         }
           let data = {
+            firstName: parentOneFirstName,
+            lastName: parentOneLastName,
+            email: email,
             parentForm: {
               rider: {
                 firstName: riderFirstName,
@@ -205,8 +213,8 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
                 }
               },
               parentOne: {
-                firstName: parentOneFirstName,
-                lastName: parentOneLastName,
+                firstName: parentOneFirstName, 
+                lastName: parentOneLastName, 
                 phone: {
                   cell: parentOneCellPhone,
                   home: parentOneHomePhone
@@ -321,7 +329,7 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
           <Container component='ParentOneInformation' className={classes.marginTop}>
               <Section>
               <Title>
-                <h2>Parent One Information</h2>
+                <h2>Account/Parent One Information</h2>
               </Title>
               <Detail>
                 <TextField
@@ -355,6 +363,14 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
                   variant="outlined"
                   onChange={e => _handleParentOneHomePhone(e.target.value)}
               />
+              <TextField
+                    required
+                    id="parentOneEmail"
+                    label="Account Email"
+                    defaultValue={email}
+                    variant="outlined"
+                    onChange={e => _handleEmail(e.target.value)}
+                />
             </Detail>
             </Section>
         </Container>

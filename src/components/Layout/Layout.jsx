@@ -58,7 +58,7 @@ const Layout = props =>{
                     }}
                     {...rest} 
                 />}
-        </div>
+            </div>
                 <Switch>
                     <Route exact path="/">
                         <Home user={user} setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} isAdmin={isAdmin} setIsAdmin={setIsAdmin}/>
@@ -85,6 +85,7 @@ const Layout = props =>{
                     </Route>
                 </Switch>
         </div>
+        <Footer />
         </>
     );
 }

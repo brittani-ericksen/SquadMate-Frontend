@@ -1,18 +1,26 @@
 import React, {useState} from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
+//MUI Core, labs, and styles
 import { makeStyles } from '@material-ui/core/styles';
-import { ButtonBase, Typography, Breadcrumbs } from '@material-ui/core';
+import { ButtonBase, Typography, Breadcrumbs, CardContent, Divider, Paper, Chip } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
+//MUI Icons
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import HomeIcon from '@material-ui/icons/Home';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import GroupIcon from '@material-ui/icons/Group';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
+import PhoneIcon from '@material-ui/icons/Phone';
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+//components
 import UserProfile from "./UserProfile";
 import InitialForm from "./InitialForm";
 import UserDocuments from './UserDocuments';
 import UserTeamList from "./UserTeamList";
+//styles
 import styled from 'styled-components';
 
 const BreadcrumbWrapper = styled.div`
@@ -21,10 +29,40 @@ const BreadcrumbWrapper = styled.div`
   border-radius: 0 7px 7px 0;
 `;
 
+const Card = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    text-align: left;
+    margin: 18px 55px;
+
+    .title {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    .paper{
+      min-width: 390px;
+    }
+`;
+
+const Title = styled.div`
+    border-radius: 7px 7px 0 0;
+    padding: 0 7px;
+`;
+
+const Detail = styled.div`
+    padding: 5px 20px;
+`;
+
 const images = [
   {
     url: '/userProfile.jpg',
-    title: 'Profile',
+    title: 'Edit Profile',
     width: '33%',
     href: '/user/profile'
   },
@@ -139,7 +177,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#E6EAF3',
     borderRadius: '30px',
     width: '210px'
-}
+  },
+  chip: {
+    margin: theme.spacing(0.5),
+  },
+  chipYes: {
+      margin: theme.spacing(0.5),
+      backgroundColor: '#4caf50',
+  }
 }));
 
 
@@ -147,8 +192,16 @@ const User = (props) => {
     const { user, setUser } = props;
     const classes = useStyles();
     const [profilePicture, setProfilePicture] = useState(user.avatarUrl)
+    const [groupView, setGroupView] = useState(false);
+    const [numberView, setNumberView] = useState(false);
     
+    const _handleViewClick =() =>{
+      setGroupView(groupView ? false : true);
+    };
 
+  const _handleViewClick2 =() =>{
+      setNumberView(numberView ? false : true);
+    };
 
   return (
     <>
@@ -156,8 +209,208 @@ const User = (props) => {
 
         <Route exact path="/user">
         <div>
-          <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round />       
-          <h1>Welcome {user.firstName}</h1>
+          {/* <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round />        */}
+          <h1>Welcome to SquadMate {user.firstName}!</h1>
+          <Card key={user._id} variant="outlined">
+            <CardContent>
+              <Paper className='paper'>
+                  <Title className="blue">
+                        <Typography variant='h5'>
+                            Rider:
+                        </Typography>
+                    </Title>
+                  <Avatar src={user.avatarUrl} />
+                  <Typography variant='h4'>
+                      {user.parentForm.rider.firstName + " " + user.parentForm.rider.lastName}
+                  </Typography>
+                  <Chip className={classes.chip}
+                  icon={<PhoneAndroidIcon />}
+                  label={user.parentForm.rider.phone.cell}
+                  />
+                  <Chip className={classes.chip}
+                  icon={<AlternateEmailIcon />}
+                  label={user.parentForm.rider.email}
+                  />
+                </Paper>
+                </CardContent>
+                <p></p>
+                <CardContent>
+                <Paper className='paper'>
+                    <Title className="blue">
+                        <Typography variant='h5'>
+                            Account Owner/Parent One:
+                        </Typography>
+                    </Title>
+                    <Detail>
+                        <Typography variant='h6'>
+                        {user.parentForm.parentOne.firstName} {user.parentForm.parentOne.lastName}
+                        </Typography>
+                        <Chip className={classes.chip}
+                        icon={<PhoneAndroidIcon />}
+                        label={user.parentForm.parentOne.phone.cell}
+                        />
+                        <Chip className={classes.chip}
+                        icon={<PhoneIcon />}
+                        label={user.parentForm.parentOne.phone.home}
+                        />
+                    </Detail>
+                    <Detail>
+                    <Chip className={classes.chip}
+                        icon={<AlternateEmailIcon />}
+                        label={user.email}
+                        />
+                    </Detail>
+                </Paper>
+                <p></p>
+                <Paper className='paper'>
+                    <Title className="blue">
+                        <Typography variant='h5'>
+                            Parent Two:
+                        </Typography>
+                    </Title>
+                    <Detail>
+                        <Typography variant='h6'>
+                        {user.parentForm.parentTwo.firstName} {user.parentForm.parentTwo.lastName}
+                        </Typography>
+                        <Chip className={classes.chip}
+                        icon={<PhoneAndroidIcon />}
+                        label={user.parentForm.parentTwo.phone.cell}
+                        />
+                        <Chip className={classes.chip}
+                        icon={<PhoneIcon />}
+                        label={user.parentForm.parentTwo.phone.home}
+                        />
+                    </Detail>
+                </Paper>
+                <p></p>
+                </CardContent>
+                <CardContent>
+                <Paper className='paper'>
+                    <Title className="blue">
+                        <Typography variant='h5'>
+                            Emergency Information:
+                        </Typography>
+                    </Title>
+                    <Detail>
+                        <Typography variant='subtitle1'>
+                        <em>Primary Contact:</em> {user.parentForm.emergencyContactOne.firstName} {user.parentForm.emergencyContactOne.lastName}
+                        </Typography>
+                        <Chip className={classes.chip}
+                        icon={<PhoneAndroidIcon />}
+                        label={user.parentForm.parentOne.phone.cell}
+                        />
+                        <Chip className={classes.chip}
+                        icon={<PhoneIcon />}
+                        label={user.parentForm.parentOne.phone.home}
+                        />
+                    </Detail>
+                    <Detail>
+                        <Typography variant='subtitle1'>
+                        <em>Alternate Contact:</em> {user.parentForm.emergencyContactTwo.firstName} {user.parentForm.emergencyContactTwo.lastName}
+                        </Typography>
+                        <Chip className={classes.chip}
+                        icon={<PhoneAndroidIcon />}
+                        label={user.parentForm.parentTwo.phone.cell}
+                        />
+                        <Chip className={classes.chip}
+                        icon={<PhoneIcon />}
+                        label={user.parentForm.parentTwo.phone.home}
+                        />
+                    </Detail>
+                    <Divider />
+                    <Detail>
+                        <Typography variant="h6">
+                            Insurance
+                        </Typography>
+                    </Detail>
+                    <Detail>
+                        <Typography variant='subtitle1'>
+                        <em>Provider:</em> <Chip className={classes.chip} label={user.insurance.provider}/>
+                        </Typography>
+                    </Detail>
+                    <Detail>
+                        <Typography variant='subtitle1'>
+                        <em>Group:</em> 
+                            {groupView ? 
+                                <Chip className={classes.chip} label={user.insurance.group}/> 
+                            : 
+                            <Chip  className={classes.chip} label="*******************"/>} 
+                            <VisibilityIcon onClick={_handleViewClick}/>
+                        </Typography>
+                    </Detail>
+                    <Detail>
+                        <Typography variant='subtitle1'>
+                        <em>Number:</em> 
+                            {numberView ? 
+                                <Chip className={classes.chip} label={user.insurance.number}/> 
+                            : 
+                            <Chip className={classes.chip} label="*********************"/>} 
+                            <VisibilityIcon onClick={_handleViewClick2}/>
+                        </Typography>
+                    </Detail>
+                </Paper>
+                <p></p>
+                </CardContent>
+                <CardContent>
+                <Paper className='paper'>
+                    <Title className="blue">
+                        <Typography variant='h5'>
+                            Medical:
+                        </Typography>
+                    </Title>
+                    <Detail>
+                        <Typography variant='subtitle1'>
+                            Ibuprofen Release: {!!user.ibuprofenRelease === true ? 
+                                <Chip
+                                className={classes.chipYes}
+                                label="Yes"
+                                />
+                                : 
+                                <Chip
+                                className={classes.chip}
+                                label="No"
+                                color="secondary"
+                                />
+                                }
+                        </Typography>                        
+                    </Detail>
+                    <Detail>
+                        <Typography variant='subtitle1'>
+                            History:
+                        </Typography>
+                        <Divider />
+                        {user.medicalCondition = true ? <Chip
+                            className={classes.chip}
+                            label="Medical Condition"
+                            color="secondary"
+                            />
+                        : null } 
+                        {user.asthma = true ? <Chip
+                            className={classes.chip}
+                            label="Asthma"
+                            color="secondary"
+                            />
+                        : null } 
+                        {user.medicationRequired =true ? <Chip
+                            className={classes.chip}
+                            label="Medication Needed"
+                            color="secondary"
+                            />
+                        : null }
+                    </Detail>
+                    <Detail>
+                        <Typography variant='subtitle1'>
+                            Medications/Allergies:
+                        </Typography>
+                        <Divider />
+                        <Typography variant='subtitle1'>
+                            {user.allergies}
+                        </Typography>
+                    </Detail>
+                </Paper>
+            </CardContent>
+        </Card>
+
         </div>
         {!!user.emergencyFormDone ? "" : (
           <Alert 
@@ -234,7 +487,7 @@ const User = (props) => {
                   </Link>
                   <Typography color="textPrimary">
                   <GroupIcon className={classes.icon} />
-                    Team Members
+                    Team users
                     </Typography>
                 </Breadcrumbs>
               </BreadcrumbWrapper>

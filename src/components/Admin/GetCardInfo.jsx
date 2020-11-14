@@ -82,7 +82,7 @@ const GetCardInfo = (props) => {
             </div>
             </CardContent>
             
-            <QRCode src={`https://api.qrserver.com/v1/create-qr-code/?data=http://localhost:3000/getCardInfo/${member._id}`} alt="qr-code"/>
+            <QRCode src={`https://api.qrserver.com/v1/create-qr-code/?data=${process.env.REACT_APP_QR_CODE_URL}/getCardInfo/${member._id}`} alt="qr-code"/>
         
         </Card>
         ) : null}

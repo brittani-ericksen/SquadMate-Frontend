@@ -71,7 +71,7 @@ export default function Footer(props) {
         </div>
         <div className={classes.right}>
           &copy; {1900 + new Date().getYear()} {''}
-            Squadmate
+            SquadMate
         </div>
       </div>
     </footer>

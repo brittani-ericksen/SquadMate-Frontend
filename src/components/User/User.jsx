@@ -230,7 +230,7 @@ const User = (props) => {
                             Rider:
                         </Typography>
                     </Title>
-                  <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round />
+                  <Avatar src={user.avatarUrl} name={user.parentForm.rider.firstName + ' ' + user.partentForm.rider.lastName}size="105" round />
                   <Typography variant='h4'>
                       {user.parentForm.rider.firstName + " " + user.parentForm.rider.lastName}
                   </Typography>

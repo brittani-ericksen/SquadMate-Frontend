@@ -20,7 +20,7 @@ const Button = styled.div`
 const SingleDocumentItem = ({document, user, setDocuments, documents}) => {
     const handleDelete = async () => {
         const response = await fetch(
-            `http://localhost:3333/document/${document._id}`,
+            `${process.env.REACT_APP_SERVER_URL}/document/${document._id}`,
             {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },

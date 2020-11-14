@@ -208,9 +208,20 @@ const User = (props) => {
       <Switch>
 
         <Route exact path="/user">
+        <h1>Welcome to SquadMate {user.firstName}!</h1>
+        {!!user.emergencyFormDone ? "" : (
+          <Alert 
+            className={classes.alert}
+            variant="filled"
+            severity="error"
+          >
+            Critical Profile Items Missing
+          <br />
+          {!!user.emergencyFormDone ? "" : <Link to='/user/forms'>Emergency Contact Form</Link>}
+          </Alert>
+        )}
         <div>
-          {/* <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round />        */}
-          <h1>Welcome to SquadMate {user.firstName}!</h1>
+          
           <Card key={user._id} variant="outlined">
             <CardContent>
               <Paper className='paper'>
@@ -219,7 +230,7 @@ const User = (props) => {
                             Rider:
                         </Typography>
                     </Title>
-                  <Avatar src={user.avatarUrl} />
+                  <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round />
                   <Typography variant='h4'>
                       {user.parentForm.rider.firstName + " " + user.parentForm.rider.lastName}
                   </Typography>
@@ -412,17 +423,7 @@ const User = (props) => {
         </Card>
 
         </div>
-        {!!user.emergencyFormDone ? "" : (
-          <Alert 
-            className={classes.alert}
-            variant="filled"
-            severity="error"
-          >
-            Critical Profile Items Missing
-          <br />
-          {!!user.emergencyFormDone ? "" : <Link to='/user/forms'>Emergency Contact Form</Link>}
-          </Alert>
-        )}
+        
         <div className={classes.root}>
         {images.map((image) => (
           <ButtonBase

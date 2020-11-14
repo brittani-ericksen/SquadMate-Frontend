@@ -27,13 +27,35 @@ export default function HeaderLinks(props) {
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <Button 
-          href="/signup"
-          color="transparent"
-          className={classes.navLink}
-        >
-          <VpnKey className={classes.icons} /> Get Started
-        </Button>
+        <CustomDropdown
+                    left
+                    caret={false}
+                    hoverColor="black"
+                    buttonText={
+                      <>
+                      <VpnKey className={classes.icons} /> 
+                      <Button 
+                        color="transparent"
+                        className={classes.navLink}>
+                        Get Started
+                      </Button>
+                      </>
+                    }
+                    buttonProps={{
+                      className:
+                        classes.navLink + " " + classes.imageDropdownButton,
+                      color: "transparent"
+                    }}
+                    dropdownList={[
+                      <Link to="/signup" className={classes.dropdownLink}>
+                        Sign up
+                      </Link>,
+                      <Link to="/signin" className={classes.dropdownLink}>
+                        Login
+                      </Link>,
+                    ]}
+                  />
+        
       </ListItem>
     </List>
   );

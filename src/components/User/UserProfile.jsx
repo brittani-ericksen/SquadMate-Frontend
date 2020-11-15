@@ -6,13 +6,13 @@ import { useHistory } from 'react-router-dom';
 import styled from "styled-components";
 import UploadPhoto from '../Admin/UploadPhoto';
 
-const Wrapper = styled.div`
-  border-radius: 5px;
-  margin: 0 auto;
-  max-width: 1000px;
-  padding-top: 5px;
-  margin-top: 15px;
-`;
+// const Wrapper = styled.div`
+//   border-radius: 5px;
+//   margin: 0 auto;
+//   max-width: 1000px;
+//   padding-top: 5px;
+//   margin-top: 15px;
+// `;
 
 const Section = styled.div`
   background-color: white;

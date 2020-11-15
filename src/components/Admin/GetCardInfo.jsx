@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
+import { useParams } from 'react-router-dom';
 import { CardContent,  } from '@material-ui/core';
 import styled from 'styled-components';
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardActions, CardContent, Button, Typography, Grid } from '@material-ui/core';
+import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({

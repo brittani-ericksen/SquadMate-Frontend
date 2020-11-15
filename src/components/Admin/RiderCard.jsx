@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { CardContent, Typography, Divider, Paper, Chip } from '@material-ui/core';
 import styled from 'styled-components';
-import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Avatar from 'react-avatar';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 import PhoneIcon from '@material-ui/icons/Phone';

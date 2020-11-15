@@ -107,29 +107,7 @@ function Forms({user, setUser}) {
     } else {
       ib = false
     }
-  //   let data = { 
-  //     parentForm: {
-  //       rider: {
-  //         firstName: riderFirstName,
-  //         lastName: riderLastName
-  //       },
-  //       emergencyContactOne: {
-  //         firstName: emergencyContactOneFirstName,
-  //         lastName: emergencyContactOneLastName,
-  //         phone: {
-  //           cell: emergencyContactOneCell,
-  //           home: emergencyContactOneHome
-  //         }
-  //       }
-  //     },
-  //     insurance: {
-  //       provider: insuranceProvider,
-  //       group: insuranceGroup,
-  //       number: insurancePolicyNumber
-  //     },
-  //     ibuprofenRelease: ib,
-  //     emergencyFormDone: true,
-  // }
+
   let data = {
     parentForm: {
       rider: {

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Paper, Grid, Container, Button, Typography } from '@material-ui/core';
+import { Paper, Grid, Container, Typography } from '@material-ui/core';
 import PermissionsComponent from './PermissionsComponent';
 import Documents from './Documents';
 import styled from 'styled-components';

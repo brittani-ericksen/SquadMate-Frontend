@@ -88,9 +88,6 @@ const AdminForms = ({user}) =>{
                                     return (<li key={member._id}>{member.firstName}</li>)
                                     })}
                                 </ul>
-                                <Button className={classes.button}>
-                                    Send form reminder email
-                                </Button>
                             </Section>
                             <br />
                             <Section>

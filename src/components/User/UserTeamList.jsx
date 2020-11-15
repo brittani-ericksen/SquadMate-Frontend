@@ -62,7 +62,7 @@ const TeamList = () =>{
             <>
                     <Grid item className="center" xs={12} sm={9} md={6} lg={3} xl={3} >
                         <Card className={classes.cardRoot} >
-                        <Avatar src={mate.avatarUrl} name={mate.firstName + ' ' + mate.lastName}size="105" round /> 
+                        <Avatar src={mate.avatarUrl} name={mate.parentForm.rider.firstName + ' ' + mate.parentForm.rider.lastName}size="105" round /> 
                             <CardContent>
                                 <Typography gutterBottom
                                 variant="h5"

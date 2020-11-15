@@ -83,7 +83,7 @@ const GetCardInfo = (props) => {
 
         <Card key={member._id} variant="outlined">
             <CardContent>
-                <Avatar src={member.avatarUrl} />
+                <Avatar src={member.avatarUrl} name={member.parentForm.rider.firstName + ' ' + member.parentForm.rider.lastName}size="105" round />
                 <Typography variant='h4'>
                     {member.parentForm.rider.firstName + " " + member.parentForm.rider.lastName}
                 </Typography>

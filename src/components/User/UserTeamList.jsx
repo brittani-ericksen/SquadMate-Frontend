@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Avatar from 'react-avatar';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardActions, CardContent, Button, Typography, Grid } from '@material-ui/core';
+import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -39,10 +39,10 @@ const TeamList = () =>{
         let teamId = '5fa2dd0998fe8fbfdf5eaac2';
 
         (async function() {
-            const response = await fetch(`http://localhost:3333/team/${teamId}/users`);
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/team/${teamId}/users`);
             const data = await response.json();
             setTeamData(data);
-            const response2 = await fetch(`http://localhost:3333/team/${teamId}`);
+            const response2 = await fetch(`${process.env.REACT_APP_SERVER_URL}/team/${teamId}`);
             const data2 = await response2.json();
             setTeamName(data2);
         })();

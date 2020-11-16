@@ -38,7 +38,7 @@ const UploadPhoto = ({user, setUser, setProfilePicture, setUpdateProfilePicture}
                     .then(async function(url) {
                         
                         const response = await fetch(
-                            `http://localhost:3333/user/update/${user._id}`,
+                            `${process.env.REACT_APP_SERVER_URL}/user/update/${user._id}`,
                             {
                                 method: 'PUT',
                                 headers: { 'Content-Type': 'application/json' },

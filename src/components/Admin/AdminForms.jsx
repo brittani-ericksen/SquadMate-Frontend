@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Paper, Grid, Container, Button, Typography } from '@material-ui/core';
+import { Paper, Grid, Container, Typography } from '@material-ui/core';
 import PermissionsComponent from './PermissionsComponent';
 import Documents from './Documents';
 import styled from 'styled-components';
@@ -63,7 +63,7 @@ const AdminForms = ({user}) =>{
     
     useEffect(() => {
         (async function(){
-            const response = await fetch(`http://localhost:3333/team/${user.team}/users`);
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/team/${user.team}/users`);
             const data = await response.json();
             setTeamMembers(data);
         })();

@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AdminProfile = (props) =>{
-    const { user, setUser, setProfilePicture, profilePicture } = props;
+    const { user, setUser, setProfilePicture} = props;
 
     const classes = useStyles();
     const history = useHistory();
@@ -96,7 +96,7 @@ const AdminProfile = (props) =>{
                 cell: cellPhone
             }
         }
-        const response = await fetch(`http://localhost:3333/user/update/${user._id}`, {
+        const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/user/update/${user._id}`, {
             method: 'PUT',
             headers: { 'Content-Type' : 'application/json' },
             body: JSON.stringify(data)
@@ -107,8 +107,6 @@ const AdminProfile = (props) =>{
         history.push('/admin');
     }
 
-    let profilePic = profilePicture === "" ? null : profilePicture;
-    let initials = profilePicture === "" ? (user.firstName + ' ' + user.lastName)  : '';
 
     return (
         <>

@@ -3,10 +3,10 @@
 </p>
 
 <h1 align="center">SquadMate</h1>
+<h2 align="center">The Ultimate Coaches ToolBox</h2>
 </div>
 
- ## 
- SquadMate was built to address the challenges a team manager faces regarding communication between themselves and the teams they lead.The application stores data on member registration, medical information and any important documents needed to be prepared for upcoming events. This application can be used by a variety of people class groups for different events.
+ SquadMate was built to address the challenges a team manager faces regarding communication between themselves and the teams they lead.The application stores data on member registration, medical information and any important documents needed to be prepared for upcoming events. This application can be used by a wide variety of groups for different events.
  
 ## Demo
 **[SquadMateDemo]()**

@@ -122,8 +122,8 @@ function Forms({user, setUser}) {
         firstName: user.parentForm.parentOne.firstName,
         lastName: user.parentForm.parentOne.lastName,
         phone: {
-          cell: user.parentForm.parentOne.phone.cell,
-          home: user.parentForm.parentOne.phone.home
+          cell: emergencyContactOneCellPhone,
+          home: emergencyContactOneHomePhone
         }
       },
       parentTwo: {

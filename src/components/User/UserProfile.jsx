@@ -276,7 +276,7 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
           </Typography>
             {/* pulls info in from completed form, editable and updates db when changed */}
             <div>
-            <Avatar src={user.avatarUrl} name={user.firstName + ' ' + user.lastName}size="105" round /> 
+            <Avatar src={user.avatarUrl} name={user.parentForm.rider.firstName + ' ' + user.parentForm.rider.lastName}size="105" round /> 
                 <form className={classes.root} validation autoComplete="off" onSubmit={e => _handleSubmit(e)}>
                 <Container className={classes.upload}>
                 {!!updateProfilePicture ? <UploadPhoto user={user} setUser={setUser} setProfilePicture={setProfilePicture} setUpdateProfilePicture={setUpdateProfilePicture}/> : (<Button className={classes.picButton} onClick={setUpdateProfilePicture}>Change Profile Pic</Button>)} 

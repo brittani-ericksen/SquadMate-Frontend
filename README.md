@@ -98,7 +98,7 @@ Sign-in and/or Sign-up. There is an admin and user option, each having their own
 - Applied the knowledge form the sixteen(16)-week coarse at DigitalCrafts Bootcamp to incorporate that knowledge into using MangoDB Database that was not cover during class period.
 
 ## Capstone Project Credits Go To The Following Builders
-Team Nemesis: 
+ 
 - Full-Stack Developer:[Brittani Ericksen](https://github.com/brittani-ericksen) Front-End, LOGO-Design and WireFrame Layout.
 - Full-Stack Developer:[Justin Gardner](https://github.com/JustinSGardner) Back-End, Design-Styles and Design-Ideas.
 - Full-Stack Developer:[Chris Owens](https://github.com/chrisowensdev) Back-End, Design-Implementations and Deployment.

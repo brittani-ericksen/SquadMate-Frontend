@@ -10,11 +10,10 @@
  
 ## Demo
 <p align="center">
-  <a target="_blank"><img  src="" alt="SquadMate YouTubeDemo"></a></p>
-</p>
-
-<p align="center">
 <a href="" rel="" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/capstoneupload.appspot.com/o/intro-screen.png?alt=media&token=e98fc3f7-fe3e-4a02-a7d1-e1ffab768a2b" alt="SquadMate Intro"></a>
+</p>
+<p align="center">
+  <a target="_blank">**[SquadMateDemo]()**</a></p>
 </p>
 
 ## Features
@@ -58,8 +57,7 @@ Back-End:
 Custom Secured Data usage.
 
 ## Build Status
-Deployed.
-**[SquadMate](https://www.squadmate.app/)**
+Deployed@**[SquadMate](https://www.squadmate.app/)**
 
 ## Usage
 Sign-in and/or Sign-up. There is an admin and user option, each having their own documentation privileges to navigate to with buttons. Administration will have ability to upload documents and print team emergency cards. User will have ability to update emergency card information and complete forms needed by admin.

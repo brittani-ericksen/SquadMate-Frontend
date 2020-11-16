@@ -81,6 +81,10 @@ export default function SignUp(props) {
         parentOne: {
           firstName: firstName,
           lastName: lastName,
+        },
+        emergencyContactOne:{
+          firstName: firstName,
+          lastName: lastName,
         }
       }
     }

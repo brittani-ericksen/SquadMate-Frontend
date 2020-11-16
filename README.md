@@ -9,9 +9,9 @@
  SquadMate was built to address the challenges a team manager faces regarding communication between themselves and the teams they lead.The application stores data on member registration, medical information and any important documents needed to be prepared for upcoming events. This application can be used by a variety of people class groups for different events.
  
 ## Demo
+**[SquadMateDemo]()**
 <p align="center">
 <a href="" rel="" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/capstoneupload.appspot.com/o/intro-screen.png?alt=media&token=e98fc3f7-fe3e-4a02-a7d1-e1ffab768a2b" alt="SquadMate Intro"></a>
-**[SquadMateDemo]()**
 </p>
 
 ## Features

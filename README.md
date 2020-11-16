@@ -79,12 +79,12 @@ Sign-in and/or Sign-up. There is an admin and user option, each having their own
         PermissionsComponent    |                  |
 
 ## Stretch Goals
-- [ ] AuthO
-- [ ] Calendar.
-- [ ] Team Chatroom.
+- [ ] Team Chatrooms.
+- [ ] Calendar integrations.
 - [ ] Coach and Manager Notification Board.
 - [ ] Turn the Custom Application into more widely used app.
 - [ ] Random Picture Display of the Events, Teams or Individual players.
+- [ ] AuthO is a third(3'd) party HIPPA approved and compliant identity management system.
 - [ ] Ability to give message alerts to parents if a telephone number or signed off form is incomplete.
 
 ## Challenges

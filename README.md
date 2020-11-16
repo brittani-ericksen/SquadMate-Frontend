@@ -13,7 +13,7 @@
 <a href="" rel="" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/capstoneupload.appspot.com/o/intro-screen.png?alt=media&token=e98fc3f7-fe3e-4a02-a7d1-e1ffab768a2b" alt="SquadMate Intro"></a>
 </p>
 <p align="center">
-  <a target="_blank">**[SquadMateDemo]()**</a></p>
+**[SquadMateDemo]()**
 </p>
 
 ## Features

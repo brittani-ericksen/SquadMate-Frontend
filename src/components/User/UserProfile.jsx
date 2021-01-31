@@ -88,11 +88,11 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
     const [emergencyContactTwoCellPhone, setEmergencyContactTwoCellPhone] = useState(user.parentForm.emergencyContactTwo.phone.cell);
     const [emergencyContactTwoHomePhone, setEmergencyContactTwoHomePhone] = useState(user.parentForm.emergencyContactTwo.phone.home);
 
-    const [insuranceProvider, setInsuranceProvider] = useState(user.insurance.provider);
-    const [insurancePolicyNumber, setInsurancePolicyNumber] = useState(user.insurance.number);
-    const [insuranceGroup, setInsuranceGroup] = useState(user.insurance.group);
+    const [insuranceProvider, setInsuranceProvider] = useState(user.medicalInfo.insurance.provider);
+    const [insurancePolicyNumber, setInsurancePolicyNumber] = useState(user.medicalInfo.insurance.number);
+    const [insuranceGroup, setInsuranceGroup] = useState(user.medicalInfo.insurance.group);
 
-    const [ibReleaseRadio, setIbReleaseRadio] = useState(String(user.ibuprofenRelease));
+    const [ibReleaseRadio, setIbReleaseRadio] = useState(String(user.medicalInfo.ibuprofenRelease));
     
 
   const _handleRiderFirstName = input => {
@@ -243,7 +243,10 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
                   cell: emergencyContactTwoCellPhone,
                   home: emergencyContactTwoHomePhone
                 }
-              },
+              }
+            
+            },
+            medicalInfo: {
               insurance: {
                 provider: insuranceProvider,
                 group: insuranceGroup,
@@ -284,7 +287,7 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
 
 
 
-          <Container component='RiderInformation'>
+          <Container>
             <Section>
               <Title>
                 <h2>Rider Information</h2>
@@ -326,7 +329,7 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
 
 
 
-          <Container component='ParentOneInformation' className={classes.marginTop}>
+          <Container className={classes.marginTop}>
               <Section>
               <Title>
                 <h2>Account/Parent One Information</h2>
@@ -375,7 +378,7 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
             </Section>
         </Container>
 
-        <Container component='ParentTwoInformation' className={classes.marginTop}>
+        <Container className={classes.marginTop}>
           <Section>
             <Title>
               <h2>Parent Two Information</h2>
@@ -413,7 +416,7 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
           </Section>
         </Container>
 
-        <Container component="Emergencycontact" className={classes.marginTop}>
+        <Container className={classes.marginTop}>
           <Section>
             <Title>
               <h2>Emergency Contact One</h2>
@@ -456,7 +459,7 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
           </Section>
         </Container>
 
-        <Container component="Emergencycontact" className={classes.marginTop}>
+        <Container className={classes.marginTop}>
           <Section>
             <Title>
               <h2>Emergency Contact Two</h2>
@@ -497,7 +500,7 @@ const UserProfile = ({user, setUser, setProfilePicture, profilePicture}) =>{
           </Section>
         </Container>
 
-        <Container component='Insurance' className={classes.marginTop}>
+        <Container  className={classes.marginTop}>
           <Section> 
             <Title>
               <h2>Insurance Information</h2>

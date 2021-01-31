@@ -72,12 +72,12 @@ const GetCardInfo = (props) => {
             </div>
             <div component="p">
                 Medications and History: {member.allergies}<br />
-                Ibuprofen Release: {!!member.ibuprofenRelease ? 'Yes' : 'No'}
+                Ibuprofen Release: {!!member.medicalInfo.ibuprofenRelease ? 'Yes' : 'No'}
             </div>
             <div component="p">
-                Insurance Company Name: {member.insurance.provider}<br />
-                Policy Number: {member.insurance.number}<br />
-                Group Name: {member.insurance.group}<br />
+                Insurance Company Name: {member.medicalInfo.insurance.provider}<br />
+                Policy Number: {member.medicalInfo.insurance.number}<br />
+                Group Name: {member.medicalInfo.insurance.group}<br />
             </div>
             </CardContent>
             

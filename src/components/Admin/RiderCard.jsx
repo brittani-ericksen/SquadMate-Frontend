@@ -184,14 +184,14 @@ const GetCardInfo = (props) => {
                     </Detail>
                     <Detail>
                         <Typography variant='subtitle1'>
-                        <em>Provider:</em> <Chip className={classes.chip} label={member.insurance.provider}/>
+                        <em>Provider:</em> <Chip className={classes.chip} label={member.medicalInfo.insurance.provider}/>
                         </Typography>
                     </Detail>
                     <Detail>
                         <Typography variant='subtitle1'>
                         <em>Group:</em> 
                             {groupView ? 
-                                <Chip className={classes.chip} label={member.insurance.group}/> 
+                                <Chip className={classes.chip} label={member.medicalInfo.insurance.group}/> 
                             : 
                             <Chip  className={classes.chip} label="*******************"/>} 
                             <VisibilityIcon onClick={_handleViewClick}/>
@@ -201,7 +201,7 @@ const GetCardInfo = (props) => {
                         <Typography variant='subtitle1'>
                         <em>Number:</em> 
                             {numberView ? 
-                                <Chip className={classes.chip} label={member.insurance.number}/> 
+                                <Chip className={classes.chip} label={member.medicalInfo.insurance.number}/> 
                             : 
                             <Chip className={classes.chip} label="*********************"/>} 
                             <VisibilityIcon onClick={_handleViewClick2}/>
@@ -217,7 +217,7 @@ const GetCardInfo = (props) => {
                     </Title>
                     <Detail>
                         <Typography variant='subtitle1'>
-                            Ibuprofen Release: {!!member.ibuprofenRelease === true ? 
+                            Ibuprofen Release: {!!member.medicalInfo.ibuprofenRelease === true ? 
                                 <Chip
                                 className={classes.chipYes}
                                 label="Yes"
@@ -236,19 +236,19 @@ const GetCardInfo = (props) => {
                             History:
                         </Typography>
                         <Divider />
-                        {member.medicalCondition = true ? <Chip
+                        {member.medicalInfo.medicalCondition = true ? <Chip
                             className={classes.chip}
                             label="Medical Condition"
                             color="secondary"
                             />
                         : null } 
-                        {member.asthma = true ? <Chip
+                        {member.medicalInfo.asthma = true ? <Chip
                             className={classes.chip}
                             label="Asthma"
                             color="secondary"
                             />
                         : null } 
-                        {member.medicationRequired =true ? <Chip
+                        {member.medicalInfo.medicationRequired =true ? <Chip
                             className={classes.chip}
                             label="Medication Needed"
                             color="secondary"
@@ -261,7 +261,7 @@ const GetCardInfo = (props) => {
                         </Typography>
                         <Divider />
                         <Typography variant='subtitle1'>
-                            {member.allergies}
+                            {member.medicalInfo.allergies}
                         </Typography>
                     </Detail>
                 </Paper>

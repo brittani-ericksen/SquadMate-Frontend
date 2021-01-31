@@ -336,14 +336,14 @@ const User = (props) => {
                     </Detail>
                     <Detail>
                         <Typography variant='subtitle1'>
-                        <em>Provider:</em> <Chip className={classes.chip} label={user.insurance.provider}/>
+                        <em>Provider:</em> <Chip className={classes.chip} label={user.medicalInfo.insurance.provider}/>
                         </Typography>
                     </Detail>
                     <Detail>
                         <Typography variant='subtitle1'>
                         <em>Group:</em> 
                             {groupView ? 
-                                <Chip className={classes.chip} label={user.insurance.group}/> 
+                                <Chip className={classes.chip} label={user.medicalInfo.insurance.group}/> 
                             : 
                             <Chip  className={classes.chip} label="*******************"/>} 
                             <VisibilityIcon onClick={_handleViewClick}/>
@@ -353,7 +353,7 @@ const User = (props) => {
                         <Typography variant='subtitle1'>
                         <em>Number:</em> 
                             {numberView ? 
-                                <Chip className={classes.chip} label={user.insurance.number}/> 
+                                <Chip className={classes.chip} label={user.medicalInfo.insurance.number}/> 
                             : 
                             <Chip className={classes.chip} label="*********************"/>} 
                             <VisibilityIcon onClick={_handleViewClick2}/>
@@ -371,7 +371,7 @@ const User = (props) => {
                     </Title>
                     <Detail>
                         <Typography variant='subtitle1'>
-                            Ibuprofen Release: {!!user.ibuprofenRelease === true ? 
+                            Ibuprofen Release: {!!user.medicalInfo.ibuprofenRelease === true ? 
                                 <Chip
                                 className={classes.chipYes}
                                 label="Yes"
@@ -390,19 +390,19 @@ const User = (props) => {
                             History:
                         </Typography>
                         <Divider />
-                        {user.medicalCondition = true ? <Chip
+                        {user.medicalInfo.medicalCondition = true ? <Chip
                             className={classes.chip}
                             label="Medical Condition"
                             color="secondary"
                             />
                         : null } 
-                        {user.asthma = true ? <Chip
+                        {user.medicalInfo.asthma = true ? <Chip
                             className={classes.chip}
                             label="Asthma"
                             color="secondary"
                             />
                         : null } 
-                        {user.medicationRequired =true ? <Chip
+                        {user.medicalInfo.medicationRequired =true ? <Chip
                             className={classes.chip}
                             label="Medication Needed"
                             color="secondary"
@@ -415,7 +415,7 @@ const User = (props) => {
                         </Typography>
                         <Divider />
                         <Typography variant='subtitle1'>
-                            {user.allergies}
+                            {user.medicalInfo.allergies}
                         </Typography>
                     </Detail>
                 </Paper>
